@@ -1,6 +1,6 @@
 ---
-title: "Data Science"
+title: "Posts"
 layout: categories
-permalink: /ds/
+permalink: /posts/
 author_profile: true
 ---
