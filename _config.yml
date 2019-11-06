@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "Hyunjae's playground"
 title_separator          : "-"
-subtitle                 : "A developer blog"
+subtitle                 : "A developer's blog"
 name                     : "Hyunjae lee"
 description              : "There is such a world to see!"
 url                      : "https://hyunjae-lee.github.io"
@@ -32,7 +32,7 @@ words_per_minute         : 200
 comments:
   provider               : disqus # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : hyunjae-lee# 블로그 댓글 기능 #https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : hyunjae-lee # 블로그 댓글 기능 #https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -44,7 +44,7 @@ comments:
     theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
 
-og_image                 : # "/assets/images/bio-photo-keyboard.jpg"
+#og_image                 : # "/assets/images/bio-photo-keyboard.jpg"
 staticman:
   allowedFields          : # ['name', 'email', 'url', 'message']
   branch                 : # "master"
@@ -67,9 +67,9 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+search                   : true # true, false (default)
+search_full_content      : true #, false (default)
+search_provider          : google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
