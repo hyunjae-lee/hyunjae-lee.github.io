@@ -1,11 +1,11 @@
 ---
 title:  "Programmers - 순열 검사 풀이"
 excerpt: "Problem solving"
-<!-- header:
-  teaser: /assets/img/algorithm/recursive/recursive_cover.png -->
+header:
+  teaser: /assets/img/algorithm/programmers/programmers_cover.jpg
 
 categories:
-  - Algorithm
+  - Programmers
 tags:
   - Algorithm
   - Programmers

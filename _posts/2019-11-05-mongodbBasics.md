@@ -2,7 +2,7 @@
 title:  "(1) MongoDB Basics"
 excerpt: "MongoDB, NoSQL"
 header:
-  teaser: /assets/img/mongodb/mongodb1.png
+  teaser: /assets/img/mongodb/mongodb_cover.png
 
 categories:
   - Database
