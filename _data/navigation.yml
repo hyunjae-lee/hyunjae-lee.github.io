@@ -4,7 +4,5 @@ main:
     url: https://hyunjae-lee.github.io/
   - title: "About"
     url: /about/
-  - title: "Computer Engineering"
-    url : /ce/
-  - title: "Data Science"
-    url : /ds/
+  - title: "Posts"
+    url : /posts/
