@@ -10,9 +10,7 @@ tags:
   - Algorithm
   - Programmers
 ---
-<br><br>
-
-> <subtitle> 순열 검사 </subtitle>
+## 순열 검사
 <p> 아주 간단한 문제이지만, C++ STL 에서 Vector 내의 중복된 원소 제거 및 정렬을 복습 및 정리할 겸 포스팅한다. 간단하게 unique, erase, sort 정도만 알아두면 복잡한 문제가 아주 간단하게 풀릴때도 있다.</p>
 
 ```cpp

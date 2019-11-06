@@ -11,9 +11,8 @@ tags:
   - NoSQL
   - MongoDB
 ---
-<br><br>
+## 1. MongoDB (Nosql) Basics
 
-> <subtitle> 1. MongoDB (Nosql) Basics </subtitle>
 <p> M001 : MongoDB Basics
 :: Posts that are going to be uploaded for MongoDB are based on the materials and lectures given by <strong>MongoDB University</strong>. </p>
 
