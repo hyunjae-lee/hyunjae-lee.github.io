@@ -23,7 +23,7 @@ tags:
 <li> <strong>MongoDB Atlas</strong> is MongoDB’s database as a service offering.
 </p>
 <center>
-<img src = "https://hyunjae-lee.github.io/assets/img/mongodb/mongodb1.png" width = "80%">
+<img src = "https://hyunjae-lee.github.io/assets/img/mongodb/mongodb1.png" width = "100%">
 </center>
 <p>In MongoDB, a <strong>database</strong> serves as a namespace for <strong>collections</strong>. <strong>collections</strong> store indivisual records called <strong>documents</strong>. </p>
 
