@@ -27,6 +27,10 @@ tags:
   
 ---
 
+## 순열
+
+- 
+
 ## 모든 방법을 찾는 방법
 - 아래에 완전탐색 문제와 풀이들이 있다.
   * [일곱 난쟁이](https://hyunjae-lee.github.io/boj/2309sol/){: target="_blank" } (난이도 : 하)
