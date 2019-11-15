@@ -132,3 +132,6 @@ int main(){
   * [일곱 난쟁이](https://hyunjae-lee.github.io/boj/2309sol/){: target="_blank" } (난이도 : 하)
   * [날짜 계산](https://hyunjae-lee.github.io/boj/1476sol/){: target="_blank" } (난이도 : 하)
   * [테트로미노](https://hyunjae-lee.github.io/boj/14500sol/){: target="_blank" } (난이도 : __중__)
+  * [모든 순열](https://hyunjae-lee.github.io/boj/10974sol/){: target="_blank" } (난이도 : 하)
+  * [차이를 최대로](https://hyunjae-lee.github.io/boj/10819sol/){: target="_blank" } (난이도 : 하)
+  * [외판원 순회2](https://hyunjae-lee.github.io/boj/10971sol/){: target="_blank" } (난이도 : 하)
