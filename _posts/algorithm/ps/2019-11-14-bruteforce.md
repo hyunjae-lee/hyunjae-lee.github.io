@@ -29,6 +29,6 @@ tags:
 
 ## 모든 방법을 찾는 방법
 - 아래에 완전탐색 문제와 풀이들이 있다.
-  * [일곱 난쟁이](https://hyunjae-lee.github.io/boj/2309sol/) (난이도 : 하)
-  * [날짜 계산](https://hyunjae-lee.github.io/boj/1476sol/) (난이도 : 하)
-  * [테트로미노](https://hyunjae-lee.github.io/boj/14500sol/) (난이도 : __중__)
+  * [일곱 난쟁이](https://hyunjae-lee.github.io/boj/2309sol/){: target="_blank" } (난이도 : 하)
+  * [날짜 계산](https://hyunjae-lee.github.io/boj/1476sol/){: target="_blank" } (난이도 : 하)
+  * [테트로미노](https://hyunjae-lee.github.io/boj/14500sol/){: target="_blank" } (난이도 : __중__)
