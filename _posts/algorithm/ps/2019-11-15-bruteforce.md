@@ -172,3 +172,4 @@ int go(int count, int sum, int goal){
   * [외판원 순회2](https://hyunjae-lee.github.io/boj/10971sol/){: target="_blank" } (난이도 : 하)
   * [로또](https://hyunjae-lee.github.io/boj/6603sol/){: target="_blank" } (난이도 : 하)
   * [연산자 우선순위](https://hyunjae-lee.github.io/boj/14888sol/){: target="_blank" } (난이도 : 하)
+  * [암호 만들기](https://hyunjae-lee.github.io/boj/1759sol/){: target="_blank" } (난이도 : __중__)
