@@ -1,5 +1,5 @@
 ---
-title:  "Problem Solving - 문제 풀이 팁 정리 (완전 탐색)"
+title:  "Problem Solving - 문제 풀이 팁 정리 (완전 탐색 - Brute Force)"
 excerpt: "For문/순열/재귀호출/비트마스크"
 header:
   teaser: /assets/img/algorithm/ps/ps_cover.png
@@ -84,6 +84,8 @@ tags:
   }
 ```
 
+---
+
 ### 모든 순열 구하기
 
 - C++ STL 을 이용하여 아주 간단하게 모든 순열을 구해보자!
@@ -127,6 +129,39 @@ int main(){
   - 대부분의 문제는 1초 내에 해결해야 하고, 1억가지의 경우의 수가 보통 허용되므로 
   - __N이 최대 10일때까지만 위와 같은 방법으로 풀 수 있다.__
 
+---
+
+### 재귀 함수 사용하기 
+
+- 재귀함수를 처음 다룬다면, [재귀함수 기초 다지기](https://hyunjae-lee.github.io/posts/#recursive){: target="_blank" } 를 통해 재귀함수의 기초를 학습하자
+
+- [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095){: target="_blank" } 문제를 통해 재귀함수에 대해 알아보자.
+- 문제설명 : N (<= 10) 을 1,2,3의 합으로 나타내는 방법의 수를 구하는 것 
+  
+- 간단한 재귀함수 설계 : go (count, sum, goal) : 숫자 count 개로 합 sum을 만드는 경우의 수를 리턴하는 함수
+- 고려해야 할 사항 1. 불가능한 경우? sum > goal (이 때 goal 은 N 이다.)
+- 고려해야 할 사항 2. 정답인 경우? sum = goal
+- 고려해야 할 사항 3. 다음 경우를 호출? 
+  * 1을 선택한 경우, go (count + 1, sum + 1, goal)
+  * 2를 선택한 경우, go (count + 1, sum + 2, goal)
+  * 3을 선택한 경우, go (count + 1, sum + 3, goal)
+
+```cpp
+// 시간복잡도 : O(3^N)
+int go(int count, int sum, int goal){
+  if (sum > goal) return 0;
+  if (sum == goal) return 1;
+
+  int now = 0;
+  for(int i = 1; i <= 3; i++){
+      now += go (count + 1, sum + i, goal);
+  }
+
+  return now;
+}
+```
+
+
 ## 예제 문제
 - 아래에 완전탐색 문제와 풀이들이 있다.
   * [일곱 난쟁이](https://hyunjae-lee.github.io/boj/2309sol/){: target="_blank" } (난이도 : 하)
@@ -135,3 +170,5 @@ int main(){
   * [모든 순열](https://hyunjae-lee.github.io/boj/10974sol/){: target="_blank" } (난이도 : 하)
   * [차이를 최대로](https://hyunjae-lee.github.io/boj/10819sol/){: target="_blank" } (난이도 : 하)
   * [외판원 순회2](https://hyunjae-lee.github.io/boj/10971sol/){: target="_blank" } (난이도 : 하)
+  * [로또](https://hyunjae-lee.github.io/boj/6603sol/){: target="_blank" } (난이도 : 하)
+  * [연산자 우선순위](https://hyunjae-lee.github.io/boj/14888sol/){: target="_blank" } (난이도 : 하)
