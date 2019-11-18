@@ -224,3 +224,5 @@ int go(int count, int sum, int goal){
   * [부분집합의 합](https://hyunjae-lee.github.io/boj/1182sol/){: target="_blank" } (난이도 : 하)
   * [퇴사](https://hyunjae-lee.github.io/boj/14501sol/){: target="_blank" } (난이도 : __중__)
   * [연산자 우선순위 (2)](https://hyunjae-lee.github.io/boj/15658sol/){: target="_blank" } (난이도 : 하)
+
+## 예제 문제 ( N과 M 시리즈 )
