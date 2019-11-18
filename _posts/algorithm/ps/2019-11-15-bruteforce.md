@@ -161,6 +161,53 @@ int go(int count, int sum, int goal){
 }
 ```
 
+---
+
+## 비트마스크 이용하기
+
+우선 기본적인 비트 연산에 대해 복습해보자
+<center>
+<img src = "https://hyunjae-lee.github.io/assets/img/algorithm/ps/bitmask1.jpg" width = "100%">
+</center>
+<br>
+<center>
+<img src = "https://hyunjae-lee.github.io/assets/img/algorithm/ps/bitmask2.jpg" width = "100%">
+</center>
+<br>
+
+* 추가로 unsigned, signed 자료형에 따라 보여지는 값이 다르다!
+
+- 중요한 연산 중 하나가 Shift 연산이다.
+- A << B 는 A 를 B 만큼의 비트를 왼쪽으로 이동시킨다.
+- A >> B 는 A 를 B 만큼의 비트를 오른쪽으로 이동시킨다.
+
+- A << B 는 A * 2^B, A >> B 는 A / 2^B 와 같다.
+- (A + B) / 2 = (A + B) >> 1 로 쓸 수 있다.
+
+- 비트마스크로 무엇을 할 수 있는가?
+  - 정수로 집합을 나타낼 수 있다.
+  - {1, 3, 4, 5, 9} = 570 = 2^1 + 2^3 + 2^4 + 2^5 + 2^9
+  - 굳이 비트마스크를 쓰는 이유는? __공간적인 이유__ + 정수 하나로 배열을 대체할 수 있기 때문에
+
+<center>
+<img src = "https://hyunjae-lee.github.io/assets/img/algorithm/ps/bitmask3.jpg" width = "100%">
+</center>
+<br>
+
+- 추가 연산들
+  - (1 << N) - 1 = 전체 집합
+  - 0 = 공집합
+  - 현재 집합이 S 라고 할 때,
+    - i를 추가 : S | (1 << i)
+    - i를 검사 : S & (1 << i)
+    - i를 제거 : S & ~(1 << i)
+    - i를 토글 (0을 1로, 1을 0으로) : S ^ (1 << i)
+
+* 비트연산 우선순위
+  * 1 << N - 1은 (1 << N) - 1 ? 1 << (N - 1)?
+    * 정답은 1 << (N - 1)
+
+---
 
 ## 예제 문제
 - 아래에 완전탐색 문제와 풀이들이 있다.
