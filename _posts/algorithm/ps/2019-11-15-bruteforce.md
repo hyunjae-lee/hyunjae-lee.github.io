@@ -131,7 +131,7 @@ int main(){
 
 ---
 
-### 재귀 함수 사용하기 
+## 재귀 함수 사용하기 
 
 - 재귀함수를 처음 다룬다면, [재귀함수 기초 다지기](https://hyunjae-lee.github.io/posts/#recursive){: target="_blank" } 를 통해 재귀함수의 기초를 학습하자
 
