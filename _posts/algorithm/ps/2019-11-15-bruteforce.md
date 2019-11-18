@@ -175,3 +175,4 @@ int go(int count, int sum, int goal){
   * [암호 만들기](https://hyunjae-lee.github.io/boj/1759sol/){: target="_blank" } (난이도 : __중__)
   * [부분집합의 합](https://hyunjae-lee.github.io/boj/1182sol/){: target="_blank" } (난이도 : 하)
   * [퇴사](https://hyunjae-lee.github.io/boj/14501sol/){: target="_blank" } (난이도 : __중__)
+  * [연산자 우선순위 (2)](https://hyunjae-lee.github.io/boj/15658sol/){: target="_blank" } (난이도 : 하)
