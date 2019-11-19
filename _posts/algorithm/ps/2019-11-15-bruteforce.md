@@ -228,3 +228,4 @@ int go(int count, int sum, int goal){
 - N과 M 시리즈 (순열)
   * [N 과 M](https://hyunjae-lee.github.io/boj/15649sol/){: target="_blank" } (난이도 : 하)
   * [N 과 M (2)](https://hyunjae-lee.github.io/boj/15650sol/){: target="_blank" } (난이도 : 하)
+  * [N 과 M (3)](https://hyunjae-lee.github.io/boj/15651sol/){: target="_blank" } (난이도 : 하)
