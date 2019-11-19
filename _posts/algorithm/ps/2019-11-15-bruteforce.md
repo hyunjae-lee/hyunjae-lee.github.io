@@ -192,18 +192,17 @@ int go(int count, int sum, int goal){
 <center>
 <img src = "https://hyunjae-lee.github.io/assets/img/algorithm/ps/bitmask3.jpg" width = "100%">
 </center>
-<br>
 
 - 추가 연산들
   - (1 << N) - 1 = 전체 집합
   - 0 = 공집합
-  
-- 현재 집합이 S 라고 할 때,
-  - i를 추가 : S | (1 << i)
-  - i를 검사 : S & (1 << i)
-  - i를 제거 : S & ~(1 << i)
-  - i를 토글 (0을 1로, 1을 0으로) : S ^ (1 << i)
 
+- 현재 집합이 S 라고 할 때,
+  - <p>i를 추가 : S | (1 << i)</p>
+  - <p>i를 검사 : S & (1 << i)</p>
+  - <p>i를 제거 : S & ~(1 << i)</p>
+  - <p>i를 토글 (0을 1로, 1을 0으로) : S ^ (1 << i)</p>
+  
 * 비트연산 우선순위
   * 1 << N - 1은 (1 << N) - 1 ? 1 << (N - 1)?
     * 정답은 1 << (N - 1)
