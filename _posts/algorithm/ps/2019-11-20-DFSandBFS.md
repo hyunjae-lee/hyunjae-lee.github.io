@@ -1,6 +1,6 @@
 ---
 title:  "Problem Solving - 문제 풀이 팁 정리 (완전 탐색 - DFS & BFS)"
-excerpt: "DFS/BFS/Graph/이분그래프"
+excerpt: "DFS/BFS/Graph"
 header:
   teaser: /assets/img/algorithm/ps/ps_cover.png
 
@@ -15,7 +15,7 @@ tags:
   - 너비 우선 탐색
 ---
 
-## 완전 탐색 (Graph & BFS)
+## 완전 탐색 (DFS & BFS)
 
 ### Graph (그래프)?
 
@@ -208,6 +208,7 @@ ___
 - 이 때 나오는 문제들의 유형 중에 __그래프 탐색__이 있다. 물론, 시험장에서는 친절하게 어떤 알고리즘을 써야하는 지 유형을 알려주지는 않는다.
 - 따라서, 내가 생각하는 알고리즘 공부법은 (최소 취업을 위한 코딩 테스트를 통과하는 기준으로) __어떤 문제를 접했을 때, 이 문제를 DFS 혹은 BFS 로 풀 수 있는가?__ 를 판단할 수 있는 분석력을 갖추는 것이 우선이라 생각한다.
 - 그래서 아래 예제 문제들에서 __어떻게 DFS/BFS 문제라고 판단을 하였고 풀이 계획을 어떻게 세웠는지__ 에 대한 아이디어와 함께 코드를 공유한다.
+- 또한, [다음 편](https://hyunjae-lee.github.io/problem%20solving/DFSandBFS2/){: target="_blank" }에 이어서 활용도가 높은 그래프 탐색 관련한 몇 가지 알고리즘을 소개한다.
 
 ---
 
@@ -215,3 +216,4 @@ ___
 - 아래에 DFS/BFS 문제와 풀이들이 있다.
   * [연결 요소](https://hyunjae-lee.github.io/boj/11724sol/){: target="_blank" } (난이도 : 하)
   * [이분 그래프](https://hyunjae-lee.github.io/boj/1707sol/){: target="_blank" } (난이도 : __중__)
+  * [단지번호붙이기](https://hyunjae-lee.github.io/boj/2667sol/){: target="_blank" } (난이도 : __중__)
