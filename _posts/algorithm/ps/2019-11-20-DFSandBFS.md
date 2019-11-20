@@ -93,15 +93,15 @@ tags:
 ## 그래프의 탐색
 
 - 그래프 탐색의 목적 : __시작점 X 부터 시작하여 모든 정점을 1번씩 방문하는 것__ 
-- DFS : 깊이 우선 탐색, Stack 사용, 주로 재귀함수 구현
-- BFS : 너비 우선 탐색, Queue 사용
+- DFS : 깊이 우선 탐색, Stack 사용, 주로 재귀함수 구현.
+- BFS : 너비 우선 탐색, Queue 사용, 주로 최단거리 알고리즘에 사용됨.
 - 개념에 대한 이해는 아래의 영상을 보면 바로 이해될 것이다.
 
 <center>
 <img src = "https://hyunjae-lee.github.io/assets/img/algorithm/ps/dfsbfs.gif" width = "100%">
 </center>
 
-### DFS 
+### DFS 기초
 
 - 인접 행렬과 인접 리스트를 이용하여 방문한 순서대로 출력하는 DFS 함수를 직접 구현해보자 
 - dfs(x) : X 정점에 방문.
@@ -148,7 +148,7 @@ void dfs(int x){
 
 ---
 
-### BFS
+### BFS 기초
 
 - 인접 행렬과 인접 리스트를 이용하여 방문한 순서대로 출력하는 BFS를 직접 구현해보자 
 
@@ -207,7 +207,7 @@ ___
 - 우선 **취업을 준비하는 입장**이라면 삼성 SW 역량테스트, 카카오 코딩테스트 등 대부분의 기업들에서 SW 직군을 뽑기 위해 코딩테스트를 실시하는데 
 - 이 때 나오는 문제들의 유형 중에 __그래프 탐색__이 있다. 물론, 시험장에서는 친절하게 어떤 알고리즘을 써야하는 지 유형을 알려주지는 않는다.
 - 따라서, 내가 생각하는 알고리즘 공부법은 (최소 취업을 위한 코딩 테스트를 통과하는 기준으로) __어떤 문제를 접했을 때, 이 문제를 DFS 혹은 BFS 로 풀 수 있는가?__ 를 판단할 수 있는 분석력을 갖추는 것이 우선이라 생각한다.
-- 그래서 아래 예제 문제들에서 __어떻게 DFS/BFS 문제라고 판단을 하였고 풀이 계획을 어떻게 세웠는지__ 에 대한 아이디어와 함께 코드를 공유한다.
+- 그래서 아래 예제 문제들에서 __어떻게 DFS/BFS 문제라고 판단을 하였고 풀이 계획을 어떻게 세웠는지__ 에 대한 **아이디어와 함께 코드**를 공유한다.
 - 또한, [다음 편](https://hyunjae-lee.github.io/problem%20solving/DFSandBFS2/){: target="_blank" }에 이어서 활용도가 높은 그래프 탐색 관련한 몇 가지 알고리즘을 소개한다.
 
 ---
@@ -216,4 +216,7 @@ ___
 - 아래에 DFS/BFS 문제와 풀이들이 있다.
   * [연결 요소](https://hyunjae-lee.github.io/boj/11724sol/){: target="_blank" } (난이도 : 하)
   * [이분 그래프](https://hyunjae-lee.github.io/boj/1707sol/){: target="_blank" } (난이도 : __중__)
-  * [단지번호붙이기](https://hyunjae-lee.github.io/boj/2667sol/){: target="_blank" } (난이도 : __중__)
+  * [단지번호붙이기](https://hyunjae-lee.github.io/boj/2667sol/){: target="_blank" } (난이도 : 하)
+  * [섬의 개수](https://hyunjae-lee.github.io/boj/4963sol/){: target="_blank" } (난이도 : 하)
+  * [미로 탐색](https://hyunjae-lee.github.io/boj/2178sol/){: target="_blank" } (난이도 : 하)
+  * [토마토](https://hyunjae-lee.github.io/boj/7576sol/){: target="_blank" } (난이도 : __중__)
