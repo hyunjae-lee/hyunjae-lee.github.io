@@ -214,6 +214,7 @@ ___
 
 ## 예제 문제
 - 아래에 DFS/BFS 문제와 풀이들이 있다.
+  * [숨바꼭질](https://hyunjae-lee.github.io/boj/1697sol/){: target="_blank" } (난이도 : 하)
   * [연결 요소](https://hyunjae-lee.github.io/boj/11724sol/){: target="_blank" } (난이도 : 하)
   * [이분 그래프](https://hyunjae-lee.github.io/boj/1707sol/){: target="_blank" } (난이도 : __중__)
   * [단지번호붙이기](https://hyunjae-lee.github.io/boj/2667sol/){: target="_blank" } (난이도 : 하)
@@ -221,3 +222,4 @@ ___
   * [미로 탐색](https://hyunjae-lee.github.io/boj/2178sol/){: target="_blank" } (난이도 : 하)
   * [토마토](https://hyunjae-lee.github.io/boj/7576sol/){: target="_blank" } (난이도 : __중__)
   * [이모티콘](https://hyunjae-lee.github.io/boj/14226sol/){: target="_blank" } (난이도 : __중__)
+  * [숨바꼭질 3](https://hyunjae-lee.github.io/boj/13549sol/){: target="_blank" } (난이도 : __중__)
