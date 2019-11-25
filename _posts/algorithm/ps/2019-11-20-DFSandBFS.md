@@ -223,3 +223,7 @@ ___
   * [토마토](https://hyunjae-lee.github.io/boj/7576sol/){: target="_blank" } (난이도 : __중__)
   * [이모티콘](https://hyunjae-lee.github.io/boj/14226sol/){: target="_blank" } (난이도 : __중__)
   * [숨바꼭질 3](https://hyunjae-lee.github.io/boj/13549sol/){: target="_blank" } (난이도 : __중__)
+  * [공주님을 구해라!](https://hyunjae-lee.github.io/boj/17836sol/){: target="_blank" } (난이도 : __중__)
+  * [알고스팟](https://hyunjae-lee.github.io/boj/1261sol/){: target="_blank" } (난이도 : __중__)
+  * [벽 부수고 이동하기](https://hyunjae-lee.github.io/boj/2206sol/){: target="_blank" } (난이도 : __중__)
+  * [탈출](https://hyunjae-lee.github.io/boj/2206sol/){: target="_blank" } (난이도 : __중__)
