@@ -220,3 +220,4 @@ ___
   * [섬의 개수](https://hyunjae-lee.github.io/boj/4963sol/){: target="_blank" } (난이도 : 하)
   * [미로 탐색](https://hyunjae-lee.github.io/boj/2178sol/){: target="_blank" } (난이도 : 하)
   * [토마토](https://hyunjae-lee.github.io/boj/7576sol/){: target="_blank" } (난이도 : __중__)
+  * [이모티콘](https://hyunjae-lee.github.io/boj/14226sol/){: target="_blank" } (난이도 : __중__)
