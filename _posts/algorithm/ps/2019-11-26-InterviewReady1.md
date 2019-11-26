@@ -18,12 +18,14 @@ tags:
 
 ### 1. How Many ways to decode this message?
 
+* [Problem URL](https://leetcode.com/problems/decode-ways/){: target="_blank" }
+
 <center>
 <img src = "https://hyunjae-lee.github.io/assets/img/algorithm/interview/interview-1.jpg" width = "100%">
 </center>
 
 
-### 2. Implement the Idea
+### 2. Implement the Idea as a pseudocode
 
 ```python
 def helper_dp(data, k, memo): # k : we look at only last 'k' letters in 'data' string
@@ -55,3 +57,57 @@ def num_ways_dp(data):
     memo = new int[data.length+1] # initialize to null's
     return helper_dp(data, data.length, memo)
 ```
+
+### 3. Solution
+
+```cpp
+class Solution {
+public:
+    int decode(string& s, int N, int* memo)
+        {
+            if (N == 0) {
+                return 1;
+            }
+
+            int start = s.size() - N;
+
+            if(s[start] == '0'){
+                return 0;
+            }
+
+            if (memo[N] > 0) {
+                return memo[N];
+            }
+
+            int result = decode(s, N-1, memo);
+            
+            if(N >= 2 && (s[start]-'0' == 1 || (s[start]-'0' == 2 && s[start+1]-'0' <= 6))){
+                result += decode(s, N-2, memo);
+            }
+            
+            memo[N] = result;
+            return memo[N];
+        }
+
+        int numDecodings(string s) {
+            if (s.size() == 0) {
+                return 0;
+            }
+
+            // Memoization
+            int memo[s.size()+1];
+
+            // Initialize to -1's
+            for (int i = 0; i <= s.size(); i++) {
+                memo[i] = -1;
+            }
+
+            return decode(s, s.size(), memo);
+        }
+};
+
+```
+
+<center>
+<img src = "https://hyunjae-lee.github.io/assets/img/algorithm/interview/interview-1-sol.png" width = "100%">
+</center>
