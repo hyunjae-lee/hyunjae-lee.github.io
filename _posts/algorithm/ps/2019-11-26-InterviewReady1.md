@@ -5,12 +5,12 @@ header:
   teaser: /assets/img/algorithm/ps/ps_cover.png
 
 categories:
-  - Interview
+  - Interview Ready
 tags:
   - Problem Solving
   - Dynamic Programming
   - Algorithm
-  - Interview
+  - Interview Ready
   - English
 ---
 
