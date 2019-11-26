@@ -8,6 +8,7 @@ categories:
   - Interview
 tags:
   - Problem Solving
+  - Dynamic Programming
   - Algorithm
   - Interview
   - English
@@ -18,7 +19,7 @@ tags:
 ### 1. How Many ways to decode this message?
 
 <center>
-<img src = "https://hyunjae-lee.github.io/assets/img/algorithm/interview/interview.jpg" width = "100%">
+<img src = "https://hyunjae-lee.github.io/assets/img/algorithm/interview/interview-1.jpg" width = "100%">
 </center>
 
 
