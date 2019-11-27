@@ -12,6 +12,7 @@ tags:
   - Algorithm
   - Interview Ready
   - English
+  - Leetcode
 ---
 
 ## Interview Ready - How Many ways to decode this message?
