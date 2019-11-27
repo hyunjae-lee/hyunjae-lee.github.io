@@ -120,12 +120,6 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://hyunjae-lee.github.io"
-    - label: "Leetcode"
-      icon: "fab fa-fw fab fa-cuttlefish"
-      url: "https://leetcode.com/leehj8687/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/hyunjae-lee"
@@ -135,6 +129,12 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin-in"
       url: "https://www.linkedin.com/in/hyunjaedev/"
+    - label: "Leetcode"
+      icon: "fab fa-fw fab fa-cuttlefish"
+      url: "https://leetcode.com/leehj8687"
+    - label: "Baekjoon"
+      icon: "fab fa-fw fas fa-cubes"
+      url: "https://www.acmicpc.net/user/leehj8687"
 
 # Site Footer
 footer:
