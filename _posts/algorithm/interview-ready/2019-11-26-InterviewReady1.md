@@ -2,7 +2,7 @@
 title:  "Interview Ready - How Many ways to decode this message?"
 excerpt: "Described in English"
 header:
-  teaser: /assets/img/algorithm/ps/ps_cover.png
+  teaser: /assets/img/algorithm/interview/interview_cover.jpg
 
 categories:
   - Interview Ready
