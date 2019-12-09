@@ -226,6 +226,8 @@ int go(int count, int sum, int goal){
   * [리모컨](https://hyunjae-lee.github.io/boj/1107sol/){: target="_blank" } (난이도 : __중__)
   * [카잉 달력](https://hyunjae-lee.github.io/boj/6064sol/){: target="_blank" } (난이도 : 하)
   * [수 이어 쓰기 1](https://hyunjae-lee.github.io/boj/1748sol/){: target="_blank" } (난이도 : 하)
+  * [부등호](https://hyunjae-lee.github.io/boj/2529sol/){: target="_blank" } (난이도 : __중__)
+  * [단어 수학](https://hyunjae-lee.github.io/boj/1339sol/){: target="_blank" } (난이도 : __중__)
 
 ## 예제 문제 ( N과 M 시리즈 )
 - N과 M 시리즈 (순열)
