@@ -18,7 +18,7 @@ tags:
 - 직접 계산을 통해서 구한다. 대부분 손으로 계산해볼 수 있다.
 
 ### 2. 가능한 모든 방법을 다 만들어본다.
-
+ 
 - 하나도 빠짐없이 만들어야 한다.
 - 대표적으로 For문, 순열 사용, 재귀호출 사용, 비트마스크 사용이 있다.
   
@@ -223,6 +223,7 @@ int go(int count, int sum, int goal){
   * [부분집합의 합](https://hyunjae-lee.github.io/boj/1182sol/){: target="_blank" } (난이도 : 하)
   * [퇴사](https://hyunjae-lee.github.io/boj/14501sol/){: target="_blank" } (난이도 : __중__)
   * [연산자 우선순위 (2)](https://hyunjae-lee.github.io/boj/15658sol/){: target="_blank" } (난이도 : 하)
+  * [리모컨](https://hyunjae-lee.github.io/boj/1107sol/){: target="_blank" } (난이도 : __중__)
 
 ## 예제 문제 ( N과 M 시리즈 )
 - N과 M 시리즈 (순열)
