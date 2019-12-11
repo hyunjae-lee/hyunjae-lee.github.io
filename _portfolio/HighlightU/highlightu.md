@@ -2,8 +2,8 @@
 title: "HighlightU"
 excerpt: "- a web service automatically extracting highlights from Twitch videos "
 header:
-  image: /assets/img/highlightu/highlightu-serviceflow.jpg
-  teaser: assets/img/highlightu/highlightu-serviceflow.jpg
+  image: /assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
+  teaser: assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
 sidebar:
   - title: "Role"
     image: /assets/img/profile.jpg
@@ -12,11 +12,11 @@ sidebar:
   - title: "Responsibilities"
     text: "test"
 gallery:
-  - url: /assets/img/highlightu/highlightu-serviceflow
-    image_path: assets/img/highlightu/highlightu-serviceflow.jpg
+  - url: /assets/img/portfolio/highlightu/highlightu-serviceflow
+    image_path: assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
     alt: "placeholder image 1"
-  - url: /assets/img/highlightu/highlightu-team
-    image_path: assets/img/highlightu/highlightu-team.jpeg
+  - url: /assets/img/portfolio/highlightu/highlightu-team
+    image_path: assets/img/portfolio/highlightu/highlightu-team.jpeg
     alt: "placeholder image 2"
 ---
 
