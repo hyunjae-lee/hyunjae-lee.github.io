@@ -39,7 +39,6 @@
   border-bottom: 1px solid $border-color;
 
   + .list__item .archive__item-title {
-    color: #575655; 
     margin-top: 0.5em;
   }
 }
@@ -58,12 +57,10 @@
     top: 0;
     right: 0;
     bottom: 0;
-    color: #396e80;
   }
 
   a + a {
     opacity: 0.5;
-    color: #396e80;
   }
 }
 
@@ -128,7 +125,6 @@
    ========================================================================== */
 
 .list__item {
-  color: #5297ad;
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
