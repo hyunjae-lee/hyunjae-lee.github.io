@@ -50,6 +50,7 @@
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #5297ad;
 
   a[rel="permalink"]::before {
     content: '';
@@ -126,6 +127,7 @@
    ========================================================================== */
 
 .list__item {
+  color: #5297ad;
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
