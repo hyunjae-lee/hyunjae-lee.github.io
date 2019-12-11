@@ -6,11 +6,11 @@ header:
   teaser: assets/images/unsplash-gallery-image-1-th.jpg
 sidebar:
   - title: "Role"
-    image: http://placehold.it/350x250
+    image: /assets/img/profile.jpg
     image_alt: "logo"
-    text: "Designer, Front-End Developer"
+    text: "System Designer, Back-End Developer"
   - title: "Responsibilities"
-    text: "Reuters try PR stupid commenters should isn't a business model"
+    text: "test"
 gallery:
   - url: /assets/images/unsplash-gallery-image-1.jpg
     image_path: assets/images/unsplash-gallery-image-1-th.jpg
@@ -24,4 +24,6 @@ gallery:
 ---
 
 
-test page
+test 
+
+{% include gallery caption="This is a sample gallery to go along with this case study." %}
