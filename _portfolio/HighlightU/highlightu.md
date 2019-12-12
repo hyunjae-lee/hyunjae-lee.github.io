@@ -13,16 +13,16 @@ sidebar:
     text: "test"
 gallery:
   - url: /assets/img/portfolio/highlightu/highlightu-serviceflow
-    image_path: assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
+    image_path: /assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
     alt: "placeholder image 1"
   - url: /assets/img/portfolio/highlightu/highlightu-devops
-    image_path: assets/img/portfolio/highlightu/highlightu-devops.jpg
+    image_path: /assets/img/portfolio/highlightu/highlightu-devops.jpg
     alt: "placeholder image 2"
   - url: /assets/img/portfolio/highlightu/highlightu-techstack
-    image_path: assets/img/portfolio/highlightu/highlightu-techstack.jpg
+    image_path: /assets/img/portfolio/highlightu/highlightu-techstack.jpg
     alt: "placeholder image 3"
   - url: /assets/img/portfolio/highlightu/highlightu-team
-    image_path: assets/img/portfolio/highlightu/highlightu-team.jpeg
+    image_path: /assets/img/portfolio/highlightu/highlightu-team.jpeg
     alt: "placeholder image 4"
 ---
 
