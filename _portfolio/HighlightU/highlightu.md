@@ -16,10 +16,10 @@ gallery:
     image_path: assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
     alt: "placeholder image 1"
   - url: /assets/img/portfolio/highlightu/highlightu-devops
-    image_path: assets/img/portfolio/highlightu/highlightu-devops.jpeg
+    image_path: assets/img/portfolio/highlightu/highlightu-devops.jpg
     alt: "placeholder image 2"
   - url: /assets/img/portfolio/highlightu/highlightu-techstack
-    image_path: assets/img/portfolio/highlightu/highlightu-teckstack.jpeg
+    image_path: assets/img/portfolio/highlightu/highlightu-teckstack.jpg
     alt: "placeholder image 3"
   - url: /assets/img/portfolio/highlightu/highlightu-team
     image_path: assets/img/portfolio/highlightu/highlightu-team.jpeg
