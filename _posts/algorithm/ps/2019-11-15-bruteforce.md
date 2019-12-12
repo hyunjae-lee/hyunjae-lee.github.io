@@ -210,7 +210,10 @@ int go(int count, int sum, int goal){
 ---
 
 ## 예제 문제
-- 아래에 완전탐색 문제와 풀이들이 있다.
+
+* [완전 탐색 문제들 리스트](https://hyunjae-lee.github.io/posts/#brute-force){: target="_blank" }에서 모든 문제들을 확인할 수 있다.
+
+- 아래에 완전탐색 기초 수준의 문제와 풀이들이 있다.
   * [일곱 난쟁이](https://hyunjae-lee.github.io/boj/2309sol/){: target="_blank" } (난이도 : 하)
   * [날짜 계산](https://hyunjae-lee.github.io/boj/1476sol/){: target="_blank" } (난이도 : 하)
   * [테트로미노](https://hyunjae-lee.github.io/boj/14500sol/){: target="_blank" } (난이도 : __중__)
