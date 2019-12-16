@@ -31,9 +31,9 @@ gallery:
 
 This is __a web development project with Django__ which helps Twitch streamers get __highlight videos__ just by uploading their broadcasting videos. Basically, this website allows users to login by __Google OAuth.__ The way we consider to get __common highlight parts from all video__ is that we score every second of the original video based on two major facts; __Chatlog Analysis and Face expression Anaylsis__. 
 
-The first one, Chatlog of Twitch is a way to communicate between the streammer and the people watching, which is reasonable and generally acceptable to evaluate __how much the streamer and the people do communicate each other__. 
+The first one, **Chatlog of Twitch** is a way to communicate between the streammer and the people watching, which is reasonable and generally acceptable to evaluate __how much the streamer and the people do communicate each other__. 
 
-The second one, Face expression Anaylsis is the fact that also makes sense to be evaluted how interesting the moment of the video is. For example, If smiling or angry face expression is detected at a certain moment, That means __The streamer feels more intersting!__ and this fact has higher percentage to be selected as __a highlight of the video__ than other normal moments. 
+The second one, **Face expression Anaylsis** is the fact that also makes sense to be evaluted how interesting the moment of the video is. For example, If smiling or angry face expression is detected at a certain moment, That means __The streamer feels more intersting!__ and this fact has higher percentage to be selected as __a highlight of the video__ than other normal moments. 
 
 If you would like to know [more detail about this project](https://github.com/highlightu/documentation/blob/master/Documents/final_report.pdf){: target="_blank" }, you can check our report that describes all detail.
 
@@ -42,14 +42,17 @@ If you would like to know [more detail about this project](https://github.com/hi
 
 > Project Features.
 
-- Chatlog Anaysis : NLTK for English, KoNLPy for Korean
-- Face expression Anaylsis : Self-Trained Resnet model to get 5 different face expression percentage of each given image.
+- Chatlog Anaysis : TF-IDF model built by NLTK for English, KoNLPy for Korean. 
+- Face expression Anaylsis : Self-trained Resnet model to get 5 different face expression percentage of each given image.
+- Google OAuth : Social login for easy accessibility.
+- Payment by Toss : Easy-to-use and trustful third-party payment system.
+- Safe and secured website : Implemented as a HTTPS website.
 
 > Team.
   
-- Hyunjae Lee
-- Jisu An
-- Zinu Zeon
+- [Hyunjae Lee](https://github.com/hyunjae-lee){: target="_blank" }
+- [Jisu An](https://github.com/ajs7270){: target="_blank" }
+- [Zinu Zeon](https://github.com/zinuzian){: target="_blank" }
 
 <center>
 <img src = "https://hyunjae-lee.github.io//assets/img/portfolio/highlightu/highlightu-team.jpeg" width = "100%">
