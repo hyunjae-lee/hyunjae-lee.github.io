@@ -10,9 +10,11 @@ sidebar:
     image_alt: "logo"
     text: "System Designer, Back-End Developer"
   - title: "Responsibilities"
-    text: "test"
+    text: "Implementing an effective algorithm that takes interesting parts of Twitch videos using Natural Language Processing and Face expression analysis."
   - title: "Project Duration"
-    text: "3 months, Mar 2019 - Jun 2019"
+    text: "4 months, Mar 2019 - Jun 2019"
+  - title: "Development Keywords"
+    text: "Python, Django, Algorithm, Natural Language Processing, Face Recognition, Deep Learning"
 gallery:
   - url: /assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
     image_path: assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
@@ -23,12 +25,38 @@ gallery:
   - url: /assets/img/portfolio/highlightu/highlightu-techstack.jpg
     image_path: assets/img/portfolio/highlightu/highlightu-techstack.jpg
     alt: "placeholder image 3"
-  - url: /assets/img/portfolio/highlightu/highlightu-team.jpeg
-    image_path: assets/img/portfolio/highlightu/highlightu-team.jpeg
-    alt: "placeholder image 4"
 ---
 
+> Project Overview.
 
-test 
+This is __a web development project with Django__ which helps Twitch streamers get __highlight videos__ just by uploading their broadcasting videos. Basically, this website allows users to login by __Google OAuth.__ The way we consider to get __common highlight parts from all video__ is that we score every second of the original video based on two major facts; __Chatlog Analysis and Face expression Anaylsis__. 
 
-{% include gallery caption="This is a sample gallery to go along with this case project." %}
+The first one, Chatlog of Twitch is a way to communicate between the streammer and the people watching, which is reasonable and generally acceptable to evaluate how much the streamer and the people do communicate each other. 
+
+The second one, Face expression Anaylsis is the fact that also makes sense to be evaluted how interesting the moment of the video is. For example, If smiling or angry face expression is detected at a certain moment, That means __The streamer feels more intersting!__ and this fact has higher percentage to be selected as __a highlight of the video__ than other normal moments. 
+
+If you would like to know [more detail about this project](https://github.com/highlightu/documentation/blob/master/Documents/final_report.pdf){: target="_blank" }, you can check our report that describes all detail.
+
+
+{% include gallery caption="This is a gallary to go along with this case project." %}
+
+> Project Features.
+  - Chatlog Anaysis : NLTK for English, KoNLPy for Korean
+  - Face expression Anaylsis : Self-Trained Resnet model to get 5 different face expression percentage of each given image.
+
+> Team.
+  - Hyunjae Lee
+  - Jisu An
+  - Zinu Zeon
+
+<center>
+<img src = "https://hyunjae-lee.github.io//assets/img/portfolio/highlightu/highlightu-team.jpeg" width = "100%">
+</center>
+
+> Awards.
+  - Excellence prize at 2019 DaVinci SW TECH-FAIR
+    - Held by Chung-Ang University 
+    - With $900 reward on Nov 22 2019
+  - The bronze prize at SW challenge competition
+    - Held by Korean Software Industry Association
+    - With $1000 reward on Dec 19 2019
