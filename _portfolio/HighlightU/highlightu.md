@@ -11,6 +11,8 @@ sidebar:
     text: "System Designer, Back-End Developer"
   - title: "Responsibilities"
     text: "test"
+  - title: "Project Duration"
+    text: "3 months, Mar 2019 - Jun 2019"
 gallery:
   - url: /assets/img/portfolio/highlightu/highlightu-serviceflow.jpg
     image_path: assets/img/portfolio/highlightu/highlightu-serviceflow.jpg

@@ -44,6 +44,6 @@ tags:
 
 ## 삼성 SW 역량 테스트 기출 문제 풀이
 
-* [1. 원판돌리기](https://hyunjae-lee.github.io/boj/17822sol/){: target="_blank" }
+* [1. 원판돌리기](https://hyunjae-lee.github.io/boj/brute%20force/17822sol/){: target="_blank" }
 
 (추가 업데이트 예정)
