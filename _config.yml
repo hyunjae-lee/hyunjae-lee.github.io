@@ -112,8 +112,11 @@ author:
   avatar           : "/assets/img/profile3.jpg"
   bio              : ":)"
   location         : "Seoul, South Korea"
-  email            :
+  email            : "leehj8687@gmail.com"
   links:
+    - label: "Current state : Tmaxsoft Researcher"
+      icon: "fas fa-suitcase"
+      url: "https://www.tmaxsoft.com/"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:leehj8687@gmail.com
