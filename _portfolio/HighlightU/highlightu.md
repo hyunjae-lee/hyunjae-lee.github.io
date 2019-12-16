@@ -35,7 +35,9 @@ The first one, **Chatlog of Twitch** is a way to communicate between the streamm
 
 The second one, **Face expression Anaylsis** is the fact that also makes sense to be evaluted how interesting the moment of the video is. For example, If smiling or angry face expression is detected at a certain moment, That means __The streamer feels more intersting!__ and this fact has higher percentage to be selected as __a highlight of the video__ than other normal moments. 
 
-If you would like to know [more detail about this project](https://github.com/highlightu/documentation/blob/master/Documents/final_report.pdf){: target="_blank" }, you can check our report that describes all detail.
+If you would like to know [more detail about this project](https://github.com/highlightu/documentation/blob/master/Documents/final_report.pdf){: target="_blank" }, you can check our report that describes all detail. 
+
+Here is the [repository](https://github.com/highlightu/server){: target="_blank" } storing codes and descriptions for this project.
 
 
 {% include gallery caption="This is a gallary to go along with this case project." %}
