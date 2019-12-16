@@ -114,12 +114,12 @@ author:
   location         : "Seoul, South Korea"
   email            : "leehj8687@gmail.com"
   links:
-    - label: "Tmaxsoft Researcher (Jan 2019 ~)"
+    - label: "Tmaxsoft Researcher"
       icon: "fas fa-suitcase"
       url: "https://www.tmaxsoft.com/"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:leehj8687@gmail.com
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope-square"
+    #   url: mailto:leehj8687@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://hyunjae-lee.github.io"
