@@ -31,7 +31,7 @@ gallery:
 
 This is __a web development project with Django__ which helps Twitch streamers get __highlight videos__ just by uploading their broadcasting videos. Basically, this website allows users to login by __Google OAuth.__ The way we consider to get __common highlight parts from all video__ is that we score every second of the original video based on two major facts; __Chatlog Analysis and Face expression Anaylsis__. 
 
-The first one, Chatlog of Twitch is a way to communicate between the streammer and the people watching, which is reasonable and generally acceptable to evaluate how much the streamer and the people do communicate each other. 
+The first one, Chatlog of Twitch is a way to communicate between the streammer and the people watching, which is reasonable and generally acceptable to evaluate __how much the streamer and the people do communicate each other__. 
 
 The second one, Face expression Anaylsis is the fact that also makes sense to be evaluted how interesting the moment of the video is. For example, If smiling or angry face expression is detected at a certain moment, That means __The streamer feels more intersting!__ and this fact has higher percentage to be selected as __a highlight of the video__ than other normal moments. 
 
@@ -41,22 +41,25 @@ If you would like to know [more detail about this project](https://github.com/hi
 {% include gallery caption="This is a gallary to go along with this case project." %}
 
 > Project Features.
-  - Chatlog Anaysis : NLTK for English, KoNLPy for Korean
-  - Face expression Anaylsis : Self-Trained Resnet model to get 5 different face expression percentage of each given image.
+
+- Chatlog Anaysis : NLTK for English, KoNLPy for Korean
+- Face expression Anaylsis : Self-Trained Resnet model to get 5 different face expression percentage of each given image.
 
 > Team.
-  - Hyunjae Lee
-  - Jisu An
-  - Zinu Zeon
+  
+- Hyunjae Lee
+- Jisu An
+- Zinu Zeon
 
 <center>
 <img src = "https://hyunjae-lee.github.io//assets/img/portfolio/highlightu/highlightu-team.jpeg" width = "100%">
 </center>
 
 > Awards.
-  - Excellence prize at 2019 DaVinci SW TECH-FAIR
-    - Held by Chung-Ang University 
-    - With $900 reward on Nov 22 2019
-  - The bronze prize at SW challenge competition
-    - Held by Korean Software Industry Association
-    - With $1000 reward on Dec 19 2019
+  
+- Excellence prize at 2019 DaVinci SW TECH-FAIR
+  - Held by Chung-Ang University 
+  - With $900 reward on Nov 22 2019
+- The bronze prize at SW challenge competition
+  - Held by Korean Software Industry Association
+  - With $1000 reward on Dec 19 2019
