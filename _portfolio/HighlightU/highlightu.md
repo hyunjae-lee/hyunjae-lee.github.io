@@ -52,13 +52,10 @@ Here is the [repository](https://github.com/highlightu/server){: target="_blank"
 
 > Team.
   
+[Team Name : LAJI](https://hyunjae-lee.github.io/assets/img/portfolio/highlightu/highlightu-team.jpeg){: target="_blank" }
 - [Hyunjae Lee](https://github.com/hyunjae-lee){: target="_blank" }
 - [Jisu An](https://github.com/ajs7270){: target="_blank" }
 - [Zinu Zeon](https://github.com/zinuzian){: target="_blank" }
-
-<center>
-<img src = "https://hyunjae-lee.github.io/assets/img/portfolio/highlightu/highlightu-team.jpeg" width = "100%">
-</center>
 
 > Awards.
 
