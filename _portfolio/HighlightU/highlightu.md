@@ -26,7 +26,7 @@ gallery:
     image_path: assets/img/portfolio/highlightu/highlightu-techstack.jpg
     alt: "placeholder image 3"
 
-award:
+figure:
   - url: /assets/img/portfolio/highlightu/award1.jpeg
     image_path: assets/img/portfolio/highlightu/award1.jpeg
     alt: "placeholder image 1"
@@ -67,7 +67,7 @@ Here is the [repository](https://github.com/highlightu/server){: target="_blank"
 
 > Awards.
   
-- {% include award caption="Excellence prize at 2019 DaVinci SW TECH-FAIR" %}
+- {% include figure caption="Excellence prize at 2019 DaVinci SW TECH-FAIR" %}
   - Held by Chung-Ang University 
   - With $900 reward on Nov 22 2019
 - The bronze prize at SW challenge competition
