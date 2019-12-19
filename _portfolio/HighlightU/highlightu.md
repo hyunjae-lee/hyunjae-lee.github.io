@@ -27,8 +27,8 @@ gallery:
     alt: "placeholder image 3"
 
 award:
-  - url: /assets/img/portfolio/highlightu/award1.jpg
-    image_path: assets/img/portfolio/highlightu/award1.jpg
+  - url: /assets/img/portfolio/highlightu/award1.jpeg
+    image_path: assets/img/portfolio/highlightu/award1.jpeg
     alt: "placeholder image 1"
 ---
 
