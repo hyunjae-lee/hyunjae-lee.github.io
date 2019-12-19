@@ -62,6 +62,6 @@ Here is the [repository](https://github.com/highlightu/server){: target="_blank"
 - [Excellence prize at 2019 DaVinci SW TECH-FAIR](https://hyunjae-lee.github.io/assets/img/portfolio/highlightu/award1.jpeg){: target="_blank" }
   - Held by Chung-Ang University 
   - With $900 reward on Nov 22 2019
-- The bronze prize at SW challenge competition
+- [The bronze prize at SW challenge competition](https://hyunjae-lee.github.io/assets/img/portfolio/highlightu/award2.jpeg){: target="_blank" }
   - Held by Korean Software Industry Association
   - With $1000 reward on Dec 19 2019
