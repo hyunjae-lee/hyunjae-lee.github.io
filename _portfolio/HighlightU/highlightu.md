@@ -25,11 +25,6 @@ gallery:
   - url: /assets/img/portfolio/highlightu/highlightu-techstack.jpg
     image_path: assets/img/portfolio/highlightu/highlightu-techstack.jpg
     alt: "placeholder image 3"
-
-figure:
-  - url: /assets/img/portfolio/highlightu/award1.jpeg
-    image_path: assets/img/portfolio/highlightu/award1.jpeg
-    alt: "placeholder image 1"
 ---
 
 > Project Overview.
@@ -62,12 +57,12 @@ Here is the [repository](https://github.com/highlightu/server){: target="_blank"
 - [Zinu Zeon](https://github.com/zinuzian){: target="_blank" }
 
 <center>
-<img src = "https://hyunjae-lee.github.io//assets/img/portfolio/highlightu/highlightu-team.jpeg" width = "100%">
+<img src = "https://hyunjae-lee.github.io/assets/img/portfolio/highlightu/highlightu-team.jpeg" width = "100%">
 </center>
 
 > Awards.
-  
-- {% include figure caption="Excellence prize at 2019 DaVinci SW TECH-FAIR" %}
+
+- [Excellence prize at 2019 DaVinci SW TECH-FAIR](https://hyunjae-lee.github.io/assets/img/portfolio/highlightu/award1.jpeg){: target="_blank" }
   - Held by Chung-Ang University 
   - With $900 reward on Nov 22 2019
 - The bronze prize at SW challenge competition
