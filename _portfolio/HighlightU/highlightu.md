@@ -10,7 +10,7 @@ sidebar:
     image_alt: "logo"
     text: "System Designer, Back-End Developer"
   - title: "Responsibilities"
-    text: "Implementing an effective algorithm that takes interesting parts of Twitch videos using Natural Language Processing and Face expression analysis."
+    text: "Implementing an effective algorithm that extracts interesting parts of Twitch videos using Natural Language Processing and Face expression analysis."
   - title: "Project Duration"
     text: "4 months, Mar 2019 - Jun 2019"
   - title: "Development Keywords"
