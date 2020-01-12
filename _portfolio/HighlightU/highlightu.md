@@ -8,7 +8,7 @@ sidebar:
   - title: "Role"
     image: /assets/img/profile.jpg
     image_alt: "logo"
-    text: "System Designer, Back-End Developer"
+    text: "Team Leader, System Designer, Back-End Developer"
   - title: "Responsibilities"
     text: "Implementing an effective algorithm that extracts interesting parts of Twitch videos using Natural Language Processing and Face expression analysis."
   - title: "Project Duration"
