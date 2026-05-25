@@ -4,9 +4,9 @@ title: Home
 
 # Hyunjae
 
-I write notes on security, AI, systems, books, investing, and languages.
+I write about security, AI systems, learning, and life.
 
-Currently working at KAIST CERT.
+Currently at KAIST IT Security team.
 
 ## Areas
 
@@ -16,9 +16,10 @@ Currently working at KAIST CERT.
 - [[04_Investment|Investment]]
 - [[05_Certifications|Certifications]]
 - [[06_Projects|Projects]]
+- [[09_Health|Health]]
 
 ## Profile
 
-- [[about|about]]
-- [[now|now]]
+- [[07_Profile/about|About]]
+- [[07_Profile/now|Now]]
 - [GitHub](https://github.com/hyunjae-lee)
