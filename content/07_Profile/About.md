@@ -7,6 +7,6 @@ I'm interested in:
 - long-term learning  
   
 Currently:  
-- working at KAIST CERT  
+- working at KAIST IT Security team  
 - studying AI systems and security  
 - building a personal knowledge archive

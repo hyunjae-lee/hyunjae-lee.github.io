@@ -19,6 +19,6 @@ Currently working at KAIST CERT.
 
 ## Profile
 
-- [[07_Profile/About|About]]
-- [[07_Profile/Now|Now]]
+- [[about|about]]
+- [[now|now]]
 - [GitHub](https://github.com/hyunjae-lee)
