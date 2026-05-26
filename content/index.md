@@ -31,20 +31,17 @@ I’m interested in building reliable security systems, understanding AI technol
 **[KAIST](https://www.kaist.ac.kr/) IT Security Team.**  
 Information Security / Cybersecurity
 
-Focus areas:
-- security policy and governance
-- information security guidelines
-- security review
-- AI and security learning
+## Current Focus
 
-## Learning
-
-Currently focused on:
-- AI agents
-- RAG systems
+- AI systems and agents
 - cybersecurity governance
+- knowledge management
 - English and Spanish
-- personal knowledge systems
+- long-term health routines
+
+## Recent Notes
+
+- [[08 #Daily/2026-05-25]]
 
 ## Links
 
