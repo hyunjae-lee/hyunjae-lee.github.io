@@ -39,10 +39,6 @@ Information Security / Cybersecurity
 - English and Spanish
 - long-term health routines
 
-## Recent Notes
-
-- [[08 #Daily/2026-05-25]]
-
 ## Links
 
 - [GitHub](https://github.com/hyunjae-lee)
