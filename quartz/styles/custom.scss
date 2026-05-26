@@ -5,3 +5,52 @@
 footer {
   display: none !important;
 }
+
+body {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+article {
+  max-width: 720px;
+}
+
+.page-title {
+  font-weight: 700;
+}
+
+.sidebar {
+  font-size: 0.95rem;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.profile-card {
+  max-width: 720px;
+}
+
+.profile-photo {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--lightgray);
+}
+
+.profile-card h1 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.profile-card h2 {
+  margin-top: 2rem;
+}
+
+.profile-card p,
+.profile-card li {
+  line-height: 1.75;
+}
