@@ -4,7 +4,7 @@ title: Home
 
 <div class="profile-card">
 
-<img src="../99_Assets/profile.jpg" class="profile-photo" />
+<img src="../99 #Assets/profile.jpg" class="profile-photo" />
 
 
 ## Hyunjae Lee
