@@ -1,6 +1,8 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ========================================
+// Global
+// ========================================
 
 footer {
   display: none !important;
@@ -10,12 +12,82 @@ footer {
   font-weight: 700;
 }
 
-article {
-  max-width: 760px;
+.sidebar {
+  font-size: 0.95rem;
 }
+
+.sidebar.left {
+  width: 250px;
+}
+
+// ========================================
+// Breadcrumb / Meta
+// ========================================
+
+.breadcrumb-container {
+  display: none;
+}
+
+.content-meta {
+  display: none;
+}
+
+// ========================================
+// Article
+// ========================================
+
+article {
+  max-width: 820px;
+}
+
+article p,
+article li {
+  line-height: 1.75;
+}
+
+article p {
+  color: var(--darkgray);
+}
+
+// ========================================
+// Explorer
+// ========================================
+
+.explorer-content {
+  gap: 0.35rem;
+}
+
+.explorer a {
+  transition: opacity 0.15s ease;
+}
+
+.explorer a:hover {
+  opacity: 0.6;
+}
+
+// ========================================
+// Search
+// ========================================
+
+.search {
+  max-width: 170px;
+}
+
+// ========================================
+// Profile Page
+// ========================================
 
 .profile-card {
   max-width: 760px;
+}
+
+.profile-card h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-card p {
+  color: var(--darkgray);
 }
 
 .profile-photo {
@@ -31,54 +103,18 @@ article {
   border: 1px solid var(--lightgray);
 
   display: block;
+
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 }
 
-.sidebar {
-  font-size: 0.95rem;
-}
+// ========================================
+// Homepage
+// ========================================
 
-article p,
-article li {
-  line-height: 1.75;
-}
-
-.breadcrumb-container {
-  display: none;
-}
-.content-meta {
-  display: none;
-}
-.explorer a {
-  transition: opacity 0.15s ease;
-}
-
-.explorer a:hover {
-  opacity: 0.65;
-}
-.sidebar.left {
-  width: 250px;
-}
-.profile-card h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.profile-card p {
-  color: var(--darkgray);
-}
 body[data-slug="index"] .article-title {
   display: none;
 }
+
 body[data-slug="index"] article {
   padding-top: 0.5rem;
-}
-.explorer a {
-  transition: opacity 0.15s ease;
-}
-
-.explorer a:hover {
-  opacity: 0.6;
-}
-.profile-photo {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
 }
