@@ -9,9 +9,9 @@ title: Home
 
 ## Hyunjae Lee
 
-Security · AI Systems · Knowledge Management
+IT Security · AI Systems · Knowledge Management
 
-Currently working at KAIST IT Security Team.
+Currently working at [KAIST](https://www.kaist.ac.kr/) IT Security Team.
 
 I’m interested in building reliable security systems, understanding AI technologies, and maintaining a long-term personal knowledge archive.
 
@@ -28,7 +28,7 @@ I’m interested in building reliable security systems, understanding AI technol
 
 ## Work
 
-**KAIST IT Security Team.**  
+**[KAIST](https://www.kaist.ac.kr/) IT Security Team.**  
 Information Security / Cybersecurity
 
 Focus areas:
