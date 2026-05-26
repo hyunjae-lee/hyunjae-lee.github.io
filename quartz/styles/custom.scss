@@ -66,3 +66,19 @@ article li {
 .profile-card p {
   color: var(--darkgray);
 }
+body[data-slug="index"] .article-title {
+  display: none;
+}
+body[data-slug="index"] article {
+  padding-top: 0.5rem;
+}
+.explorer a {
+  transition: opacity 0.15s ease;
+}
+
+.explorer a:hover {
+  opacity: 0.6;
+}
+.profile-photo {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
