@@ -45,3 +45,24 @@ article li {
 .breadcrumb-container {
   display: none;
 }
+.content-meta {
+  display: none;
+}
+.explorer a {
+  transition: opacity 0.15s ease;
+}
+
+.explorer a:hover {
+  opacity: 0.65;
+}
+.sidebar.left {
+  width: 250px;
+}
+.profile-card h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-card p {
+  color: var(--darkgray);
+}

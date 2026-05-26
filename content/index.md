@@ -1,5 +1,5 @@
 ---
-title: Home
+title:
 ---
 
 <div class="profile-card">
