@@ -2,24 +2,54 @@
 title: Home
 ---
 
-# Hyunjae
+<div class="profile-card">
 
-I write about security, AI systems, learning, and life.
+<img src="../99_Assets/profile.jpg" class="profile-photo" />
 
-Currently at KAIST IT Security team.
 
-## Areas
+## Hyunjae Lee
 
-- [[01_IT|IT & Security]]
-- [[02_Books|Books]]
-- [[03_Languages|Languages]]
-- [[04_Investment|Investment]]
-- [[05_Certifications|Certifications]]
-- [[06_Projects|Projects]]
-- [[09_Health|Health]]
+Security · AI Systems · Knowledge Management
 
-## Profile
+Currently working at KAIST IT Security Team.
 
-- [[07_Profile/about|About]]
-- [[07_Profile/now|Now]]
+I’m interested in building reliable security systems, understanding AI technologies, and maintaining a long-term personal knowledge archive.
+
+## Interests
+
+- Cybersecurity
+- AI systems and agents
+- Security governance
+- Knowledge management
+- Books and learning
+- Long-term investing
+- Languages (Especially English and Spainish)
+- Health routines
+
+## Work
+
+**KAIST IT Security Team.**  
+Information Security / Cybersecurity
+
+Focus areas:
+- security policy and governance
+- information security guidelines
+- security review
+- AI and security learning
+
+## Learning
+
+Currently focused on:
+- AI agents
+- RAG systems
+- cybersecurity governance
+- English and Spanish
+- personal knowledge systems
+
+## Links
+
 - [GitHub](https://github.com/hyunjae-lee)
+- [LinkedIn](https://www.linkedin.com/in/hyunjaedev/)
+- Email (hyunjae@kaist.ac.kr)
+
+</div>
