@@ -41,11 +41,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-  Component.DesktopOnly(
-    Component.RecentNotes({
-      limit: 5,
-    }),
-  ),
   ],
 }
 
