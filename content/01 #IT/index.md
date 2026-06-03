@@ -1,9 +1,8 @@
 # IT & Security  
   
 Notes on:  
-- cybersecurity  
+- Cybersecurity  
 - AI systems  
-- networking  
-- coding  
-- infrastructure  
-- research
+- Networks
+- Coding  
+- Infrastructure  

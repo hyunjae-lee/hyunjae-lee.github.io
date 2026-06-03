@@ -1,0 +1,13 @@
+- https://www.youtube.com/watch?v=6PDmQu2GLww&t=3s
+	- stress someone out : ~가 누구를 스트레스 받게 하다.
+	- make things worse : 상황을 악화시키다.
+	- feel the pinch : 경제적으로 힘들다, 부담을 느끼다.
+	- wrap your head around (something) : (복잡하거나 충격적인 사실을) 이해하다, 받아들이다.
+		- I can't wrap my head around how they finished the project so fast.
+	- make a meal for somebody : 누군가를 위해 식사를 준비하다. 
+	- stretch one's money : 돈을 절약해 오래 쓰다. 한정된 예산을 최대한 활용하다.
+		- I try to stretch my money by cooking at home
+	- be on a fixed income : 일정한 수입만 있는 상태
+	- ongoing inflation : 지속되는 인플레이션
+	- be connected to : ~와 관련이 있다.
+	- with respect to : ~에 관하여, ~와 관련해서
