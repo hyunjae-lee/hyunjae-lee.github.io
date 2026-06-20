@@ -1,2 +1,27 @@
 - https://www.youtube.com/watch?v=siHGMOnKXaU
-	- 
+	- let's hop on the train
+		- 기차에 타볼게요
+	- I'm just kinda winging it 
+		- 즉흥적으로 ~하고 있어요
+	- I tend to overpack, but this time I'm gonna try my hardest to pack light
+		- 보통 과하게 짐을 싸는데, 이번에는 최대한 적게 짐을 챙기려고 해
+	- I'm calling it a night
+		- (밤에 하던 일을) 그만할게요
+	- I made it to the platform and we depart in 5 mins
+		- 플랫폼에 도착했고, 5분 뒤에 출발해요
+	- The seats even recline 
+		- 의자도 뒤로 젖혀져요
+	- I've never gotten to the airport thie early before a flight
+		- 비행기 타기 전에 이렇게 공항에 일찍 온 건 처음이에요
+	- I've got lots fo time to kill
+		- 시간이 많이 남아요
+	- This hits the spot
+		- 바로 이 맛이야!
+	- Let's shop til we drop
+		- 지칠때까지 쇼핑하자
+	- I brought my big bag along for a reason
+		- 큰 가방을 가져온 데에는 이유가 있었어.
+	- I'm putting my backpack in the overhead compartment
+		- (기차, 비행기 위) 짐칸에 백팩을 올리고 있어
+	- I'm running on 4 hours of sleep
+		- 4시간 잔 상태로 버티고 있어
