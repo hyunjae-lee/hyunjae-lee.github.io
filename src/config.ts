@@ -38,14 +38,24 @@ export const resume = {
   location: 'Daejeon, Republic of Korea',
   available: 'Information Security Team · KAIST',
 
+  // HTML — key phrases are emphasized so the paragraph scans at a glance.
   summary:
-    'Information Security Engineer at KAIST. My current focus (since July 2026) is web security — web application vulnerability assessment, ' +
-    'SSL/TLS certificate management, and Web Application Firewall (WAF) operations. Before that I led information-security governance — ' +
-    '100+ annual security reviews of KAIST’s major IT initiatives in collaboration with the NIS and MSIT, plus MSIT-led security and ' +
-    'privacy audits grounded in the national Cybersecurity Guidelines — and spent five years operating core academic systems, including a ' +
-    'key working-level role in a ~USD 130M next-generation information-system program, with earlier experience migrating enterprise products to cloud-native ' +
-    'infrastructure (Docker, Kubernetes). I also bring a professional command of modern AI/ML — from classical machine learning to ' +
-    'LLM-based tooling — and apply it to automate and sharpen security work.',
+    'Information Security Engineer at KAIST. My current focus (since July 2026) is ' +
+    '<span class="font-semibold text-accent-600 dark:text-accent-400">web security</span> — ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">web application vulnerability assessment</strong>, ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">SSL/TLS certificate management</strong>, and ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">Web Application Firewall (WAF)</strong> operations. ' +
+    'Before that I led information-security governance — ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">100+ annual security reviews</strong> of KAIST’s major IT initiatives in ' +
+    'collaboration with the <strong class="text-zinc-900 dark:text-zinc-100">NIS and MSIT</strong>, plus ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">MSIT-led security &amp; privacy audits</strong> grounded in the national ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">Cybersecurity Guidelines</strong> — and spent five years operating core academic ' +
+    'systems, including a key working-level role in a <strong class="text-zinc-900 dark:text-zinc-100">~USD 130M</strong> ' +
+    'next-generation information-system program, with earlier experience migrating enterprise products to ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">cloud-native infrastructure (Docker, Kubernetes)</strong>. I also bring a ' +
+    '<span class="font-semibold text-accent-600 dark:text-accent-400">professional command of modern AI/ML</span> — from classical ' +
+    'machine learning to <strong class="text-zinc-900 dark:text-zinc-100">LLM-based tooling</strong> — and apply it to automate and ' +
+    'sharpen security work.',
 
   experience: [
     {
@@ -76,10 +86,12 @@ export const resume = {
         },
         {
           period: '2020 — Jul 2025',
-          focus: 'IT Team · Academic Systems',
+          focus: 'Information Development Team · Academic Systems',
           points: [
-            'Operated the Academic Affairs and Graduation Management systems, ensuring reliability of mission-critical services.',
-            'Served as a core working-level member for the academic module of a ~USD 130M Next-Generation Integrated Information System.',
+            'Operated the Academic Affairs and Graduation Management systems, ensuring the reliability of mission-critical services across the student lifecycle.',
+            'Built a deep, detailed command of KAIST’s academic domain — curriculum, course/class operations, graduation assessment, and role-based user permissions.',
+            'As a core working-level member of the ~USD 130M Next-Generation Integrated Information System, was deeply involved in the design of the academic module.',
+            'Drove development verification, testing, and production deployment of the academic module through to a successful launch.',
           ],
         },
       ],
@@ -165,10 +177,10 @@ export const resume = {
       date: 'Sep 2024',
     },
     {
-      name: 'OPIc — English: Advanced Low (AL)',
+      name: 'OPIc — English: Advanced Low (AL) · Highest Grade',
       issuer: 'ACTFL',
       date: 'Dec 2025',
-      note: 'Highest OPIc rating · valid through Dec 2027',
+      note: 'AL is the highest level awarded on OPIc · valid through Dec 2027',
     },
     {
       name: 'Cloud Computing 101 (클라우드 컴퓨팅 기초)',
@@ -177,10 +189,10 @@ export const resume = {
 
   languages: [
     { name: 'Korean', level: 'Native' },
-    { name: 'English', level: 'Professional Working · OPIc AL (highest rating)' },
+    { name: 'English', level: 'Professional Working', badge: 'OPIc AL · highest grade' },
     { name: 'Spanish', level: 'Elementary' },
     { name: 'French', level: 'Elementary' },
-  ],
+  ] as Array<{ name: string; level: string; badge?: string }>,
 
   // Honors — add `image` (a file in public/awards/) to show the certificate in the gallery.
   honors: [
