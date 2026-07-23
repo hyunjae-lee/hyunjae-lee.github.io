@@ -9,7 +9,7 @@ interface Props {
 const { title, description, tags = [], href, date } = Astro.props;
 const year = date ? new Date(date).getFullYear() : undefined;
 ---
-<article class="group relative rounded-xl border border-zinc-200 p-6 transition-colors hover:border-accent-500/60 dark:border-zinc-800 dark:hover:border-accent-400/60">
+<article class="group relative rounded-xl border border-zinc-200 p-6 transition-all hover:-translate-y-0.5 hover:border-accent-500/60 hover:shadow-lg hover:shadow-zinc-900/5 dark:border-zinc-800 dark:hover:border-accent-400/60 dark:hover:shadow-black/20">
   <div class="flex items-start justify-between gap-4">
     <h3 class="font-medium text-zinc-900 dark:text-zinc-100">
       <a href={href} class="after:absolute after:inset-0">{title}</a>
