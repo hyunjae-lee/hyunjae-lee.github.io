@@ -7,9 +7,10 @@
 export const site = {
   name: 'Hyunjae Lee',
   nameKo: '이현재',
-  title: 'Hyunjae Lee — Security & Infrastructure Engineer',
+  title: 'Hyunjae Lee — Information Security Engineer',
   tagline:
-    'Keeping critical systems secure and reliable — from security audits and policy to cloud-native infrastructure.',
+    'Securing large-scale systems through audits, reviews, and sound policy — grounded in years of building the infrastructure underneath.',
+  bio: 'There is such a world to see.',
   url: 'https://hyunjae-lee.github.io',
   locale: 'en',
 };
@@ -22,6 +23,9 @@ export const links = {
     'https://grove-gazelle-23b.notion.site/HyunjaeLee-80af4b603f5b488590a7eb779b6e4038',
 };
 
+// Avatar (from GitHub), served locally for speed/reliability.
+export const avatar = '/profile.jpg';
+
 export const nav = [
   { href: '/', label: 'Home' },
   { href: '/projects/', label: 'Projects' },
@@ -32,14 +36,15 @@ export const nav = [
  * Kept here so the home page stays a clean template you can edit in one place.
  */
 export const resume = {
-  role: 'Security & Infrastructure Engineer',
+  role: 'Information Security Engineer',
   location: 'Daejeon, Republic of Korea',
-  available: 'Engineer at KAIST',
+  available: 'Information Security Team · KAIST',
 
   summary:
-    'Engineer at KAIST, currently on the Information Security team — leading security audits and reviews and driving information-security policy. ' +
-    'For five years I operated core academic systems, including a key working-level role in a ~USD 130M next-generation information-system program. ' +
-    'My background also spans cloud-native infrastructure (Docker, Kubernetes, Istio) and applied research in blockchain security.',
+    'Information Security Engineer at KAIST. Since July 2025 I have been on the Information Security team, where I lead security audits and reviews, ' +
+    'govern storage and removable-media security, and drive the institution’s information-security policies and guidelines. ' +
+    'Before that I spent five years operating core academic systems — including a key working-level role in a ~USD 130M next-generation information-system program — ' +
+    'with earlier experience migrating enterprise products to cloud-native infrastructure (Docker, Kubernetes, Istio).',
 
   experience: [
     {
@@ -48,8 +53,11 @@ export const resume = {
       org: 'KAIST',
       location: 'Daejeon, KR',
       points: [
-        'Information Security Team (2025–present): lead security audits and reviews, manage storage and removable-media security, and drive the development and revision of information-security policies and guidelines.',
-        'IT Team (2020–2025): operated the Academic Affairs and Graduation Management systems, and served as a core working-level member for the academic module of a ~USD 130M Next-Generation Integrated Information System.',
+        'Information Security Team (since Jul 2025): lead internal information-security audits, assessing systems and controls against policy and driving remediation.',
+        'Perform security reviews (보안성검토) of new and changed systems before deployment — architecture, access control, and data protection.',
+        'Govern storage and removable-media security: portable-media controls, data-at-rest handling, and secure disposal.',
+        'Author and revise the institution’s information-security policies, standards, and guidelines.',
+        'IT Team (2020–2025): operated the Academic Affairs and Graduation Management systems and was a core working-level member for the academic module of a ~USD 130M Next-Generation Integrated Information System.',
       ],
     },
     {
@@ -75,7 +83,7 @@ export const resume = {
       org: 'Distributed Platforms & Security Lab, Chung-Ang University',
       location: 'Seoul, KR',
       points: [
-        'Researched blockchain security; the work led to an IEEE publication and a patent on preventing double-spending in private blockchains.',
+        'Applied-security research that led to an IEEE publication and a patent (see Publications).',
       ],
     },
   ],
@@ -86,21 +94,31 @@ export const resume = {
       title: 'B.S., Computer Science & Engineering',
       org: 'Chung-Ang University',
       location: 'Seoul, KR',
+      link: 'https://www.cau.ac.kr/',
     },
     {
       period: '2018 — 2019',
       title: 'Information Systems (Exchange)',
       org: 'ECE Paris',
       location: 'Paris, FR',
+      link: 'https://www.ece.fr/',
     },
-  ],
+  ] as Array<{ period: string; title: string; org: string; location: string; link?: string }>,
 
   // Grouped skills read cleaner on a resume than one long list.
   skills: [
-    { group: 'Security', items: ['Security Audit', 'Security Review', 'InfoSec Policy', 'Compliance'] },
+    {
+      group: 'Security',
+      items: [
+        'Security Audit',
+        'Security Review (보안성검토)',
+        'Data & Media Protection',
+        'Policy & Governance',
+        'Risk & Compliance',
+      ],
+    },
     { group: 'Cloud & Infrastructure', items: ['Docker', 'Kubernetes', 'Istio', 'Envoy'] },
-    { group: 'Development', items: ['Java', 'Spring Framework', 'Software Development'] },
-    { group: 'Focus Areas', items: ['Machine Learning', 'Blockchain Security'] },
+    { group: 'Systems & Development', items: ['Java', 'Spring Framework', 'Enterprise Systems'] },
   ],
 
   certifications: [
@@ -113,7 +131,7 @@ export const resume = {
       name: 'OPIc — English: Advanced Low (AL)',
       issuer: 'ACTFL',
       date: 'Dec 2025',
-      note: 'Valid through Dec 2027',
+      note: 'Highest OPIc rating · valid through Dec 2027',
     },
     {
       name: 'Cloud Computing 101 (클라우드 컴퓨팅 기초)',
@@ -122,7 +140,7 @@ export const resume = {
 
   languages: [
     { name: 'Korean', level: 'Native' },
-    { name: 'English', level: 'Professional Working (OPIc AL)' },
+    { name: 'English', level: 'Professional Working · OPIc AL (highest rating)' },
     { name: 'Spanish', level: 'Elementary' },
     { name: 'French', level: 'Elementary' },
   ],
@@ -132,7 +150,7 @@ export const resume = {
     'Award by the Dean, College of Software, Chung-Ang University',
   ],
 
-  // Real entries from your profile. Venue/number can be refined anytime.
+  // Academic output from earlier research — kept as a credential.
   publications: [
     {
       type: 'Paper',

@@ -4,7 +4,7 @@ description: Research on preventing double-spending in private blockchains — p
 date: 2018-06-01
 tags: [Blockchain, Security, Research]
 link: https://ieeexplore.ieee.org/document/8397151/
-featured: true
+featured: false
 draft: false
 ---
 
