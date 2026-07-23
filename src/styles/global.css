@@ -46,3 +46,40 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Print / "Save as PDF" — produce a clean, ink-friendly resume.
+   The layout drops the site chrome and forces light colors (an inline
+   beforeprint handler also removes the `.dark` class for good measure). */
+@media print {
+  @page {
+    margin: 1.4cm;
+  }
+
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Keep resume sections from splitting awkwardly across pages. */
+  section,
+  li,
+  article {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+}

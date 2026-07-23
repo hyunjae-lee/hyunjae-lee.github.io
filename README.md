@@ -1,56 +1,84 @@
 # hyunjae-lee.github.io
 
-개인 포트폴리오 사이트 — **Astro + Tailwind CSS**로 만든 미니멀 정적 사이트.
+Personal resume & portfolio — a minimal static site built with **Astro + Tailwind CSS**,
+deployed to GitHub Pages.
 
-## 요구 사항
+**Live:** <https://hyunjae-lee.github.io>
 
-- **Node.js 18.20+ / 20.3+ / 22+** (LTS 권장)
-- npm (Node 설치 시 함께 제공)
+## Requirements
 
-> 현재 환경에는 Node.js가 설치되어 있지 않습니다. [nodejs.org](https://nodejs.org/)에서
-> LTS 버전을 설치한 뒤 아래 명령을 실행하세요.
+- **Node.js 18.20+ / 20.3+ / 22+** (LTS recommended)
+- npm (bundled with Node)
 
-## 로컬 개발
+## Local development
 
 ```bash
-npm install      # 의존성 설치 (최초 1회)
-npm run dev      # http://localhost:4321 에서 개발 서버 실행
+npm install      # first time only
+npm run dev      # http://localhost:4321
 ```
 
-| 명령 | 설명 |
+| Command | Description |
 | --- | --- |
-| `npm run dev` | 개발 서버 (`localhost:4321`) |
-| `npm run build` | 정적 사이트를 `dist/` 로 빌드 |
-| `npm run preview` | 빌드 결과 로컬 미리보기 |
+| `npm run dev` | Dev server at `localhost:4321` |
+| `npm run build` | Build the static site to `dist/` |
+| `npm run preview` | Preview the production build locally |
 
-## 구조
+## Structure
 
-```
+```text
 src/
-├─ config.ts              # 이름·링크·프로젝트 등 콘텐츠 (여기부터 수정)
+├─ config.ts              # ← edit here: name, links, and the whole resume
 ├─ layouts/BaseLayout.astro
 ├─ components/            # Header, Footer, ThemeToggle, ProjectCard
-├─ pages/                 # index(홈) / about / projects
-├─ content/blog/          # 블로그(향후 확장용, 구조만 준비)
-└─ styles/global.css      # Tailwind + 다크모드 변수
+├─ pages/
+│  ├─ index.astro         # the resume (Home)
+│  ├─ 404.astro
+│  └─ projects/           # list + [slug] detail, generated from content
+├─ content/
+│  ├─ projects/           # one Markdown file per project
+│  └─ blog/               # reserved for a future blog
+└─ styles/global.css      # Tailwind, dark mode, and print styles
+public/                   # favicon, og.png, robots.txt
+scripts/gen-og.mjs        # regenerate the social share image
 ```
 
-## 콘텐츠 수정
+## Editing content
 
-- 이름·소개·소셜 링크·프로젝트 카드 → **`src/config.ts`**
-- 경력·스킬 → **`src/pages/about.astro`**
-- 색상/폰트(포인트 컬러 등) → **`src/styles/global.css`**
+- **Resume** (summary, experience, education, skills, certifications, languages,
+  honors, publications) → [`src/config.ts`](src/config.ts), in the `resume` object.
+- **Name, links, nav** → also `src/config.ts`.
 
-## 배포 (GitHub Pages)
+## Adding a project
 
-`main` 브랜치에 push하면 GitHub Actions가 자동으로 빌드·배포합니다.
+Each project is a Markdown file in `src/content/projects/`.
 
-**최초 1회 설정:** GitHub 저장소 → **Settings → Pages → Build and deployment →
-Source** 를 **GitHub Actions** 로 지정하세요.
+1. Copy [`_template.md`](src/content/projects/_template.md) to `my-project.md`.
+2. Fill in the frontmatter and body.
+3. Set `draft: false` to publish; `featured: true` also surfaces it on the home page.
 
-워크플로우: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
+Projects are sorted by **`date`, newest first** — give a project the most recent date
+to keep it at the top.
 
-## 다크 모드
+## Print / PDF
 
-- 우측 상단 토글 버튼으로 전환하며 선택은 `localStorage`에 저장됩니다.
-- 최초 방문 시에는 OS 설정(`prefers-color-scheme`)을 따릅니다.
+The home page has a print stylesheet: **Cmd/Ctrl + P → Save as PDF** produces a clean,
+light-themed resume with the site chrome removed.
+
+## Social share image
+
+`public/og.png` is used for link previews. To regenerate after changing text:
+
+```bash
+node scripts/gen-og.mjs
+```
+
+## Dark mode
+
+Toggle in the header; the choice is saved to `localStorage`, and first visit follows the
+OS setting (`prefers-color-scheme`). Printing always uses the light theme.
+
+## Deployment (GitHub Pages)
+
+Pushing to `main` triggers GitHub Actions to build and deploy automatically
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)). Pages **Source** is set
+to **GitHub Actions**.
