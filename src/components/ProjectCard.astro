@@ -1,25 +1,19 @@
 ---
 interface Props {
   title: string;
-  titleEn?: string;
   description: string;
   tags?: string[];
-  href?: string;
-  year?: string;
+  href: string; // detail page, e.g. /projects/my-project/
+  date?: Date;
 }
-const { title, titleEn, description, tags = [], href = '#', year } = Astro.props;
-const external = href !== '#' && /^https?:/.test(href);
+const { title, description, tags = [], href, date } = Astro.props;
+const year = date ? new Date(date).getFullYear() : undefined;
 ---
 <article class="group relative rounded-xl border border-zinc-200 p-6 transition-colors hover:border-accent-500/60 dark:border-zinc-800 dark:hover:border-accent-400/60">
   <div class="flex items-start justify-between gap-4">
-    <div>
-      <h3 class="font-medium text-zinc-900 dark:text-zinc-100">
-        <a href={href} class="after:absolute after:inset-0" {...external ? { target: '_blank', rel: 'noopener' } : {}}>
-          {title}
-        </a>
-      </h3>
-      {titleEn && <p class="mt-0.5 text-sm text-zinc-500">{titleEn}</p>}
-    </div>
+    <h3 class="font-medium text-zinc-900 dark:text-zinc-100">
+      <a href={href} class="after:absolute after:inset-0">{title}</a>
+    </h3>
     {year && <span class="shrink-0 text-xs text-zinc-400">{year}</span>}
   </div>
 
@@ -36,4 +30,8 @@ const external = href !== '#' && /^https?:/.test(href);
       </ul>
     )
   }
+
+  <span class="mt-4 inline-block text-sm font-medium text-accent-600 transition-colors group-hover:text-accent-700 dark:text-accent-400" aria-hidden="true">
+    Read more →
+  </span>
 </article>
