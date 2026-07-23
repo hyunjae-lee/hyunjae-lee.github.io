@@ -9,7 +9,7 @@ export const site = {
   nameKo: '이현재',
   title: 'Hyunjae Lee — Information Security Engineer',
   tagline:
-    'Hardening web services and enterprise systems — from vulnerability assessment and TLS to WAF and security governance.',
+    'Hardening web services and enterprise systems — vulnerability assessment, TLS, and WAF — with a strong command of modern AI/ML.',
   bio: 'There is such a world to see.',
   url: 'https://hyunjae-lee.github.io',
   locale: 'en',
@@ -19,8 +19,6 @@ export const links = {
   github: 'https://github.com/hyunjae-lee',
   linkedin: 'https://www.linkedin.com/in/hyunjaedev',
   email: 'mailto:hyunjae@kaist.ac.kr',
-  personal:
-    'https://grove-gazelle-23b.notion.site/HyunjaeLee-80af4b603f5b488590a7eb779b6e4038',
 };
 
 // Avatar (from GitHub), served locally for speed/reliability.
@@ -45,7 +43,8 @@ export const resume = {
     'SSL/TLS certificate management, and Web Application Firewall (WAF) operations. Before that I led security audits, reviews, and ' +
     'information-security policy, and spent five years operating core academic systems — including a key working-level role in a ' +
     '~USD 130M next-generation information-system program — with earlier experience migrating enterprise products to cloud-native ' +
-    'infrastructure (Docker, Kubernetes, Istio).',
+    'infrastructure (Docker, Kubernetes). I also bring a professional command of modern AI/ML — from classical machine learning to ' +
+    'LLM-based tooling — and apply it to automate and sharpen security work.',
 
   experience: [
     {
@@ -61,6 +60,7 @@ export const resume = {
             'Lead web application vulnerability assessment and analysis — identifying and validating flaws, prioritizing by risk, and coordinating remediation with service owners.',
             'Manage the SSL/TLS certificate lifecycle across web services — issuance, renewal, and deployment — enforcing strong cryptographic configurations and preventing expiry-driven outages.',
             'Operate and tune the Web Application Firewall (WAF), maintaining rule sets and policies that block web-layer attacks while minimizing false positives.',
+            'Apply automation and AI-assisted analysis to accelerate vulnerability triage and anomaly detection.',
           ],
         },
         {
@@ -90,7 +90,7 @@ export const resume = {
       location: 'Seongnam, KR',
       points: [
         'Developed and maintained enterprise products built on Tomcat (WAS) and the Spring Framework.',
-        'Migrated legacy products to cloud-native infrastructure (Hyper Cloud) using Docker, Kubernetes, Envoy, and Istio.',
+        'Migrated legacy products to cloud-native infrastructure (Hyper Cloud) using Docker and Kubernetes.',
       ],
     },
     {
@@ -98,7 +98,9 @@ export const resume = {
       role: 'Data Scientist',
       org: 'Head Start',
       location: 'San Jose, CA',
-      points: ['Summer data-science internship in Silicon Valley.'],
+      points: [
+        'Built and evaluated machine-learning models as a data scientist during a summer internship in Silicon Valley.',
+      ],
     },
     {
       period: '2018 — 2019',
@@ -147,8 +149,12 @@ export const resume = {
         'Policy & Governance',
       ],
     },
-    { group: 'Cloud & Infrastructure', items: ['Docker', 'Kubernetes', 'Istio', 'Envoy'] },
-    { group: 'Systems & Development', items: ['Java', 'Spring Framework', 'Enterprise Systems'] },
+    {
+      group: 'AI / Machine Learning',
+      items: ['Machine Learning', 'Deep Learning', 'LLMs & Generative AI', 'Applied AI for Security'],
+    },
+    { group: 'Cloud & Infrastructure', items: ['Docker', 'Kubernetes'] },
+    { group: 'Systems & Development', items: ['Java', 'Python', 'Spring Framework', 'Enterprise Systems'] },
   ],
 
   certifications: [
@@ -176,6 +182,7 @@ export const resume = {
   ],
 
   honors: [
+    'Special Commendation, KAIST — Next-Generation Integrated Information System (2025)',
     'Excellence Award — 2019 DaVinci SW TECH-FAIR',
     'Award by the Dean, College of Software, Chung-Ang University',
   ],
