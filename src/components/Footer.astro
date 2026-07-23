@@ -1,0 +1,14 @@
+---
+import { site, links } from '../config';
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-zinc-100 dark:border-zinc-900">
+  <div class="mx-auto flex max-w-3xl flex-col items-center justify-between gap-3 px-6 py-8 text-sm text-zinc-500 sm:flex-row dark:text-zinc-500">
+    <p>© {year} {site.name}</p>
+    <div class="flex items-center gap-4">
+      <a href={links.github} class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100" rel="me noopener" target="_blank">GitHub</a>
+      <a href={links.linkedin} class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100" rel="me noopener" target="_blank">LinkedIn</a>
+      <a href={links.email} class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">Email</a>
+    </div>
+  </div>
+</footer>
