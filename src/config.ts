@@ -40,9 +40,10 @@ export const resume = {
 
   summary:
     'Information Security Engineer at KAIST. My current focus (since July 2026) is web security — web application vulnerability assessment, ' +
-    'SSL/TLS certificate management, and Web Application Firewall (WAF) operations. Before that I led security audits, reviews, and ' +
-    'information-security policy, and spent five years operating core academic systems — including a key working-level role in a ' +
-    '~USD 130M next-generation information-system program — with earlier experience migrating enterprise products to cloud-native ' +
+    'SSL/TLS certificate management, and Web Application Firewall (WAF) operations. Before that I led information-security governance — ' +
+    '100+ annual security reviews of KAIST’s major IT initiatives in collaboration with the NIS and MSIT, plus MSIT-led security and ' +
+    'privacy audits grounded in the national Cybersecurity Guidelines — and spent five years operating core academic systems, including a ' +
+    'key working-level role in a ~USD 130M next-generation information-system program, with earlier experience migrating enterprise products to cloud-native ' +
     'infrastructure (Docker, Kubernetes). I also bring a professional command of modern AI/ML — from classical machine learning to ' +
     'LLM-based tooling — and apply it to automate and sharpen security work.',
 
@@ -67,10 +68,10 @@ export const resume = {
           period: 'Jul 2025 — Jul 2026',
           focus: 'Information Security Team · Governance',
           points: [
-            'Conducted internal information-security audits, assessing systems and controls against policy and driving remediation.',
-            'Performed security reviews (보안성검토) of new and changed systems prior to deployment — architecture, access control, and data protection.',
-            'Governed storage and removable-media security: portable-media controls, data-at-rest handling, and secure disposal.',
-            'Developed and revised the institution’s information-security policies, standards, and guidelines.',
+            'Led 100+ security reviews (보안성검토) per year across KAIST’s major IT initiatives — including AI-enabled systems and commercial cloud-service adoption — in direct collaboration with the National Intelligence Service (NIS) and the Ministry of Science and ICT (MSIT).',
+            'Conducted information-security and personal-data-protection audits under the Ministry of Science and ICT (MSIT), evaluating controls, compliance, and risk across the institution.',
+            'Anchored every review and audit in the NIS Cybersecurity Guidelines (국가정보원 사이버보안 기본지침), applying its control baselines to assess architecture, access control, and data protection against national standards.',
+            'Governed storage and removable-media security, and developed and revised the institution’s information-security policies, standards, and guidelines.',
           ],
         },
         {
@@ -183,8 +184,8 @@ export const resume = {
 
   honors: [
     'Special Commendation, KAIST — Next-Generation Integrated Information System (2025)',
-    'Excellence Award — 2019 DaVinci SW TECH-FAIR',
-    'Award by the Dean, College of Software, Chung-Ang University',
+    'Bronze Prize — 2019 SW Challenge, Korea Software Industry Association (HighlightU)',
+    'Excellence Award — 2019 DaVinci SW TECH-FAIR, Chung-Ang University',
   ],
 
   // Academic output from earlier research — kept as a credential.
