@@ -17,6 +17,7 @@ const projects = defineCollection({
     // Optional external links shown on the card / detail page.
     link: z.string().url().optional(), // live demo / product
     repo: z.string().url().optional(), // source code
+    status: z.enum(['in-progress']).optional(), // shows a distinct "In progress" treatment
     featured: z.boolean().default(false), // surfaced on the home page
     draft: z.boolean().default(false), // hidden from listings while true
   }),

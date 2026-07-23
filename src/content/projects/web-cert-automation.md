@@ -2,7 +2,8 @@
 title: Automated Internal PKI for Web Certificates
 description: Designing and building a private ACME CA (step-ca) that issues and renews KAIST web-server TLS certificates hands-off — no expiry outages, no manual requests. (In progress)
 date: 2026-07-01
-tags: [PKI, TLS, Automation, step-ca, DevSecOps, In Progress]
+tags: [PKI, TLS, Automation, step-ca, DevSecOps]
+status: in-progress
 featured: true
 draft: false
 ---
@@ -18,6 +19,8 @@ designing and building an **automated internal PKI**: a private **ACME certifica
 > Status: **in design & build** with the KAIST Information Security Team.
 
 ## Architecture
+
+![Web certificate automation — overall architecture and communication paths](/projects/kaist-cert-automation-flow.png)
 
 Two independent paths, by design:
 
@@ -35,6 +38,8 @@ policy scoped to `*.kaist.ac.kr`), a **CA-dedicated resolver** that maps each do
 origin, and a **cert-setup** installer distributed to servers (only the first install is manual).
 
 ## How issuance works
+
+![Certificate issuance and renewal — communication sequence](/projects/kaist-cert-flow-sequence.png)
 
 1. **Receive Root CA** — once, via the gateway WAF, trusted over the public certificate.
 2. **Request issuance** — the server talks directly to step-ca (WAF-independent).

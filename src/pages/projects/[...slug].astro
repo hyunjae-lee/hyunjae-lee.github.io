@@ -12,8 +12,9 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { title, description, date, tags, link, repo } = project.data;
+const { title, description, date, tags, link, repo, status } = project.data;
 const dateLabel = new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+const inProgress = status === 'in-progress';
 ---
 <BaseLayout title={title} description={description}>
   <article>
@@ -22,7 +23,18 @@ const dateLabel = new Date(date).toLocaleDateString('en-US', { year: 'numeric', 
     </a>
 
     <header class="mt-6 border-b border-zinc-100 pb-8 dark:border-zinc-900">
-      <p class="text-sm text-zinc-400">{dateLabel}</p>
+      <div class="flex items-center gap-3">
+        <p class="text-sm text-zinc-400">{dateLabel}</p>
+        {inProgress && (
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-accent-500/10 px-2.5 py-0.5 text-xs font-semibold text-accent-600 dark:text-accent-400">
+            <span class="relative flex h-1.5 w-1.5">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-500 opacity-75" />
+              <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-500" />
+            </span>
+            In progress
+          </span>
+        )}
+      </div>
       <h1 class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">{title}</h1>
       <p class="mt-3 max-w-2xl leading-relaxed text-zinc-600 dark:text-zinc-400">{description}</p>
 
