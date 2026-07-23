@@ -78,6 +78,33 @@ export const resume = {
     { group: 'Infrastructure', items: ['Linux', 'Kubernetes', 'Terraform', 'AWS', 'Docker'] },
     { group: 'Security', items: ['IAM', 'Zero Trust', 'Vulnerability Mgmt', 'DevSecOps'] },
     { group: 'Observability', items: ['Prometheus', 'Grafana', 'ELK'] },
-    { group: 'Languages', items: ['Python', 'Go', 'Bash', 'TypeScript'] },
+    { group: 'Programming', items: ['Python', 'Go', 'Bash', 'TypeScript'] },
   ],
+
+  // Verified from the certificates you provided.
+  certifications: [
+    {
+      name: 'Engineer Information Processing (정보처리기사)',
+      issuer: 'Ministry of Science and ICT, Republic of Korea',
+      date: 'Sep 2024',
+    },
+    {
+      name: 'OPIc — English: Advanced Low (AL)',
+      issuer: 'ACTFL',
+      date: 'Dec 2025',
+      note: 'Valid through Dec 2027',
+    },
+  ],
+
+  languages: [
+    { name: 'Korean', level: 'Native' },
+    { name: 'English', level: 'Advanced Low (OPIc AL)' },
+  ],
+
+  // Papers & patents. Left empty on purpose — I won't fabricate credentials.
+  // Add your real entries here and the "Publications & Patents" section appears.
+  // Example shape:
+  //   { type: 'Paper',  title: '...', venue: 'Conference / Journal, Year', link: 'https://...' },
+  //   { type: 'Patent', title: '...', venue: 'KR Patent 10-XXXXXXX, Year' },
+  publications: [] as Array<{ type: string; title: string; venue: string; link?: string }>,
 };

@@ -9,6 +9,8 @@ const featured = (await getCollection('projects'))
   .filter((p) => !p.data.draft && p.data.featured)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
+
+const publications = resume.publications ?? [];
 ---
 <BaseLayout>
   <!-- Hero -->
@@ -123,6 +125,68 @@ const featured = (await getCollection('projects'))
       }
     </dl>
   </section>
+
+  <!-- Languages & Certifications -->
+  <section class="mt-16 grid gap-10 sm:grid-cols-2">
+    <div>
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-400">Languages</h2>
+      <dl class="mt-8 space-y-3">
+        {
+          resume.languages.map((l) => (
+            <div class="flex items-baseline justify-between gap-4">
+              <dt class="text-sm font-medium text-zinc-900 dark:text-zinc-100">{l.name}</dt>
+              <dd class="text-sm text-zinc-500 dark:text-zinc-400">{l.level}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <div>
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-400">Certifications</h2>
+      <ul class="mt-8 space-y-4">
+        {
+          resume.certifications.map((c) => (
+            <li>
+              <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">{c.name}</p>
+              <p class="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">
+                {c.issuer} · {c.date}
+                {c.note && <span class="text-zinc-400"> · {c.note}</span>}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Publications & Patents (only when populated) -->
+  {
+    publications.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-400">Publications &amp; Patents</h2>
+        <ul class="mt-8 space-y-6">
+          {publications.map((pub) => (
+            <li class="grid gap-1 sm:grid-cols-[6rem_1fr] sm:gap-6">
+              <p class="text-sm text-zinc-400">{pub.type}</p>
+              <div>
+                <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  {pub.link ? (
+                    <a href={pub.link} target="_blank" rel="noopener" class="hover:text-accent-600 dark:hover:text-accent-400">
+                      {pub.title} ↗
+                    </a>
+                  ) : (
+                    pub.title
+                  )}
+                </p>
+                <p class="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">{pub.venue}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
 
   <!-- Education -->
   <section class="mt-16">
