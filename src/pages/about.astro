@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Placeholder career summary — replace with real content.
+const experience = [
+  {
+    period: '2022 — 현재',
+    role: '인프라 · 보안 엔지니어',
+    org: 'Company A',
+    points: [
+      '클라우드 인프라 운영 및 IaC 기반 자동화 구축',
+      '보안 정책 수립과 취약점 대응 프로세스 개선',
+    ],
+  },
+  {
+    period: '2019 — 2022',
+    role: '시스템 엔지니어',
+    org: 'Company B',
+    points: [
+      '온프레미스 서버·네트워크 운영 및 모니터링 체계 구축',
+      '장애 대응 및 백업/복구 절차 표준화',
+    ],
+  },
+];
+
+const skills = [
+  'Linux', 'Kubernetes', 'Terraform', 'AWS',
+  'Prometheus', 'Grafana', 'Network Security', 'IAM',
+];
+---
+<BaseLayout title="About" description="정보보안과 인프라 운영을 중심으로 한 경력 요약">
+  <section>
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">About</h1>
+    <p class="mt-4 max-w-xl leading-relaxed text-zinc-600 dark:text-zinc-400">
+      정보보안과 인프라 운영을 중심으로 일해 왔습니다. 안정적인 시스템 운영,
+      보안 위험의 사전 차단, 그리고 반복 작업의 자동화에 관심이 많습니다.
+      아래 내용은 예시 placeholder이며 실제 이력으로 교체하면 됩니다.
+    </p>
+  </section>
+
+  <section class="mt-14">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">경력 / Experience</h2>
+    <ol class="mt-6 space-y-8">
+      {
+        experience.map((job) => (
+          <li class="border-l-2 border-zinc-100 pl-5 dark:border-zinc-800">
+            <p class="text-xs text-zinc-400">{job.period}</p>
+            <h3 class="mt-1 font-medium text-zinc-900 dark:text-zinc-100">
+              {job.role} <span class="text-zinc-400">· {job.org}</span>
+            </h3>
+            <ul class="mt-2 list-disc space-y-1 pl-4 text-sm leading-relaxed text-zinc-600 marker:text-accent-500 dark:text-zinc-400">
+              {job.points.map((p) => (
+                <li>{p}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="mt-14">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">기술 / Skills</h2>
+    <ul class="mt-6 flex flex-wrap gap-2">
+      {
+        skills.map((skill) => (
+          <li class="rounded-full border border-zinc-200 px-3 py-1 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
+            {skill}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>

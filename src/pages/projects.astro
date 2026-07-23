@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../config';
+---
+<BaseLayout title="Projects" description="주요 프로젝트 목록">
+  <section>
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Projects</h1>
+    <p class="mt-4 max-w-xl leading-relaxed text-zinc-600 dark:text-zinc-400">
+      진행했던 주요 작업들입니다. 아래 카드는 예시 placeholder이며
+      <code class="rounded bg-zinc-100 px-1 py-0.5 text-sm dark:bg-zinc-900">src/config.ts</code>
+      에서 실제 프로젝트로 교체할 수 있습니다.
+    </p>
+  </section>
+
+  <section class="mt-10 grid gap-4 sm:grid-cols-2">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </section>
+</BaseLayout>
