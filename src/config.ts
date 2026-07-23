@@ -9,7 +9,7 @@ export const site = {
   nameKo: '이현재',
   title: 'Hyunjae Lee — Information Security Engineer',
   tagline:
-    'Securing large-scale systems through audits, reviews, and sound policy — grounded in years of building the infrastructure underneath.',
+    'Hardening web services and enterprise systems — from vulnerability assessment and TLS to WAF and security governance.',
   bio: 'There is such a world to see.',
   url: 'https://hyunjae-lee.github.io',
   locale: 'en',
@@ -41,10 +41,11 @@ export const resume = {
   available: 'Information Security Team · KAIST',
 
   summary:
-    'Information Security Engineer at KAIST. Since July 2025 I have been on the Information Security team, where I lead security audits and reviews, ' +
-    'govern storage and removable-media security, and drive the institution’s information-security policies and guidelines. ' +
-    'Before that I spent five years operating core academic systems — including a key working-level role in a ~USD 130M next-generation information-system program — ' +
-    'with earlier experience migrating enterprise products to cloud-native infrastructure (Docker, Kubernetes, Istio).',
+    'Information Security Engineer at KAIST. My current focus (since July 2026) is web security — web application vulnerability assessment, ' +
+    'SSL/TLS certificate management, and Web Application Firewall (WAF) operations. Before that I led security audits, reviews, and ' +
+    'information-security policy, and spent five years operating core academic systems — including a key working-level role in a ' +
+    '~USD 130M next-generation information-system program — with earlier experience migrating enterprise products to cloud-native ' +
+    'infrastructure (Docker, Kubernetes, Istio).',
 
   experience: [
     {
@@ -52,12 +53,34 @@ export const resume = {
       role: 'Engineer (기술원)',
       org: 'KAIST',
       location: 'Daejeon, KR',
-      points: [
-        'Information Security Team (since Jul 2025): lead internal information-security audits, assessing systems and controls against policy and driving remediation.',
-        'Perform security reviews (보안성검토) of new and changed systems before deployment — architecture, access control, and data protection.',
-        'Govern storage and removable-media security: portable-media controls, data-at-rest handling, and secure disposal.',
-        'Author and revise the institution’s information-security policies, standards, and guidelines.',
-        'IT Team (2020–2025): operated the Academic Affairs and Graduation Management systems and was a core working-level member for the academic module of a ~USD 130M Next-Generation Integrated Information System.',
+      phases: [
+        {
+          period: 'Jul 2026 — Present',
+          focus: 'Information Security Team · Web Security',
+          points: [
+            'Lead web application vulnerability assessment and analysis — identifying and validating flaws, prioritizing by risk, and coordinating remediation with service owners.',
+            'Manage the SSL/TLS certificate lifecycle across web services — issuance, renewal, and deployment — enforcing strong cryptographic configurations and preventing expiry-driven outages.',
+            'Operate and tune the Web Application Firewall (WAF), maintaining rule sets and policies that block web-layer attacks while minimizing false positives.',
+          ],
+        },
+        {
+          period: 'Jul 2025 — Jul 2026',
+          focus: 'Information Security Team · Governance',
+          points: [
+            'Conducted internal information-security audits, assessing systems and controls against policy and driving remediation.',
+            'Performed security reviews (보안성검토) of new and changed systems prior to deployment — architecture, access control, and data protection.',
+            'Governed storage and removable-media security: portable-media controls, data-at-rest handling, and secure disposal.',
+            'Developed and revised the institution’s information-security policies, standards, and guidelines.',
+          ],
+        },
+        {
+          period: '2020 — Jul 2025',
+          focus: 'IT Team · Academic Systems',
+          points: [
+            'Operated the Academic Affairs and Graduation Management systems, ensuring reliability of mission-critical services.',
+            'Served as a core working-level member for the academic module of a ~USD 130M Next-Generation Integrated Information System.',
+          ],
+        },
       ],
     },
     {
@@ -86,7 +109,14 @@ export const resume = {
         'Applied-security research that led to an IEEE publication and a patent (see Publications).',
       ],
     },
-  ],
+  ] as Array<{
+    period: string;
+    role: string;
+    org: string;
+    location: string;
+    points?: string[];
+    phases?: Array<{ period: string; focus: string; points: string[] }>;
+  }>,
 
   education: [
     {
@@ -110,11 +140,11 @@ export const resume = {
     {
       group: 'Security',
       items: [
-        'Security Audit',
-        'Security Review (보안성검토)',
-        'Data & Media Protection',
+        'Web Vulnerability Assessment',
+        'SSL/TLS & PKI',
+        'Web Application Firewall (WAF)',
+        'Security Audit & Review',
         'Policy & Governance',
-        'Risk & Compliance',
       ],
     },
     { group: 'Cloud & Infrastructure', items: ['Docker', 'Kubernetes', 'Istio', 'Envoy'] },
