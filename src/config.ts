@@ -138,14 +138,14 @@ export const resume = {
       type: 'Paper',
       title:
         'Recipient-Oriented Transaction for Preventing Double Spending Attacks in Private Blockchain',
-      venue: 'IEEE, 2018',
+      venue: 'IEEE SECON 2018 · with M. Shin, K. S. Kim, Y. Kang, J. Kim',
       link: 'https://ieeexplore.ieee.org/document/8397151/',
     },
     {
       type: 'Patent',
       title:
         'Recipient-oriented transaction verification method and apparatus for preventing double spending',
-      venue: 'Patent',
+      venue: 'KR 10-2018-0089040 · 2018',
     },
   ] as Array<{ type: string; title: string; venue?: string; link?: string }>,
 };

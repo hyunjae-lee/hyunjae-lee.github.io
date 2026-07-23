@@ -25,6 +25,7 @@ blockchains. The work was published at IEEE and filed as a patent.
 ## Outputs
 
 - **Paper:** *Recipient-Oriented Transaction for Preventing Double Spending Attacks in
-  Private Blockchain* — [IEEE Xplore](https://ieeexplore.ieee.org/document/8397151/).
+  Private Blockchain*, **IEEE SECON 2018** (with M. Shin, K. S. Kim, Y. Kang, J. Kim) —
+  [IEEE Xplore](https://ieeexplore.ieee.org/document/8397151/).
 - **Patent:** *Recipient-oriented transaction verification method and apparatus for
-  preventing double spending.*
+  preventing double spending* — **KR 10-2018-0089040** (2018).

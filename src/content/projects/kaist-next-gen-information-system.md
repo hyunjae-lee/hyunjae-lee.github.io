@@ -1,11 +1,17 @@
 ---
 title: Next-Generation Integrated Information System
 description: Core working-level member for the academic module of KAIST’s next-generation information-system program (~USD 130M).
-date: 2023-06-01
+date: 2025-07-01
 tags: [Enterprise Systems, Academic Affairs, Project Delivery]
 featured: true
 draft: false
 ---
+
+<!--
+  Ordering: projects sort by `date`, newest first, on both /projects and the home
+  page. To keep a project at the top, give it the most recent date.
+  This is a starter you can rewrite — set `draft: true` to hide it while editing.
+-->
 
 ## Overview
 

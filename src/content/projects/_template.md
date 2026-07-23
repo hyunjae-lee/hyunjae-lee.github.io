@@ -3,7 +3,7 @@
 # Files starting with "_" are ignored, so this template never appears on the site.
 title: Project title
 description: One-sentence summary shown on the card and in previews.
-date: 2026-01-01
+date: 2026-01-01 # projects sort by this, NEWEST FIRST — use a recent date to appear at the top
 tags: [Tag1, Tag2]
 # link: https://example.com        # optional: live demo / product URL
 # repo: https://github.com/you/repo # optional: source code URL
