@@ -3,6 +3,7 @@ title: HighlightU — Automatic Highlight Extraction for Live Streams
 description: A web service that auto-extracts highlight clips from Twitch VODs by fusing NLP on chat logs with CNN-based facial-expression analysis.
 date: 2019-12-19
 tags: [Machine Learning, NLP, Computer Vision, Django]
+repo: https://github.com/highlightu
 featured: true
 draft: false
 ---
