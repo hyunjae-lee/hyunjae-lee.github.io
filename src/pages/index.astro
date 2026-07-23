@@ -149,10 +149,11 @@ const publications = resume.publications ?? [];
           resume.certifications.map((c) => (
             <li>
               <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">{c.name}</p>
-              <p class="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">
-                {c.issuer} · {c.date}
-                {c.note && <span class="text-zinc-400"> · {c.note}</span>}
-              </p>
+              {(c.issuer || c.date || c.note) && (
+                <p class="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">
+                  {[c.issuer, c.date, c.note].filter(Boolean).join(' · ')}
+                </p>
+              )}
             </li>
           ))
         }
@@ -179,8 +180,25 @@ const publications = resume.publications ?? [];
                     pub.title
                   )}
                 </p>
-                <p class="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">{pub.venue}</p>
+                {pub.venue && <p class="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">{pub.venue}</p>}
               </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <!-- Honors & Awards -->
+  {
+    resume.honors.length > 0 && (
+      <section class="mt-16">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-400">Honors &amp; Awards</h2>
+        <ul class="mt-8 space-y-2">
+          {resume.honors.map((h) => (
+            <li class="flex gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+              <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" aria-hidden="true" />
+              <span>{h}</span>
             </li>
           ))}
         </ul>
@@ -207,9 +225,9 @@ const publications = resume.publications ?? [];
 
   <!-- Contact -->
   <section class="mt-16 rounded-2xl border border-zinc-200 p-8 dark:border-zinc-800">
-    <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Let’s work together</h2>
+    <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Get in touch</h2>
     <p class="mt-2 max-w-xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-      Have a role, project, or idea in mind? I’m always happy to talk.
+      Interested in security, infrastructure, or a possible collaboration? I’m always happy to connect.
     </p>
     <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">
       <a href={links.email} class="font-medium text-accent-600 transition-colors hover:text-accent-700 dark:text-accent-400">
@@ -217,6 +235,7 @@ const publications = resume.publications ?? [];
       </a>
       <a href={links.linkedin} target="_blank" rel="me noopener" class="text-zinc-500 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">LinkedIn ↗</a>
       <a href={links.github} target="_blank" rel="me noopener" class="text-zinc-500 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">GitHub ↗</a>
+      <a href={links.personal} target="_blank" rel="me noopener" class="text-zinc-500 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">Notes ↗</a>
     </div>
   </section>
 </BaseLayout>
