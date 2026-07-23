@@ -127,4 +127,13 @@ const dateLabel = new Date(date).toLocaleDateString('en-US', { year: 'numeric', 
   :global(.dark) .prose :global(code) {
     background: var(--color-zinc-900);
   }
+  .prose :global(img) {
+    margin: 1.5rem 0;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-zinc-200);
+  }
+  :global(.dark) .prose :global(img) {
+    border-color: var(--color-zinc-800);
+  }
 </style>

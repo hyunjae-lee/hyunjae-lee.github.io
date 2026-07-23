@@ -259,10 +259,33 @@ const publications = resume.publications ?? [];
           {resume.honors.map((h) => (
             <li class="flex gap-3 text-sm text-zinc-700 dark:text-zinc-300">
               <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" aria-hidden="true" />
-              <span>{h}</span>
+              <span>{h.text}</span>
             </li>
           ))}
         </ul>
+
+        {resume.honors.some((h) => h.image) && (
+          <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {resume.honors
+              .filter((h) => h.image)
+              .map((h) => (
+                <a
+                  href={h.image}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={`${h.text} — view certificate`}
+                  class="group block overflow-hidden rounded-lg border border-zinc-200 bg-white p-2 shadow-sm transition-all hover:-translate-y-0.5 hover:border-accent-500/60 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-100"
+                >
+                  <img
+                    src={h.image}
+                    alt={h.text}
+                    loading="lazy"
+                    class="h-56 w-full object-contain"
+                  />
+                </a>
+              ))}
+          </div>
+        )}
       </section>
     )
   }

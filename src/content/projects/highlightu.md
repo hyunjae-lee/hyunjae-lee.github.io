@@ -15,6 +15,8 @@ independent signals — **chat-log analysis (NLP)** and **facial-expression anal
 vision)** — then stitch the top-scoring moments into highlights. Built as a Django web app
 with Google OAuth login, payments, and email delivery.
 
+![HighlightU — basic service flow](/projects/highlightu-serviceflow.png)
+
 ## My role — Team Leader (Team LAJI, 3 members)
 
 Led a three-person team and owned the highlight-extraction algorithm — designing how the two
