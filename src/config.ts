@@ -70,6 +70,7 @@ export const resume = {
           points: [
             'Lead web application vulnerability assessment and analysis — identifying and validating flaws, prioritizing by risk, and coordinating remediation with service owners.',
             'Manage the SSL/TLS certificate lifecycle across web services — issuance, renewal, and deployment — enforcing strong cryptographic configurations and preventing expiry-driven outages.',
+            'Designing and building an automated internal PKI — a private ACME CA (step-ca) — so server certificates issue and renew hands-off, eliminating manual network-team requests and expiry outages.',
             'Operate and tune the Web Application Firewall (WAF), maintaining rule sets and policies that block web-layer attacks while minimizing false positives.',
             'Apply automation and AI-assisted analysis to accelerate vulnerability triage and anomaly detection.',
           ],

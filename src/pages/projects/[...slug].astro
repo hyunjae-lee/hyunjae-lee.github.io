@@ -136,4 +136,32 @@ const dateLabel = new Date(date).toLocaleDateString('en-US', { year: 'numeric', 
   :global(.dark) .prose :global(img) {
     border-color: var(--color-zinc-800);
   }
+  .prose :global(table) {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .prose :global(th),
+  .prose :global(td) {
+    border: 1px solid var(--color-zinc-200);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .prose :global(th) {
+    background: var(--color-zinc-50);
+    font-weight: 600;
+    color: var(--color-zinc-900);
+  }
+  :global(.dark) .prose :global(th),
+  :global(.dark) .prose :global(td) {
+    border-color: var(--color-zinc-800);
+  }
+  :global(.dark) .prose :global(th) {
+    background: var(--color-zinc-900);
+    color: var(--color-zinc-100);
+  }
 </style>
