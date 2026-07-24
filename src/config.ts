@@ -90,7 +90,7 @@ export const resume = {
           period: '2020 — Jul 2025',
           focus: 'Information Development Team · Academic Systems',
           points: [
-            'Served as a core working-level member of the ~USD 130M, 3-year Next-Generation Integrated Information System program — deeply involved in the academic module’s design and driving verification, testing, and production deployment to a successful launch.',
+            'Served as a core working-level member of the ~USD 130M, 3-year Next-Generation Integrated Information System — deeply involved in designing the academic module (curriculum, course registration, classes, graduation) and driving verification, testing, and production deployment to a successful launch.',
             'Reviewed and modernized 1,400+ common and major-specific graduation requirements across departments (CS, EE, Mechanical, and more), re-basing complex rules onto the next-generation system and resolving policy–system mismatches.',
             'Redesigned graduation-assessment exception handling and the logic for internships, special lectures, and substitute courses; improved thesis-review management (proposal, defense, external committees), eliminating recurring errors.',
             'During the transition-aligned graduation season, processed 2,000+ graduations and degree conferrals without disruption, and built new degree certificate / name / number issuance features that improved record accuracy and administrative trust.',
