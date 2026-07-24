@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectArticle from '../../../components/ProjectArticle.astro';
+
+export async function getStaticPaths() {
+  const projects = (await getCollection('projectsKo')).filter((p) => !p.data.draft);
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+<BaseLayout lang="ko" title={project.data.title} description={project.data.description}>
+  <ProjectArticle project={project} lang="ko" />
+</BaseLayout>

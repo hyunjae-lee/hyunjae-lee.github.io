@@ -1,0 +1,232 @@
+---
+import { render } from 'astro:content';
+import { t, localizePath, type Lang } from '../i18n';
+
+interface Props {
+  project: any;
+  lang: Lang;
+}
+const { project, lang } = Astro.props;
+const { Content } = await render(project);
+const { title, description, date, tags, link, repo, status } = project.data;
+const dateLabel = new Date(date).toLocaleDateString(lang === 'ko' ? 'ko-KR' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+});
+const inProgress = status === 'in-progress';
+---
+<article>
+  <a href={localizePath('/projects/', lang)} class="text-sm text-zinc-500 transition-colors hover:text-accent-600 dark:hover:text-accent-400">
+    {t(lang, 'action.backToProjects')}
+  </a>
+
+  <header class="mt-6 border-b border-zinc-100 pb-8 dark:border-zinc-900">
+    <div class="flex items-center gap-3">
+      <p class="text-sm text-zinc-400">{dateLabel}</p>
+      {inProgress && (
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-accent-500/10 px-2.5 py-0.5 text-xs font-semibold text-accent-600 dark:text-accent-400">
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-500 opacity-75" />
+            <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-500" />
+          </span>
+          {t(lang, 'label.inProgress')}
+        </span>
+      )}
+    </div>
+    <h1 class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">{title}</h1>
+    <p class="mt-3 max-w-2xl leading-relaxed text-zinc-600 dark:text-zinc-400">{description}</p>
+
+    {
+      tags.length > 0 && (
+        <ul class="mt-5 flex flex-wrap gap-2">
+          {tags.map((tag: string) => (
+            <li class="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    {
+      (link || repo) && (
+        <div class="mt-5 flex flex-wrap gap-4 text-sm">
+          {link && (
+            <a href={link} target="_blank" rel="noopener" class="font-medium text-accent-600 transition-colors hover:text-accent-700 dark:text-accent-400">
+              {t(lang, 'label.live')}
+            </a>
+          )}
+          {repo && (
+            <a href={repo} target="_blank" rel="noopener" class="font-medium text-accent-600 transition-colors hover:text-accent-700 dark:text-accent-400">
+              {t(lang, 'label.source')}
+            </a>
+          )}
+        </div>
+      )
+    }
+  </header>
+
+  <div class="prose mt-8">
+    <Content />
+  </div>
+</article>
+
+{/* Image lightbox — tap any diagram to enlarge and pan */}
+<div
+  id="img-lightbox"
+  class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Enlarged diagram"
+>
+  <button
+    id="img-close"
+    type="button"
+    aria-label="Close"
+    class="fixed right-3 top-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-black/40 text-white/90 transition-colors hover:bg-white/15 hover:text-white"
+  >
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+  </button>
+  <div id="img-scroll" class="flex h-full w-full items-center justify-center overflow-auto p-4">
+    <img id="img-large" src="" alt="" class="max-w-none rounded-lg bg-white shadow-2xl" />
+  </div>
+  <p class="pointer-events-none fixed inset-x-0 bottom-3 text-center text-xs text-white/70">
+    {t(lang, 'lightbox.hint')}
+  </p>
+</div>
+
+<script>
+  const lb = document.getElementById('img-lightbox');
+  const big = document.getElementById('img-large');
+  const scroll = document.getElementById('img-scroll');
+  if (lb && big && scroll) {
+    const open = (src, alt) => {
+      big.setAttribute('src', src);
+      big.setAttribute('alt', alt || '');
+      lb.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      scroll.scrollTop = 0;
+      scroll.scrollLeft = 0;
+    };
+    const close = () => {
+      lb.classList.add('hidden');
+      big.setAttribute('src', '');
+      document.body.style.overflow = '';
+    };
+    document.querySelectorAll('.prose img').forEach((im) => {
+      im.setAttribute('title', 'Tap to enlarge');
+      im.addEventListener('click', () => open(im.getAttribute('src'), im.getAttribute('alt')));
+    });
+    document.getElementById('img-close')?.addEventListener('click', close);
+    lb.addEventListener('click', (e) => {
+      if (e.target !== big) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lb.classList.contains('hidden')) close();
+    });
+  }
+</script>
+
+<style>
+  .prose {
+    color: var(--color-zinc-700);
+    line-height: 1.75;
+  }
+  :global(.dark) .prose {
+    color: var(--color-zinc-300);
+  }
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-zinc-900);
+  }
+  :global(.dark) .prose :global(h2) {
+    color: var(--color-zinc-100);
+  }
+  .prose :global(h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-zinc-900);
+  }
+  :global(.dark) .prose :global(h3) {
+    color: var(--color-zinc-100);
+  }
+  .prose :global(p) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .prose :global(ul) {
+    margin: 1rem 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+  .prose :global(li) {
+    margin: 0.375rem 0;
+  }
+  .prose :global(li)::marker {
+    color: var(--color-accent-500);
+  }
+  .prose :global(a) {
+    color: var(--color-accent-600);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose :global(blockquote) {
+    margin: 1.25rem 0;
+    border-left: 3px solid var(--color-accent-500);
+    padding-left: 1rem;
+    color: var(--color-zinc-500);
+    font-style: italic;
+  }
+  .prose :global(code) {
+    border-radius: 0.25rem;
+    background: var(--color-zinc-100);
+    padding: 0.125rem 0.375rem;
+    font-size: 0.875em;
+  }
+  :global(.dark) .prose :global(code) {
+    background: var(--color-zinc-900);
+  }
+  .prose :global(img) {
+    margin: 1.5rem 0;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-zinc-200);
+    cursor: zoom-in;
+  }
+  :global(.dark) .prose :global(img) {
+    border-color: var(--color-zinc-800);
+  }
+  .prose :global(table) {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .prose :global(th),
+  .prose :global(td) {
+    border: 1px solid var(--color-zinc-200);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .prose :global(th) {
+    background: var(--color-zinc-50);
+    font-weight: 600;
+    color: var(--color-zinc-900);
+  }
+  :global(.dark) .prose :global(th),
+  :global(.dark) .prose :global(td) {
+    border-color: var(--color-zinc-800);
+  }
+  :global(.dark) .prose :global(th) {
+    background: var(--color-zinc-900);
+    color: var(--color-zinc-100);
+  }
+</style>

@@ -1,21 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { t, localizePath } from '../i18n';
 ---
-<BaseLayout title="Page not found" description="This page could not be found.">
+<BaseLayout lang="en" title={t('en', 'notFound.title')} description={t('en', 'notFound.body')}>
   <section class="py-16 text-center">
-    <p class="text-sm font-medium text-accent-600 dark:text-accent-400">404</p>
+    <p class="text-sm font-medium text-accent-600 dark:text-accent-400">{t('en', 'notFound.tag')}</p>
     <h1 class="mt-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-      Page not found
+      {t('en', 'notFound.title')}
     </h1>
-    <p class="mt-4 text-zinc-600 dark:text-zinc-400">
-      The page you’re looking for doesn’t exist or has moved.
-    </p>
+    <p class="mt-4 text-zinc-600 dark:text-zinc-400">{t('en', 'notFound.body')}</p>
     <div class="mt-8 flex justify-center gap-3">
-      <a href="/" class="inline-flex items-center rounded-md bg-accent-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-700">
-        Back home
+      <a href={localizePath('/', 'en')} class="inline-flex items-center rounded-md bg-accent-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-700">
+        {t('en', 'notFound.home')}
       </a>
-      <a href="/projects/" class="inline-flex items-center rounded-md border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900">
-        Projects
+      <a href={localizePath('/projects/', 'en')} class="inline-flex items-center rounded-md border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900">
+        {t('en', 'projects.title')}
       </a>
     </div>
   </section>

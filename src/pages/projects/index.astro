@@ -1,43 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-
-// All published projects, most recent first.
-const projects = (await getCollection('projects'))
-  .filter((p) => !p.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+import ProjectList from '../../components/ProjectList.astro';
+import { t } from '../../i18n';
 ---
-<BaseLayout title="Projects" description="Selected projects and work.">
-  {/*
-    MEMO (not shown on the site): each project is a Markdown file in
-    `src/content/projects/`. To add one, copy `_template.md`, set `draft: false`
-    to publish and `featured: true` to surface it on the home page. Projects sort
-    by `date`, newest first.
-  */}
-  <section>
-    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Projects</h1>
-    <p class="mt-4 max-w-xl leading-relaxed text-zinc-600 dark:text-zinc-400">
-      A selection of things I’ve built — across security, systems, and applied AI.
-    </p>
-  </section>
-
-  {
-    projects.length > 0 ? (
-      <section class="mt-10 grid gap-4 sm:grid-cols-2">
-        {projects.map((p) => (
-          <ProjectCard
-            title={p.data.title}
-            description={p.data.description}
-            tags={p.data.tags}
-            date={p.data.date}
-            status={p.data.status}
-            href={`/projects/${p.id}/`}
-          />
-        ))}
-      </section>
-    ) : (
-      <p class="mt-10 text-zinc-500">No projects published yet.</p>
-    )
-  }
+<BaseLayout lang="en" title={t('en', 'projects.title')} description={t('en', 'projects.intro')}>
+  <ProjectList lang="en" />
 </BaseLayout>

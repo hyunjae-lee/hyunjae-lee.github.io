@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+import { t, localizePath, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const collection = lang === 'ko' ? 'projectsKo' : 'projects';
+const projects = (await getCollection(collection))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+{/*
+  MEMO (not shown on the site): each project is a Markdown file in
+  `src/content/projects/` (English) and `src/content/projects-ko/` (Korean),
+  sharing the same filename/slug. Copy `_template.md`, set `draft: false` to
+  publish, `featured: true` to surface on the home page, `status: in-progress`
+  for the in-progress treatment. Projects sort by `date`, newest first.
+*/}
+<section>
+  <h1 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">{t(lang, 'projects.title')}</h1>
+  <p class="mt-4 max-w-xl leading-relaxed text-zinc-600 dark:text-zinc-400">{t(lang, 'projects.intro')}</p>
+</section>
+
+{
+  projects.length > 0 ? (
+    <section class="mt-10 grid gap-4 sm:grid-cols-2">
+      {projects.map((p) => (
+        <ProjectCard
+          title={p.data.title}
+          description={p.data.description}
+          tags={p.data.tags}
+          date={p.data.date}
+          status={p.data.status}
+          lang={lang}
+          href={localizePath(`/projects/${p.id}/`, lang)}
+        />
+      ))}
+    </section>
+  ) : (
+    <p class="mt-10 text-zinc-500">{t(lang, 'projects.empty')}</p>
+  )
+}

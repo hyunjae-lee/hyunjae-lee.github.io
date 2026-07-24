@@ -2,34 +2,44 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site, links, resume } from '../config';
+import { t, type Lang } from '../i18n';
 import '../styles/global.css';
 
 interface Props {
   title?: string;
   description?: string;
+  lang?: Lang;
 }
 
-const { title, description = site.tagline } = Astro.props;
-const pageTitle = title ? `${title} — ${site.name}` : site.title;
+const { title, description, lang = 'en' } = Astro.props;
+const r = resume[lang];
+const pageTitle = title ? `${title} — ${site.name}` : r.title;
+const desc = description ?? r.tagline;
 
-const canonical = new URL(Astro.url.pathname, site.url).href;
+// Localized alternates (en at root, ko under /ko/).
+const path = Astro.url.pathname;
+const enPath = path.replace(/^\/ko(?=\/|$)/, '') || '/';
+const koPath = enPath === '/' ? '/ko/' : `/ko${enPath}`;
+const selfPath = lang === 'ko' ? koPath : enPath;
+const canonical = new URL(selfPath, site.url).href;
+const enHref = new URL(enPath, site.url).href;
+const koHref = new URL(koPath, site.url).href;
 const ogImage = new URL('/og.png', site.url).href;
 
-// Structured data so search engines and rich-link previews understand the page.
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
   alternateName: site.nameKo,
-  jobTitle: resume.role,
+  jobTitle: r.role,
   url: site.url,
   email: links.email.replace('mailto:', ''),
-  address: { '@type': 'PostalAddress', addressLocality: resume.location },
+  address: { '@type': 'PostalAddress', addressLocality: r.location },
   sameAs: [links.github, links.linkedin],
 };
 ---
 <!doctype html>
-<html lang={site.locale} class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,31 +49,31 @@ const personJsonLd = {
     <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
 
     <title>{pageTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={desc} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="ko" href={koHref} />
+    <link rel="alternate" hreflang="x-default" href={enHref} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={lang === 'ko' ? 'ko_KR' : 'en_US'} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={desc} />
     <meta name="twitter:image" content={ogImage} />
 
     <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
 
-    <!--
-      Apply the saved (or system) theme before first paint to avoid a flash of
-      the wrong theme. Kept inline and tiny — no external JS.
-    -->
     <script is:inline>
       (() => {
         const root = document.documentElement;
@@ -72,7 +82,6 @@ const personJsonLd = {
         if (stored === 'dark' || (!stored && prefersDark)) {
           root.classList.add('dark');
         }
-        // Always print in light mode, then restore the on-screen theme.
         let wasDark = false;
         window.addEventListener('beforeprint', () => {
           wasDark = root.classList.contains('dark');
@@ -89,12 +98,12 @@ const personJsonLd = {
       href="#main"
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-accent-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
     >
-      Skip to content
+      {t(lang, 'a11y.skip')}
     </a>
-    <Header />
+    <Header lang={lang} />
     <main id="main" class="mx-auto w-full max-w-3xl flex-1 px-6 py-16">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

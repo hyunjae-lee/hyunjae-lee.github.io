@@ -1,4 +1,5 @@
 ---
+import { t, type Lang } from '../i18n';
 interface Props {
   title: string;
   description: string;
@@ -6,8 +7,9 @@ interface Props {
   href: string; // detail page, e.g. /projects/my-project/
   date?: Date;
   status?: string; // 'in-progress' gets a distinct treatment
+  lang?: Lang;
 }
-const { title, description, tags = [], href, date, status } = Astro.props;
+const { title, description, tags = [], href, date, status, lang = 'en' } = Astro.props;
 const year = date ? new Date(date).getFullYear() : undefined;
 const inProgress = status === 'in-progress';
 ---
@@ -26,7 +28,7 @@ const inProgress = status === 'in-progress';
           <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-500 opacity-75" />
           <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-500" />
         </span>
-        In progress
+        {t(lang, 'label.inProgress')}
       </span>
     )
   }
@@ -53,6 +55,6 @@ const inProgress = status === 'in-progress';
   }
 
   <span class="mt-4 inline-block text-sm font-medium text-accent-600 transition-colors group-hover:text-accent-700 dark:text-accent-400" aria-hidden="true">
-    Read more →
+    {t(lang, 'action.readMore')}
   </span>
 </article>

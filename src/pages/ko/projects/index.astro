@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectList from '../../../components/ProjectList.astro';
+import { t } from '../../../i18n';
+---
+<BaseLayout lang="ko" title={t('ko', 'projects.title')} description={t('ko', 'projects.intro')}>
+  <ProjectList lang="ko" />
+</BaseLayout>
