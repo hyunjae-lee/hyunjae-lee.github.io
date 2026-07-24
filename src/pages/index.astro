@@ -261,32 +261,37 @@ const publications = resume.publications ?? [];
           <span class="h-px w-6 bg-gradient-to-r from-accent-500 to-transparent" aria-hidden="true" />
           Honors &amp; Awards
         </h2>
-        <ul class="mt-8 space-y-2">
-          {resume.honors.map((h) =>
-            h.image ? (
-              <li>
-                <button
-                  type="button"
-                  class="cert-trigger group flex w-full items-start gap-3 text-left text-sm text-zinc-700 transition-colors hover:text-accent-600 dark:text-zinc-300 dark:hover:text-accent-400"
-                  data-cert={h.image}
-                  data-caption={h.text}
-                >
-                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" aria-hidden="true" />
-                  <span>
-                    {h.text}
-                    <span class="ml-1 whitespace-nowrap text-xs font-medium text-accent-600 underline-offset-2 group-hover:underline dark:text-accent-400">
-                      — view certificate
-                    </span>
+        <ul class="mt-8 space-y-3">
+          {resume.honors.map((h) => (
+            <li class="flex items-start gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+              <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" aria-hidden="true" />
+              <span>
+                {h.text}
+                {(h.image || h.project) && (
+                  <span class="ml-2 inline-flex flex-wrap items-baseline gap-x-3 align-baseline">
+                    {h.image && (
+                      <button
+                        type="button"
+                        class="cert-trigger whitespace-nowrap text-xs font-medium text-accent-600 underline-offset-2 hover:underline dark:text-accent-400"
+                        data-cert={h.image}
+                        data-caption={h.text}
+                      >
+                        view certificate
+                      </button>
+                    )}
+                    {h.project && (
+                      <a
+                        href={`/projects/${h.project}/`}
+                        class="whitespace-nowrap text-xs font-medium text-accent-600 underline-offset-2 hover:underline dark:text-accent-400"
+                      >
+                        view project →
+                      </a>
+                    )}
                   </span>
-                </button>
-              </li>
-            ) : (
-              <li class="flex items-start gap-3 text-sm text-zinc-700 dark:text-zinc-300">
-                <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" aria-hidden="true" />
-                <span>{h.text}</span>
-              </li>
-            )
-          )}
+                )}
+              </span>
+            </li>
+          ))}
         </ul>
       </section>
     )

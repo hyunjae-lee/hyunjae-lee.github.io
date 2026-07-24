@@ -196,18 +196,22 @@ export const resume = {
     { name: 'French', level: 'Elementary' },
   ] as Array<{ name: string; level: string; badge?: string }>,
 
-  // Honors — add `image` (a file in public/awards/) to show the certificate in the gallery.
+  // Honors — `image`: certificate file in public/awards/; `project`: linked project slug.
   honors: [
-    { text: 'Special Commendation, KAIST — Next-Generation Integrated Information System (2025)' },
+    {
+      text: 'Special Commendation, KAIST — Next-Generation Integrated Information System (2025)',
+      project: 'kaist-next-gen-information-system',
+    },
     {
       text: 'Bronze Prize — 2019 SW Challenge, Korea Software Industry Association (HighlightU)',
       image: '/awards/sw-challenge-bronze-2019.jpg',
+      project: 'highlightu',
     },
     {
       text: 'Excellence Award — 2019 DaVinci SW TECH-FAIR, Chung-Ang University',
       image: '/awards/davinci-tech-fair-2019.jpg',
     },
-  ] as Array<{ text: string; image?: string }>,
+  ] as Array<{ text: string; image?: string; project?: string }>,
 
   // Academic output from earlier research — kept as a credential.
   publications: [
