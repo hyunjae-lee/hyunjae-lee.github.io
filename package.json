@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "diagrams": "node diagrams/build.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.11"
   }
 }

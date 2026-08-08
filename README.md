@@ -35,10 +35,12 @@ src/
 │  ├─ 404.astro
 │  └─ projects/           # list + [slug] detail, generated from content
 ├─ content/
-│  ├─ projects/           # one Markdown file per project
+│  ├─ projects/           # one Markdown file per project (English)
+│  ├─ projects-ko/        # Korean translations, matching slugs
 │  └─ blog/               # reserved for a future blog
 └─ styles/global.css      # Tailwind, dark mode, and print styles
-public/                   # favicon, og.png, robots.txt
+public/                   # favicon, og.png, robots.txt, project diagrams
+diagrams/                 # diagram sources — see "Project diagrams"
 scripts/gen-og.mjs        # regenerate the social share image
 ```
 
@@ -63,6 +65,27 @@ to keep it at the top.
 
 The home page has a print stylesheet: **Cmd/Ctrl + P → Save as PDF** produces a clean,
 light-themed resume with the site chrome removed.
+
+## Project diagrams
+
+The certificate-automation diagrams are generated, not hand-drawn — so the Korean and English
+versions never drift apart.
+
+```bash
+npm run diagrams
+```
+
+This renders four fixed-size HTML canvases with headless Chrome and writes an optimized PNG plus
+a vector PDF for each into `public/projects/`:
+
+| File | Source |
+| --- | --- |
+| [`diagrams/strings.mjs`](diagrams/strings.mjs) | all diagram copy, Korean and English side by side |
+| [`diagrams/templates.mjs`](diagrams/templates.mjs) | layout — box positions, connectors, colors |
+| [`diagrams/build.mjs`](diagrams/build.mjs) | renders and optimizes the output |
+
+**Edit text in `strings.mjs` only.** Both languages share one layout, so changing copy on one side
+without the other is immediately visible. Requires Chrome installed locally.
 
 ## Social share image
 

@@ -60,7 +60,7 @@ const resumeEn = {
           points: [
             'Lead web application vulnerability assessment and analysis — identifying and validating flaws, prioritizing by risk, and coordinating remediation with service owners.',
             'Manage the SSL/TLS certificate lifecycle across web services — issuance, renewal, and deployment — enforcing strong cryptographic configurations and preventing expiry-driven outages.',
-            'Designing and building an automated internal PKI — a private ACME CA (step-ca) — so server certificates issue and renew hands-off, eliminating manual network-team requests and expiry outages.',
+            'Designing and building campus-wide certificate automation — a one-command ACME installer that obtains and renews publicly trusted Let’s Encrypt certificates, with a central portal tracking every server, eliminating manual requests and expiry-driven outages.',
             'Operate and tune the Web Application Firewall (WAF), maintaining rule sets and policies that block web-layer attacks while minimizing false positives.',
             'Apply automation and AI-assisted analysis to accelerate vulnerability triage and anomaly detection.',
           ],
@@ -247,7 +247,7 @@ const resumeKo: typeof resumeEn = {
           points: [
             '웹 애플리케이션 취약점 점검·분석을 주도 — 취약점 식별·검증, 위험도 기반 우선순위화, 서비스 담당자와의 조치 협업.',
             'SSL/TLS 인증서 수명주기 관리 — 발급·갱신·배포, 강력한 암호화 설정 적용, 만료로 인한 장애 예방.',
-            '사설 ACME 인증기관(step-ca) 기반 사내 인증서 자동화(PKI)를 설계·구축 — 서버 인증서를 무인 발급·갱신하여 통신팀 반복 요청과 만료 장애를 제거.',
+            '교내 전체 웹 인증서 자동화를 설계·구축 — 명령 한 줄로 공인 인증서(Let’s Encrypt)를 ACME로 발급·갱신하는 설치 체계와, 전 서버 현황을 추적하는 관리 포털로 반복 요청과 만료 장애를 제거.',
             '웹 방화벽(WAF) 운영·튜닝 — 웹 계층 공격을 차단하는 룰셋·정책을 유지하며 오탐을 최소화.',
             '자동화와 AI 보조 분석을 활용해 취약점 트리아지와 이상 탐지를 가속.',
           ],
