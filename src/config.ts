@@ -23,29 +23,36 @@ export const avatar = '/profile.jpg';
 const resumeEn = {
   title: 'Hyunjae Lee — Information Security Engineer',
   tagline:
-    'Hardening web services and enterprise systems — vulnerability assessment, TLS, and WAF — with a strong command of modern AI/ML.',
+    'Securing how an institution uses AI and the web — LLM guardrails measured, not assumed; vulnerability assessment, TLS automation, and WAF at campus scale.',
   bio: 'There is such a world to see.',
   role: 'Information Security Engineer',
   location: 'Daejeon, Republic of Korea',
   available: 'Information Security Team · KAIST',
 
   summary:
-    'Information Security Engineer at KAIST. My current focus (since July 2026) is ' +
-    '<span class="font-semibold text-accent-600 dark:text-accent-400">web security</span> — ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">web application vulnerability assessment</strong>, ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">SSL/TLS certificate management</strong>, and ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">Web Application Firewall (WAF)</strong> operations. ' +
-    'Before that I led information-security governance — ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">100+ annual security reviews</strong> of KAIST’s major IT initiatives in ' +
-    'collaboration with the <strong class="text-zinc-900 dark:text-zinc-100">NIS and MSIT</strong>, plus ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">MSIT-led security &amp; privacy audits</strong> grounded in the national ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">Cybersecurity Guidelines</strong> — and spent five years operating core academic ' +
-    'systems, including a key working-level role in a <strong class="text-zinc-900 dark:text-zinc-100">~USD 130M</strong> ' +
-    'next-generation information-system program, with earlier experience migrating enterprise products to ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">cloud-native infrastructure (Docker, Kubernetes)</strong>. I also bring a ' +
-    '<span class="font-semibold text-accent-600 dark:text-accent-400">professional command of modern AI/ML</span> — from classical ' +
-    'machine learning to <strong class="text-zinc-900 dark:text-zinc-100">LLM-based tooling</strong> — and apply it to automate and ' +
-    'sharpen security work.',
+    'Information Security Engineer at KAIST, working where ' +
+    '<span class="font-semibold text-accent-600 dark:text-accent-400">AI security</span> meets day-to-day security operations. ' +
+    'As principal investigator of a 2026 field study, I built an ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">LLM guardrail gateway</strong> aligned with the NIS N2SF framework and validated it on a ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">205-prompt evaluation set</strong> — missed attacks ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">30% → 0%</strong>, benign false blocks 2.6% → 0%, at ~6 ms per inspection without a GPU. ' +
+    'In web security I run the campus ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">web vulnerability assessment</strong> (99.4% of mandated targets across ~1,200 sites), ' +
+    'operate the WAF, and built ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">certificate automation</strong> now renewing certificates on 70+ servers with zero expiries. ' +
+    'Before that I led security governance — ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">100+ security reviews a year</strong> with the NIS and MSIT and the MSIT security &amp; privacy audit — ' +
+    'and spent five years on core academic systems, including a key role in a ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">~USD 130M</strong> next-generation information-system program. ' +
+    'Earlier work spans ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">cloud-native infrastructure (Docker, Kubernetes)</strong>, machine learning, and an IEEE paper and patent in applied security.',
+
+  now: [
+    { title: 'Agent tool-execution control', text: 'Extending the guardrail from inspecting words to inspecting actions — policy enforcement for AI agents’ tool calls and MCP servers (OWASP LLM06).' },
+    { title: 'Red-teaming my own guardrail', text: 'An automated Korean jailbreak and prompt-injection generator, plus re-measurement on a held-out set written by someone else.' },
+    { title: 'LLM-assisted vulnerability triage, on-prem', text: 'Testing a local LLM on scanner findings and code review against the current knowledge-base baseline — measured, with no data leaving the institution.' },
+    { title: 'Offensive fundamentals', text: 'Web exploitation labs, malware analysis and reverse engineering, and IDS rule writing — turning defenses I build into attacks I can test.' },
+  ],
 
   experience: [
     {
@@ -58,11 +65,12 @@ const resumeEn = {
           period: 'Jul 2026 — Present',
           focus: 'Information Security Team · Web Security',
           points: [
-            'Lead web application vulnerability assessment and analysis — identifying and validating flaws, prioritizing by risk, and coordinating remediation with service owners.',
-            'Manage the SSL/TLS certificate lifecycle across web services — issuance, renewal, and deployment — enforcing strong cryptographic configurations and preventing expiry-driven outages.',
-            'Designing and building campus-wide certificate automation — a one-command ACME installer that obtains and renews publicly trusted Let’s Encrypt certificates, with a central portal tracking every server, eliminating manual requests and expiry-driven outages.',
-            'Operate and tune the Web Application Firewall (WAF), maintaining rule sets and policies that block web-layer attacks while minimizing false positives.',
-            'Apply automation and AI-assisted analysis to accelerate vulnerability triage and anomaly detection.',
+            'Principal investigator of a staff field study on secure generative-AI adoption: built an institutional LLM guardrail gateway (8 outbound / 6 inbound inspection stages, RAG clearance control, canary tokens) mapped to the NIS N2SF AI architecture, and a 205-prompt evaluation set with a CI gate — missed attacks 30% → 0%, benign false blocks 2.6% → 0%, ~6 ms per inspection on two GPU-less servers.',
+            'Ran the H2 2026 campus web vulnerability assessment under the MSIT plan: 99.4% coverage of mandated targets (519/522) across ~1,200 live domains, closing the commercial scanner’s gaps with nuclei self-scans; delivered remediation guidance to 56 owners of 62 affected sites (214 high, 832 medium findings).',
+            'Built campus-wide certificate automation (in production since May 2026): a one-command ACME installer, self-updating agent, four-point certificate fingerprint checks, and DNS-01 delegation for closed servers — 73 servers enrolled, 109 automatic renewals, zero expiries.',
+            'Designing SafeWeb, a self-service security portal (scan request, automatic ownership verification, offline Korean remediation reports, rescans), with a verifiable data boundary for AI-assisted development.',
+            'Wrote threat-intelligence triage criteria for ~9,500 malicious-URL IoCs (graded evidence, verdicts separated from blocking scope), and turned the KISA critical-infrastructure guide into 47 remotely assessable server-baseline checks.',
+            'Operate and tune the Web Application Firewall (WAF), balancing web-layer attack blocking against false positives.',
           ],
         },
         {
@@ -137,21 +145,33 @@ const resumeEn = {
 
   skills: [
     {
+      group: 'AI Security',
+      items: [
+        'LLM Guardrails',
+        'Prompt Injection Defense',
+        'RAG Access Control',
+        'AI Red-Team Evaluation',
+        'OWASP LLM Top 10 · MITRE ATLAS',
+        'N2SF · AI Governance',
+      ],
+    },
+    {
       group: 'Security',
       items: [
-        'Web Vulnerability Assessment',
-        'SSL/TLS & PKI',
+        'Web Vulnerability Assessment (nuclei)',
+        'SSL/TLS · PKI · ACME',
         'Web Application Firewall (WAF)',
-        'Security Audit & Review',
-        'Policy & Governance',
+        'Threat Intelligence · IoC Triage',
+        'Malware Analysis · MITRE ATT&CK',
+        'Security Review · Audit · Policy',
       ],
     },
     {
       group: 'AI / Machine Learning',
-      items: ['Machine Learning', 'Deep Learning', 'LLMs & Generative AI', 'Applied AI for Security'],
+      items: ['Machine Learning', 'Deep Learning', 'LLMs & Generative AI', 'Korean NER (ONNX)', 'AI Coding Agents'],
     },
-    { group: 'Cloud & Infrastructure', items: ['Docker', 'Kubernetes'] },
-    { group: 'Systems & Development', items: ['Java', 'Python', 'Spring Framework', 'Enterprise Systems'] },
+    { group: 'Cloud & Infrastructure', items: ['Docker', 'Kubernetes', 'CI/CD', 'Linux · Windows Server', 'DNS'] },
+    { group: 'Systems & Development', items: ['Python', 'FastAPI', 'Java', 'Spring Framework', 'Enterprise Systems'] },
   ],
 
   certifications: [
@@ -212,27 +232,35 @@ const resumeEn = {
 const resumeKo: typeof resumeEn = {
   title: 'Hyunjae Lee — 정보보안 엔지니어',
   tagline:
-    '웹 서비스와 엔터프라이즈 시스템을 견고하게 — 취약점 점검, TLS, WAF, 그리고 탄탄한 AI/ML 역량까지.',
+    '기관이 AI와 웹을 안전하게 쓰도록 — 추정이 아니라 측정으로 검증한 LLM 가드레일, 그리고 캠퍼스 규모의 취약점 점검·TLS 자동화·WAF.',
   bio: 'There is such a world to see.',
   role: '정보보안 엔지니어',
   location: '대한민국 대전',
   available: '정보보안팀 · KAIST',
 
   summary:
-    '<span class="font-semibold text-accent-600 dark:text-accent-400">웹 보안</span>을 중심으로 일하는 KAIST 정보보안 엔지니어입니다. ' +
-    '현재(2026년 7월~)는 <strong class="text-zinc-900 dark:text-zinc-100">웹 애플리케이션 취약점 점검·분석</strong>, ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">SSL/TLS 인증서 관리</strong>, ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">웹 방화벽(WAF) 운영</strong>을 담당합니다. ' +
-    '그전에는 정보보안 거버넌스를 이끌며, 국가정보원(NIS)·과학기술정보통신부(MSIT)와 협력해 KAIST 주요 정보화사업에 대한 ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">연 100건 이상의 보안성 검토</strong>를 수행하고, 국가 ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">사이버보안 기본지침</strong>에 기반한 ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">과기정통부 주관 정보보안·개인정보 감사</strong>에 대응했습니다. ' +
-    '또한 5년간 핵심 학사 시스템을 운영하며 <strong class="text-zinc-900 dark:text-zinc-100">약 USD 130M</strong> 규모의 ' +
-    '차세대 정보시스템 구축에 핵심 실무자로 참여했고, 이전에는 엔터프라이즈 제품을 ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">클라우드 네이티브 인프라(Docker, Kubernetes)</strong>로 전환한 경험이 있습니다. ' +
-    '아울러 고전 머신러닝부터 <strong class="text-zinc-900 dark:text-zinc-100">LLM 기반 도구</strong>까지 ' +
-    '<span class="font-semibold text-accent-600 dark:text-accent-400">현대 AI/ML에 대한 전문적 이해와 숙련도</span>를 갖추고, ' +
-    '이를 보안 업무의 자동화와 고도화에 활용합니다.',
+    '<span class="font-semibold text-accent-600 dark:text-accent-400">AI 보안</span>과 현장 보안 운영이 만나는 지점에서 일하는 KAIST 정보보안 엔지니어입니다. ' +
+    '2026년 직원 현장연구의 연구책임자로 국가정보원 N2SF 구성도에 대응하는 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">LLM 가드레일 게이트웨이</strong>를 구현하고, ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">평가셋 205문항</strong>으로 실증해 놓친 공격 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">30% → 0%</strong>, 정상 질의 오차단 2.6% → 0%를 달성했습니다(검사당 약 6ms, GPU 없음). ' +
+    '웹 보안에서는 교내 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">웹 취약점 정기 점검</strong>(약 1,200개 사이트, 계획 대상 99.4% 점검)과 WAF를 운영하고, ' +
+    '서버 70여 대의 인증서를 만료 없이 갱신 중인 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">인증서 자동화 체계</strong>를 직접 만들었습니다. ' +
+    '그전에는 국가정보원·과학기술정보통신부와 협력해 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">연 100건 이상의 보안성 검토</strong>와 과기정통부 정보보안·개인정보 감사 대응을 이끌었고, ' +
+    '5년간 핵심 학사 시스템을 운영하며 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">약 USD 130M</strong> 규모 차세대 정보시스템 구축의 핵심 실무를 맡았습니다. ' +
+    '그 이전에는 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">클라우드 네이티브 인프라(Docker, Kubernetes)</strong>, 머신러닝, 그리고 응용 보안 분야 IEEE 논문·특허 경험이 있습니다.',
+
+  now: [
+    { title: 'AI 에이전트 도구 실행 통제', text: '질의·응답 검사에서 행동 검사로 — AI 에이전트의 도구 호출과 MCP 서버에 정책을 적용하도록 가드레일을 확장합니다(OWASP LLM06).' },
+    { title: '내 가드레일을 직접 공격하기', text: '한국어 탈옥·프롬프트 인젝션 자동 생성기를 만들고, 규칙 작성에 관여하지 않은 제3자의 시험지로 다시 측정합니다.' },
+    { title: '로컬 LLM 기반 취약점 트리아지', text: '점검 결과와 코드 리뷰에 기관 내부 LLM을 적용해 지식베이스 기반 방식과 비교 측정합니다. 데이터는 기관 밖으로 나가지 않습니다.' },
+    { title: '공격 보안 기본기', text: '웹 익스플로잇 실습, 악성코드 분석·리버싱, 탐지 룰 작성 — 만든 방어를 직접 공격해 볼 수 있도록.' },
+  ],
 
   experience: [
     {
@@ -245,11 +273,12 @@ const resumeKo: typeof resumeEn = {
           period: '2026.07 — 현재',
           focus: '정보보안팀 · 웹 보안',
           points: [
-            '웹 애플리케이션 취약점 점검·분석을 주도 — 취약점 식별·검증, 위험도 기반 우선순위화, 서비스 담당자와의 조치 협업.',
-            'SSL/TLS 인증서 수명주기 관리 — 발급·갱신·배포, 강력한 암호화 설정 적용, 만료로 인한 장애 예방.',
-            '교내 전체 웹 인증서 자동화를 설계·구축 — 명령 한 줄로 공인 인증서(Let’s Encrypt)를 ACME로 발급·갱신하는 설치 체계와, 전 서버 현황을 추적하는 관리 포털로 반복 요청과 만료 장애를 제거.',
-            '웹 방화벽(WAF) 운영·튜닝 — 웹 계층 공격을 차단하는 룰셋·정책을 유지하며 오탐을 최소화.',
-            '자동화와 AI 보조 분석을 활용해 취약점 트리아지와 이상 탐지를 가속.',
+            '직원 현장연구 「생성형 AI 도입을 위한 보안 프레임워크 및 가드레일 실증 연구」 연구책임자 — 국가정보원 N2SF AI 연계체계에 대응하는 기관 전용 LLM 가드레일 게이트웨이(송신 8단계·수신 6단계, RAG 권한 통제, 카나리아 토큰)와 평가셋 205문항·배포 게이트를 구축하여 놓친 공격 30%→0%, 정상 질의 오차단 2.6%→0%, 검사당 약 6ms(GPU 없이 1U 서버 2대)를 실증.',
+            '2026 하반기 과기정통부 계획에 따른 교내 웹 취약점 정기 점검 운영 — 운영 도메인 약 1,200개 대상, 계획 대상 점검률 99.4%(519/522), 상용 스캐너 미점검분은 nuclei 자체점검으로 해소, 취약 사이트 62개(상 214·중 832건) 담당자 56명에게 조치 안내.',
+            '교내 인증서 자동화 체계 구축·운영(2026.05~) — 명령 한 줄 ACME 설치, 자가 업데이트 에이전트, 인증서 4지점 지문 대조, 80번을 열 수 없는 서버를 위한 DNS-01 위임 설계. 서버 73대 등록, 자동 갱신 109건, 만료 0건.',
+            '셀프서비스 웹 보안포털(SafeWeb) 설계 — 점검 신청, 서버 소유권 자동 확인, 외부 반출 없는 오프라인 한글 조치 리포트, 재점검 대조. AI 보조 개발에 검증 가능한 데이터 경계 적용.',
+            '악성 URL IoC 약 9,500건에 대한 위협 인텔리전스 판정 기준 수립(근거 등급화, 판정과 차단 범위 분리), KISA 주요정보통신기반시설 가이드를 원격 판정 가능한 서버 보안 기준 47개 항목으로 설계.',
+            '웹 방화벽(WAF) 운영·튜닝 — 웹 계층 공격 차단과 오탐 최소화의 균형 유지.',
           ],
         },
         {
@@ -320,15 +349,19 @@ const resumeKo: typeof resumeEn = {
 
   skills: [
     {
+      group: 'AI 보안',
+      items: ['LLM 가드레일', '프롬프트 인젝션 방어', 'RAG 권한 통제', 'AI 레드팀 평가', 'OWASP LLM Top 10 · MITRE ATLAS', 'N2SF · AI 거버넌스'],
+    },
+    {
       group: '보안',
-      items: ['웹 취약점 점검', 'SSL/TLS · PKI', '웹 방화벽(WAF)', '보안감사 · 보안성검토', '정책 · 거버넌스'],
+      items: ['웹 취약점 점검(nuclei)', 'SSL/TLS · PKI · ACME', '웹 방화벽(WAF)', '위협 인텔리전스 · IoC 판정', '악성코드 분석 · MITRE ATT&CK', '보안성검토 · 감사 · 정책'],
     },
     {
       group: 'AI / 머신러닝',
-      items: ['머신러닝', '딥러닝', 'LLM · 생성형 AI', '보안 응용 AI'],
+      items: ['머신러닝', '딥러닝', 'LLM · 생성형 AI', '한국어 NER(ONNX)', 'AI 코딩 에이전트'],
     },
-    { group: '클라우드 · 인프라', items: ['Docker', 'Kubernetes'] },
-    { group: '시스템 · 개발', items: ['Java', 'Python', 'Spring Framework', '엔터프라이즈 시스템'] },
+    { group: '클라우드 · 인프라', items: ['Docker', 'Kubernetes', 'CI/CD', 'Linux · Windows Server', 'DNS'] },
+    { group: '시스템 · 개발', items: ['Python', 'FastAPI', 'Java', 'Spring Framework', '엔터프라이즈 시스템'] },
   ],
 
   certifications: [
