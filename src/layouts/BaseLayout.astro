@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ImageDialog from '../components/ImageDialog.astro';
 import { site, links, resume } from '../config';
 import { t, type Lang } from '../i18n';
 import '../styles/global.css';
@@ -45,6 +46,14 @@ const personJsonLd = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Color scheme: "light dark" follows the OS; a stored override pins "light" or "dark".
+         This tiny inline script only exists to avoid a flash of the wrong scheme. -->
+    <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      try {
+        document.querySelector('meta[name="color-scheme"]').content = localStorage.getItem('color-scheme') ?? 'light dark';
+      } catch {}
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
@@ -76,23 +85,19 @@ const personJsonLd = {
 
     <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
 
-    <script is:inline>
-      (() => {
-        const root = document.documentElement;
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'dark' || (!stored && prefersDark)) {
-          root.classList.add('dark');
-        }
-        let wasDark = false;
-        window.addEventListener('beforeprint', () => {
-          wasDark = root.classList.contains('dark');
-          root.classList.remove('dark');
-        });
-        window.addEventListener('afterprint', () => {
-          if (wasDark) root.classList.add('dark');
-        });
-      })();
+    <!-- Speculative loading (modern-web-guidance: improve-next-page-load-performance):
+         prefetch same-origin pages on hover/press; never the PDF downloads. -->
+    <script type="speculationrules" is:inline>
+      {
+        "prefetch": [{
+          "where": { "and": [
+            { "href_matches": "/*" },
+            { "not": { "href_matches": "/resume/*" } },
+            { "not": { "href_matches": "/*.pdf" } }
+          ] },
+          "eagerness": "moderate"
+        }]
+      }
     </script>
   </head>
   <body class="flex min-h-screen flex-col">
@@ -107,5 +112,6 @@ const personJsonLd = {
       <slot />
     </main>
     <Footer lang={lang} />
+    <ImageDialog lang={lang} />
   </body>
 </html>

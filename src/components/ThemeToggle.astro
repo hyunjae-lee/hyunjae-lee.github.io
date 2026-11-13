@@ -1,28 +1,97 @@
 ---
-// Dark-mode toggle button. The actual class flip + persistence is handled by the
-// inline script in BaseLayout (to avoid FOUC); this button just dispatches it.
+/**
+ * Two-state color-scheme toggle (modern-web-guidance: dark-mode-toggle).
+ *
+ * States: "system" (no stored value, meta = "light dark") and an override that is
+ * the opposite of the system preference, stored literally as "light" or "dark".
+ * Toggling targets the opposite of what is rendered now; if that equals the system
+ * preference the stored value is removed, so the site follows the OS again.
+ *
+ * Both icons are in the markup and the inactive one is hidden with the `dark:`
+ * variant, so the control stays correct even before (or without) JavaScript.
+ */
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const label =
+  lang === 'ko'
+    ? { toDark: '어두운 테마로 전환', toLight: '밝은 테마로 전환' }
+    : { toDark: 'Switch to dark theme', toLight: 'Switch to light theme' };
 ---
 <button
   id="theme-toggle"
   type="button"
   class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-zinc-200 text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
-  aria-label="다크 모드 전환 / Toggle dark mode"
 >
-  <!-- Sun icon (shown in dark mode → click to go light) -->
-  <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="4"></circle>
-    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-  </svg>
-  <!-- Moon icon (shown in light mode → click to go dark) -->
-  <svg class="block h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-  </svg>
+  <!-- Rendered light → offer dark -->
+  <span class="contents dark:hidden">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+    <span class="visually-hidden">{label.toDark}</span>
+  </span>
+  <!-- Rendered dark → offer light -->
+  <span class="hidden dark:contents">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+    </svg>
+    <span class="visually-hidden">{label.toLight}</span>
+  </span>
 </button>
 
 <script>
-  const toggle = document.getElementById('theme-toggle');
-  toggle?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  const KEY = 'color-scheme';
+  const meta = document.querySelector<HTMLMetaElement>('meta[name="color-scheme"]');
+  const system = matchMedia('(prefers-color-scheme: dark)');
+
+  const read = (): string | null => {
+    try {
+      return localStorage.getItem(KEY);
+    } catch {
+      return null;
+    }
+  };
+  const write = (value: string | null) => {
+    try {
+      if (value) localStorage.setItem(KEY, value);
+      else localStorage.removeItem(KEY);
+    } catch {
+      /* storage blocked — the scheme still applies for this page */
+    }
+  };
+  const apply = (value: string | null) => {
+    if (meta) meta.content = value ?? 'light dark';
+  };
+  const systemScheme = () => (system.matches ? 'dark' : 'light');
+  const rendered = () => {
+    const c = meta?.content ?? 'light dark';
+    return c === 'light dark' ? systemScheme() : c;
+  };
+
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const target = rendered() === 'dark' ? 'light' : 'dark';
+    // Matching the system preference means "undo my adjustment": follow the OS again.
+    const stored = target === systemScheme() ? null : target;
+    write(stored);
+    apply(stored);
+  });
+
+  // Keep other tabs in sync.
+  addEventListener('storage', (e) => {
+    if (e.key === KEY) apply(e.newValue);
+  });
+
+  // Print in the light scheme, then restore.
+  let before: string | null = null;
+  addEventListener('beforeprint', () => {
+    before = meta?.content ?? null;
+    apply('light');
+  });
+  addEventListener('afterprint', () => {
+    if (meta && before) meta.content = before;
   });
 </script>
