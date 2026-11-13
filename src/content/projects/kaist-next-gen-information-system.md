@@ -2,7 +2,7 @@
 title: Next-Generation Integrated Information System
 description: A 3-year, ~USD 130M institution-wide program at KAIST — I analyzed and systematized the university's most rule-dense domain (curriculum, course registration, classes, graduation) from design through deployment. Recognized with a Special Commendation.
 date: 2025-07-01
-tags: [Enterprise Systems, System Integration, Academic Affairs, Business Rules, Deployment]
+tags: [Enterprise Systems, System Integration, Academic Affairs, Business Rules, Privacy, Access Control, Deployment]
 featured: true
 draft: false
 ---
@@ -73,6 +73,21 @@ whole university can trust:
   recurring errors.
 - Safeguarded **registration and record integrity** across the enrollment lifecycle and the
   migration of years of academic data.
+
+## Security and privacy
+
+Academic data (grades, records, discipline, scholarships) is the densest collection of sensitive
+personal data a university holds, so protection was designed in alongside the features:
+
+- **Access control.** Designed which menus and data each role (student, faculty, department,
+  registrar) can reach, and verified it by testing each role against what it should and shouldn't see.
+- **Encryption and masking.** Personal identifiers are stored encrypted, and screens and printouts
+  show only as much as the task requires.
+- **Privacy impact assessment and access logging.** Reflected the privacy-impact-assessment
+  requirements in the design, and applied access-logging requirements so it's recorded who viewed
+  or processed which personal data.
+- **Vulnerability remediation and secure coding.** Fixed the findings from the pre-launch security
+  assessment and applied secure-coding rules in development.
 
 ## Verification & deployment
 
