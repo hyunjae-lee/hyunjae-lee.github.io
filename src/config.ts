@@ -190,6 +190,21 @@ const resumeEn = {
     { name: 'Cloud Computing 101 (클라우드 컴퓨팅 기초)' },
   ],
 
+  training: [
+    {
+      name: 'Local LLM Deployment and Practical Application',
+      issuer: 'Cyber Security Training Center (사이버안보훈련센터)',
+      date: 'Jun 2026',
+      hours: '21 hrs',
+    },
+    {
+      name: 'Security Review of Public IT Projects (정보화사업 보안성 검토)',
+      issuer: 'Cyber Security Training Center (사이버안보훈련센터)',
+      date: 'May 2026',
+      hours: '7 hrs',
+    },
+  ],
+
   languages: [
     { name: 'Korean', level: 'Native' },
     { name: 'English', level: 'Professional Working', badge: 'OPIc AL · highest grade' },
@@ -379,6 +394,11 @@ const resumeKo: typeof resumeEn = {
       note: 'AL은 OPIc에서 부여하는 최고 등급 · 2027.12까지 유효',
     },
     { name: 'Cloud Computing 101 (클라우드 컴퓨팅 기초)' },
+  ],
+
+  training: [
+    { name: '로컬 LLM 구축 및 실무 적용', issuer: '사이버안보훈련센터', date: '2026.06', hours: '21시간' },
+    { name: '정보화사업 보안성 검토', issuer: '사이버안보훈련센터', date: '2026.05', hours: '7시간' },
   ],
 
   languages: [

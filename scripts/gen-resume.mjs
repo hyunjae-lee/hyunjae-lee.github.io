@@ -51,7 +51,7 @@ const content = {
       ['0건', '인증서 만료 (자동 갱신 체계 운영)'],
       ['100+/년', '국정원·과기정통부 협력 보안성 검토'],
     ],
-    h: { exp: '경력', skills: '기술', edu: '학력', cert: '자격 · 어학', pub: '논문 · 특허', honors: '수상' },
+    h: { exp: '경력', skills: '기술', edu: '학력', cert: '자격 · 어학', training: '교육 이수', pub: '논문 · 특허', honors: '수상' },
     experience: [
       {
         org: 'KAIST', role: '기술원', period: '2020 — 현재',
@@ -95,6 +95,7 @@ const content = {
       ['ECE Paris 정보시스템 교환학생', '2018 — 2019'],
     ],
     certs: ['정보처리기사 (2024)', 'OPIc 영어 AL — 최고 등급 (2025)', '영어 업무 능숙 · 스페인어·프랑스어 초급'],
+    training: ['로컬 LLM 구축 및 실무 적용 — 사이버안보훈련센터, 21시간 (2026)', '정보화사업 보안성 검토 — 사이버안보훈련센터, 7시간 (2026)'],
     pubs: [
       'Recipient-Oriented Transaction for Preventing Double Spending Attacks in Private Blockchain — IEEE SECON 2018',
       '특허 KR 10-2018-0089040 — 이중지불 방지를 위한 수신자 중심 트랜잭션 검증 방법 및 장치',
@@ -116,7 +117,7 @@ const content = {
       ['0', 'certificate expiries under automated renewal'],
       ['100+/yr', 'security reviews with the NIS and MSIT'],
     ],
-    h: { exp: 'Experience', skills: 'Skills', edu: 'Education', cert: 'Certifications · Languages', pub: 'Publications · Patent', honors: 'Honors' },
+    h: { exp: 'Experience', skills: 'Skills', edu: 'Education', cert: 'Certifications · Languages', training: 'Training · Cyber Security Training Center', pub: 'Publications · Patent', honors: 'Honors' },
     experience: [
       {
         org: 'KAIST', role: 'Engineer', period: '2020 — Present',
@@ -156,10 +157,11 @@ const content = {
       ['Dev · Infra', 'Python · FastAPI · Java/Spring · Docker · Kubernetes · CI/CD · Linux/Windows Server · DNS · ONNX (Korean NER)'],
     ],
     education: [
-      ['B.S. Computer Science & Engineering, Chung-Ang University', '2013 — 2020'],
+      ['B.S. Computer Science & Eng., Chung-Ang Univ.', '2013 — 2020'],
       ['Information Systems (Exchange), ECE Paris', '2018 — 2019'],
     ],
     certs: ['Engineer Information Processing (2024)', 'OPIc English AL — highest grade (2025)', 'Korean native · English professional · Spanish, French elementary'],
+    training: ['Local LLM Deployment & Application — 21 hrs (2026)', 'Security Review of Public IT Projects — 7 hrs (2026)'],
     pubs: [
       'Recipient-Oriented Transaction for Preventing Double Spending Attacks in Private Blockchain — IEEE SECON 2018',
       'Patent KR 10-2018-0089040 — Recipient-oriented transaction verification for preventing double spending',
@@ -191,7 +193,7 @@ function html(c) {
   html, body { width: 210mm; }
   body {
     font-family: 'Pretendard', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Segoe UI', Arial, sans-serif;
-    color: #27272a; font-size: 8.4pt; line-height: 1.42; padding: 11mm 13mm 9mm;
+    color: #27272a; font-size: 8.2pt; line-height: 1.4; padding: 10mm 13mm 6mm;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
     word-break: ${c.lang === 'ko' ? 'keep-all' : 'normal'};
   }
@@ -245,6 +247,8 @@ ${exp}
     <ul class="plain edu">${c.education.map(([t, p]) => `<li><span>${t}</span><span class="period">${p}</span></li>`).join('')}</ul>
     <h2>${c.h.cert}</h2>
     <ul class="plain">${c.certs.map((x) => `<li>${x}</li>`).join('')}</ul>
+    <h2>${c.h.training}</h2>
+    <ul class="plain">${c.training.map((x) => `<li>${x}</li>`).join('')}</ul>
   </div>
   <div>
     <h2>${c.h.pub}</h2>

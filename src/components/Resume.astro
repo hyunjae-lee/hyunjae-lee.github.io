@@ -259,6 +259,29 @@ const resumeFiles = [
   </div>
 </section>
 
+<!-- Training -->
+{
+  r.training && r.training.length > 0 && (
+    <section class="mt-16">
+      <h2 class="flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-zinc-400">
+        <span class="h-px w-6 bg-gradient-to-r from-accent-500 to-transparent" aria-hidden="true" />
+        {t(lang, 'section.training')}
+      </h2>
+      <ul class="mt-8 space-y-4">
+        {r.training.map((tr) => (
+          <li class="grid gap-1 sm:grid-cols-[6rem_1fr] sm:gap-6">
+            <p class="text-sm text-zinc-400">{tr.date}</p>
+            <div>
+              <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">{tr.name}</p>
+              <p class="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">{[tr.issuer, tr.hours].filter(Boolean).join(' · ')}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 <!-- Publications & Patents -->
 {
   publications.length > 0 && (
