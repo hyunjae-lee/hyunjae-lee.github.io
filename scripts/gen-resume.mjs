@@ -47,7 +47,7 @@ const content = {
       'AI 보안과 현장 보안 운영이 만나는 지점에서 일합니다. 국가정보원 N2SF 구성도에 대응하는 <b>LLM 가드레일 게이트웨이</b>를 연구 프로젝트의 책임자로 구현·실증했고, 교내 웹사이트의 <b>취약점 정기 점검</b>과 <b>인증서 자동화</b>를 운영합니다. 그전에는 국정원·과기정통부와 함께 <b>연 100건 이상의 보안성 검토</b>를 이끌었고, 약 USD 130M 규모 차세대 정보시스템 구축의 핵심 실무를 맡았습니다.',
     metrics: [
       ['30% → 0%', 'LLM 가드레일 공격 미탐 (평가셋 205문항)'],
-      ['99.4%', '웹 취약점 점검률 (과기정통부 계획 대상)'],
+      ['100%', '웹 취약점 점검률 (과기정통부 계획 대상)'],
       ['0건', '인증서 만료 (자동 갱신 체계 운영)'],
       ['100+/년', '국정원·과기정통부 협력 보안성 검토'],
     ],
@@ -60,8 +60,8 @@ const content = {
             label: '정보보안팀 · 웹 보안 / AI 보안', period: '2026.07 — 현재',
             points: [
               '<b>생성형 AI 가드레일 실증 연구 연구책임자</b>(3인, 연구 프로젝트 완료·기관 운영 미적용) — 송신 8·수신 6단계 검사, RAG 권한 통제, 카나리아 토큰. 평가셋 205문항과 배포 게이트로 공격 미탐 30%→0%, 정상 오차단 2.6%→0%, 검사당 6ms(GPU 없음). OWASP LLM Top 10 대응.',
-              '<b>교내 웹 취약점 정기 점검</b> 운영 — 계획 대상 99.4% 점검, 상용 스캐너 공백은 nuclei 자체점검으로 해소, 취약 사이트 담당자 개별 조치 안내·재점검.',
-              '<b>인증서 자동화 체계</b> 설계·구축·운영 — ACME 1줄 설치, 자가 업데이트 에이전트, 4지점 지문 대조, DNS-01 위임. 인증서 만료 0건.',
+              '<b>교내 웹 취약점 정기 점검</b> 운영 — 계획 대상 100% 점검, 상용 스캐너 공백은 nuclei 자체점검으로 해소, 취약 사이트 담당자 개별 조치 안내·재점검.',
+              '<b>인증서 자동화 체계</b> 설계·구축·운영 — 명령 한 줄 ACME 설치, 자가 업데이트 에이전트, 실제 서비스 중인 인증서 검증, 80번 포트를 열 수 없는 서버용 DNS-01 인증. 인증서 만료 0건.',
               '셀프서비스 보안포털 설계, 악성 URL IoC 판정 기준 수립, KISA 가이드 기반 서버 보안 기준 47항목 자동 판정 설계, WAF 운영.',
             ],
           },
@@ -113,7 +113,7 @@ const content = {
       'I work where AI security meets day-to-day security operations. As principal investigator I built and validated an <b>LLM guardrail gateway</b> aligned with Korea’s NIS N2SF framework, as a research project, and I run <b>web vulnerability assessment</b> and <b>certificate automation</b> across the university’s websites. Before that I led <b>100+ security reviews a year</b> with the NIS and MSIT, and played a key role in a ~USD 130M next-generation information-system program.',
     metrics: [
       ['30% → 0%', 'missed attacks, LLM guardrail (205-prompt eval set)'],
-      ['99.4%', 'web assessment coverage of mandated targets'],
+      ['100%', 'web assessment coverage of mandated targets'],
       ['0', 'certificate expiries under automated renewal'],
       ['100+/yr', 'security reviews with the NIS and MSIT'],
     ],
@@ -126,8 +126,8 @@ const content = {
             label: 'Information Security Team · Web & AI Security', period: 'Jul 2026 — Present',
             points: [
               '<b>Principal investigator, generative-AI guardrail research project</b> (team of 3; completed, not deployed to production): 8 outbound / 6 inbound inspection stages, RAG clearance control, canary tokens. A 205-prompt eval set with a CI gate took missed attacks 30%→0% and false blocks 2.6%→0% at 6 ms per check, no GPU. Mapped to OWASP LLM Top 10.',
-              'Ran the <b>campus web vulnerability assessment</b>: 99.4% of mandated targets, scanner gaps closed with nuclei self-scans; individual remediation guidance and rescans for affected sites.',
-              'Designed, built, and operate <b>certificate automation</b>: one-command ACME installer, self-updating agent, four-point fingerprint checks, DNS-01 delegation. Zero certificate expiries.',
+              'Ran the <b>campus web vulnerability assessment</b>: 100% of mandated targets, scanner gaps closed with nuclei self-scans; individual remediation guidance and rescans for affected sites.',
+              'Designed, built, and operate <b>certificate automation</b>: one-command ACME installer, self-updating agent, verification of the certificate actually served, DNS-01 for servers that can’t open port 80. Zero certificate expiries.',
               'Designed a self-service security portal, IoC triage criteria for malicious URLs, and 47 automated server-baseline checks from the KISA guide; operate the WAF.',
             ],
           },

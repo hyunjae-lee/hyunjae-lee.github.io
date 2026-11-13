@@ -111,10 +111,11 @@ that were failing but didn't look like failures**. tracer reported success when 
 servers behind the WAF were counted as "someone else's certificate"; a renewal succeeded while the
 web server kept serving the old one. All of these run with clean logs until the expiry date.
 
-So the certificate is now **read in four places and compared by fingerprint**: two reported by
-tracer (the issued certificate, and the file the web server config points to) and two observed by
-the portal from outside (via the domain, and directly at the server's address). That comparison
-finally separates "the front end terminates TLS (fine)" from "renewed but not served (act now)".
+So the portal now checks **that the renewed certificate is actually being served**. It compares
+what tracer reports (the newly issued certificate, and the file the web server config points to)
+with what the portal itself receives from outside (connecting via the domain, and directly to the
+server's IP). That finally separates "a WAF in front terminates TLS, so a different certificate is
+expected (fine)" from "renewed, but the web server is still serving the old one (act now)".
 
 Since there's no way into these servers, **tracer updates itself**. The weekly request also carries
 the latest version; the swap is hash-checked, test-run, atomic, and guarded by a fleet-wide kill
@@ -124,8 +125,8 @@ Encrypt's failure quota.
 
 ## Servers that can't open port 80: DNS-01 delegation
 
-Plenty of servers can't expose port 80. What blocks automation isn't "internal-only", it's the
-validation method. The institutional zone gets **one permanent CNAME per host**; the per-renewal
+Plenty of servers can't expose port 80. What blocked automation for them wasn't being
+"internal-only"; it was HTTP-01, the validation method that proves ownership over port 80. The institutional zone gets **one permanent CNAME per host**; the per-renewal
 TXT is written only to a **dedicated delegated subzone**. Only the portal holds DNS write
 credentials, and it writes only after checking the name belongs to that tracer, so DNS credentials
 never get scattered across servers.
