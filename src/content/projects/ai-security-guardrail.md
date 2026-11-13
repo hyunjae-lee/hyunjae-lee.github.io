@@ -1,6 +1,6 @@
 ---
-title: An Institutional Gateway in Front of Generative AI — A Guardrail Field Study
-description: Designed and built a gateway that lets the institution inspect what members send to external generative AI and what comes back, then validated it on a 205-prompt university-admin evaluation set. Missed attacks 30%→0%, benign false blocks 2.6%→0%, ~6 ms per inspection, campus scale on two GPU-less 1U servers. Maps to the AI integration architecture in Korea's N2SF.
+title: An Institutional Gateway in Front of Generative AI — A Guardrail Research Project
+description: Designed and built a gateway that lets the institution inspect what members send to external generative AI and what comes back, then validated it on a 205-prompt university-admin evaluation set, as a completed research project (not deployed to the institution's production environment). Missed attacks 30%→0%, benign false blocks 2.6%→0%, ~6 ms per inspection. Maps to the AI integration architecture in Korea's N2SF.
 date: 2026-10-30
 tags: [AI Security, LLM, Prompt Injection, Guardrails, RAG, Red Teaming, N2SF, OWASP LLM Top 10, Python]
 repo: https://github.com/hyunjae-lee/AI-Security-Guardrail
@@ -21,6 +21,10 @@ estimated.
 > Learning teams) and owned the gateway design and implementation, the evaluation harness, and the
 > final presentation (47 slides). The final report was submitted in October 2026.
 > *Figures below are from the Korean report and slides.*
+
+> **Status: completed research project.** It was not deployed to the institution's production
+> environment. All measurements come from a research test server and the evaluation set; the
+> campus-wide rollout remains a **proposal** from the study.
 
 | Metric (balanced profile, evaluation set) | Before | After |
 | --- | --- | --- |
@@ -190,8 +194,8 @@ guardrails that block on keywords.
 ![Evaluation set examples — 6 benign, 6 attacks](/projects/ai-guardrail-eval-examples.webp)
 
 The scorer runs the engine, compares against labels, and reports missed attacks, hard false
-positives, and soft false positives **together**. And **every deployment re-scores automatically; a
-single missed attack or false block stops the release.**
+positives, and soft false positives **together**. And **every code change re-scores automatically; a
+single missed attack or false block fails CI.**
 
 ## Measurement found the hole
 
@@ -207,7 +211,7 @@ The first run missed 30% of attacks, and **every defect found was in Korean-lang
 4. The grant-rules document had too high a clearance, blocking researchers' routine expense questions.
 
 That's exactly the kind of hole you get from porting English-centric rules, and without measuring,
-we'd have gone live **leaking three attacks out of every ten** without knowing it.
+we'd never have known it was **leaking three attacks out of every ten**.
 
 ## Measurement also decided what not to ship
 
@@ -247,7 +251,7 @@ came from **detectors that depend on phrase lists**. Generalization needs re-mea
 set written by someone who didn't write the rules, and the location and procedure for that
 (`attacks/heldout/`) are already in the repository.
 
-## Cost: no GPU, two 1U servers
+## Sizing estimate (proposal): no GPU, two 1U servers
 
 | Item | Value |
 | --- | --- |
@@ -257,10 +261,10 @@ set written by someone who didn't write the rules, and the location and procedur
 | Purchase | ₩14–18M (₩230–300k/month over 5 years) |
 | Long-input latency | 100 chars 8.8 ms · 2,000 chars 172 ms · 10,000 chars 852 ms |
 
-Inspection hardware costs under a tenth of the external AI usage bill. The largest cost isn't
+This combines measured throughput with assumptions (adoption rate, peak factor). Inspection hardware costs under a tenth of the external AI usage bill. The largest cost isn't
 hardware, it's **people**: a false-positive report desk and per-department grade negotiations.
 
-## Campus rollout and AI governance
+## Proposed campus rollout and AI governance
 
 ![Six prerequisites for campus-wide rollout](/projects/ai-guardrail-rollout-prereqs.webp)
 
@@ -279,7 +283,7 @@ never gets treated as "allowed"**.
 ## Engineering
 
 - **Python · FastAPI**, containerized. Every change runs ruff → pytest → Docker build → container
-  E2E smoke test → re-scoring gate → deploy.
+  E2E smoke test → re-scoring gate, and passing builds update the research test server.
 - **Pluggable detectors.** Proven open source where it fits (**Microsoft Presidio**, **KoELECTRA**,
   **LiteLLM**, **promptfoo · garak**, **NeMo Guardrails** integration); built in-house where Korean
   and university work demanded it (Korean harmful-intent detection, 9 Korean identifier
@@ -289,7 +293,7 @@ never gets treated as "allowed"**.
   gateway, not only a demo.
 - **Reproducible.** `python3 scripts/eval.py` reruns the same scoring for anyone.
 
-## Next
+## Follow-up work (proposed by the study)
 
 - **Controlling AI agents' tool execution** (OWASP LLM06): from inspecting words to inspecting actions.
 - **An on-campus local LLM with no cross-border transfer**, a channel for the most sensitive grades.
