@@ -29,6 +29,13 @@ const resumeEn = {
   location: 'Daejeon, Republic of Korea',
   available: 'Information Security Team · KAIST',
 
+  highlights: [
+    { value: '30% → 0%', label: 'Missed attacks after measured fixes — LLM guardrail research, 205-prompt evaluation set' },
+    { value: '99.4%', label: 'Coverage of mandated targets in the campus web vulnerability assessment' },
+    { value: '0', label: 'Certificate expiries since automated renewal went live' },
+    { value: '100+/yr', label: 'Security reviews of IT projects with the NIS and MSIT' },
+  ],
+
   summary:
     'Information Security Engineer at KAIST, working where ' +
     '<span class="font-semibold text-accent-600 dark:text-accent-400">AI security</span> meets day-to-day security operations. ' +
@@ -253,6 +260,13 @@ const resumeKo: typeof resumeEn = {
   role: '정보보안 엔지니어',
   location: '대한민국 대전',
   available: '정보보안팀 · KAIST',
+
+  highlights: [
+    { value: '30% → 0%', label: '측정으로 고친 LLM 가드레일의 공격 미탐률 (연구 프로젝트, 평가셋 205문항)' },
+    { value: '99.4%', label: '교내 웹 취약점 정기 점검의 계획 대상 점검률' },
+    { value: '0건', label: '자동 갱신 체계 운영 이후 인증서 만료' },
+    { value: '100+/년', label: '국정원·과기정통부와 함께한 정보화사업 보안성 검토' },
+  ],
 
   summary:
     '<span class="font-semibold text-accent-600 dark:text-accent-400">AI 보안</span>과 현장 보안 운영이 만나는 지점에서 일하는 KAIST 정보보안 엔지니어입니다. ' +

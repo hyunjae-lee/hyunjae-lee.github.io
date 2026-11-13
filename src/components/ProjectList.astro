@@ -27,7 +27,7 @@ const projects = (await getCollection(collection))
 
 {
   projects.length > 0 ? (
-    <section class="mt-10 grid gap-4 sm:grid-cols-2">
+    <section class="mt-10 grid gap-4 sm:grid-cols-2" aria-label={t(lang, 'projects.title')}>
       {projects.map((p) => (
         <ProjectCard
           title={p.data.title}
@@ -36,6 +36,7 @@ const projects = (await getCollection(collection))
           date={p.data.date}
           status={p.data.status}
           lang={lang}
+          headingLevel="h2"
           href={localizePath(`/projects/${p.id}/`, lang)}
         />
       ))}
