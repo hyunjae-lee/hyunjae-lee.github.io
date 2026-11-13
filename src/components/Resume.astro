@@ -1,7 +1,7 @@
 ---
 /**
  * Home page (resume). Section order is built for a reader with 30 seconds:
- *   hero → at a glance (metrics) → about → selected work → experience →
+ *   hero → about → selected work → experience →
  *   now building → recent writing → skills → credentials → publications/honors →
  *   education → contact.
  * Every section is a labelled landmark (aria-labelledby → its <h2>).
@@ -120,23 +120,6 @@ const bullets =
     />
   </div>
 </section>
-
-<!-- At a glance -->
-{
-  r.highlights && (
-    <section aria-labelledby="sec-highlights" class="mt-14">
-      <SectionTitle id="sec-highlights">{t(lang, 'section.highlights')}</SectionTitle>
-      <dl class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        {r.highlights.map((h) => (
-          <div class="flex flex-col-reverse justify-end rounded-xl border border-accent-500/20 bg-accent-50/60 p-4 dark:bg-accent-500/5">
-            <dt class="mt-1.5 text-xs leading-snug text-zinc-600 dark:text-zinc-400">{h.label}</dt>
-            <dd class="whitespace-nowrap text-xl font-bold tracking-tight text-accent-700 tabular-nums sm:text-2xl dark:text-accent-400">{h.value}</dd>
-          </div>
-        ))}
-      </dl>
-    </section>
-  )
-}
 
 <!-- About -->
 <section aria-labelledby="sec-about" class="mt-14">
