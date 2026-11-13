@@ -32,14 +32,14 @@ const resumeEn = {
   summary:
     'Information Security Engineer at KAIST, working where ' +
     '<span class="font-semibold text-accent-600 dark:text-accent-400">AI security</span> meets day-to-day security operations. ' +
-    'As principal investigator of a 2026 field study, I built an ' +
+    'As principal investigator of a 2026 research project, I built a research prototype of an ' +
     '<strong class="text-zinc-900 dark:text-zinc-100">LLM guardrail gateway</strong> aligned with the NIS N2SF framework and validated it on a ' +
     '<strong class="text-zinc-900 dark:text-zinc-100">205-prompt evaluation set</strong> — missed attacks ' +
     '<strong class="text-zinc-900 dark:text-zinc-100">30% → 0%</strong>, benign false blocks 2.6% → 0%, at ~6 ms per inspection without a GPU. ' +
     'In web security I run the campus ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">web vulnerability assessment</strong> (99.4% of mandated targets across ~1,200 sites), ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">web vulnerability assessment</strong> (99.4% of mandated targets), ' +
     'operate the WAF, and built ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">certificate automation</strong> now renewing certificates on 70+ servers with zero expiries. ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">certificate automation</strong> in production with zero certificate expiries. ' +
     'Before that I led security governance — ' +
     '<strong class="text-zinc-900 dark:text-zinc-100">100+ security reviews a year</strong> with the NIS and MSIT and the MSIT security &amp; privacy audit — ' +
     'and spent five years on core academic systems, including a key role in a ' +
@@ -65,11 +65,11 @@ const resumeEn = {
           period: 'Jul 2026 — Present',
           focus: 'Information Security Team · Web Security',
           points: [
-            'Principal investigator of a staff field study on secure generative-AI adoption: built an institutional LLM guardrail gateway (8 outbound / 6 inbound inspection stages, RAG clearance control, canary tokens) mapped to the NIS N2SF AI architecture, and a 205-prompt evaluation set with a CI gate — missed attacks 30% → 0%, benign false blocks 2.6% → 0%, ~6 ms per inspection on two GPU-less servers.',
-            'Ran the H2 2026 campus web vulnerability assessment under the MSIT plan: 99.4% coverage of mandated targets (519/522) across ~1,200 live domains, closing the commercial scanner’s gaps with nuclei self-scans; delivered remediation guidance to 56 owners of 62 affected sites (214 high, 832 medium findings).',
-            'Built campus-wide certificate automation (in production since May 2026): a one-command ACME installer, self-updating agent, four-point certificate fingerprint checks, and DNS-01 delegation for closed servers — 73 servers enrolled, 109 automatic renewals, zero expiries.',
+            'Principal investigator of a staff research project on secure generative-AI adoption (completed; not deployed to production): built a research prototype of an institutional LLM guardrail gateway (8 outbound / 6 inbound inspection stages, RAG clearance control, canary tokens) mapped to the NIS N2SF AI architecture, and a 205-prompt evaluation set with a CI gate — missed attacks 30% → 0%, benign false blocks 2.6% → 0%, ~6 ms per inspection without a GPU.',
+            'Ran the H2 2026 campus web vulnerability assessment under the MSIT plan: 99.4% coverage of mandated targets, closing the commercial scanner’s gaps with nuclei self-scans; delivered individual remediation guidance to owners of affected sites and tracked rescans.',
+            'Built campus-wide certificate automation (in production since May 2026): a one-command ACME installer, self-updating agent, four-point certificate fingerprint checks, and DNS-01 delegation for closed servers — zero certificate expiries.',
             'Designing SafeWeb, a self-service security portal (scan request, automatic ownership verification, offline Korean remediation reports, rescans), with a verifiable data boundary for AI-assisted development.',
-            'Wrote threat-intelligence triage criteria for ~9,500 malicious-URL IoCs (graded evidence, verdicts separated from blocking scope), and turned the KISA critical-infrastructure guide into 47 remotely assessable server-baseline checks.',
+            'Wrote threat-intelligence triage criteria for malicious-URL IoCs (graded evidence, verdicts separated from blocking scope), and turned the KISA critical-infrastructure guide into 47 remotely assessable server-baseline checks.',
             'Operate and tune the Web Application Firewall (WAF), balancing web-layer attack blocking against false positives.',
           ],
         },
@@ -91,6 +91,7 @@ const resumeEn = {
             'Served as a core working-level member of the ~USD 130M, 3-year Next-Generation Integrated Information System — deeply involved in designing the academic module (curriculum, course registration, classes, graduation) and driving verification, testing, and production deployment to a successful launch.',
             'Reviewed and modernized 1,400+ common and major-specific graduation requirements across departments (CS, EE, Mechanical, and more), re-basing complex rules onto the next-generation system and resolving policy–system mismatches.',
             'Redesigned graduation-assessment exception handling and the logic for internships, special lectures, and substitute courses; improved thesis-review management (proposal, defense, external committees), eliminating recurring errors.',
+            'Built security and privacy into the academic module: designed and verified role-based access control (student, faculty, department, registrar), encryption and on-screen/print masking of personal identifiers, privacy-impact-assessment requirements and personal-data access logging, and remediation of pre-launch vulnerability findings under secure-coding rules.',
             'During the transition-aligned graduation season, processed 2,000+ graduations and degree conferrals without disruption, and built new degree certificate / name / number issuance features that improved record accuracy and administrative trust.',
           ],
         },
@@ -240,13 +241,13 @@ const resumeKo: typeof resumeEn = {
 
   summary:
     '<span class="font-semibold text-accent-600 dark:text-accent-400">AI 보안</span>과 현장 보안 운영이 만나는 지점에서 일하는 KAIST 정보보안 엔지니어입니다. ' +
-    '2026년 직원 현장연구의 연구책임자로 국가정보원 N2SF 구성도에 대응하는 ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">LLM 가드레일 게이트웨이</strong>를 구현하고, ' +
+    '2026년 직원 현장연구(연구 프로젝트)의 연구책임자로 국가정보원 N2SF 구성도에 대응하는 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">LLM 가드레일 게이트웨이</strong> 프로토타입을 구현하고, ' +
     '<strong class="text-zinc-900 dark:text-zinc-100">평가셋 205문항</strong>으로 실증해 놓친 공격 ' +
     '<strong class="text-zinc-900 dark:text-zinc-100">30% → 0%</strong>, 정상 질의 오차단 2.6% → 0%를 달성했습니다(검사당 약 6ms, GPU 없음). ' +
     '웹 보안에서는 교내 ' +
-    '<strong class="text-zinc-900 dark:text-zinc-100">웹 취약점 정기 점검</strong>(약 1,200개 사이트, 계획 대상 99.4% 점검)과 WAF를 운영하고, ' +
-    '서버 70여 대의 인증서를 만료 없이 갱신 중인 ' +
+    '<strong class="text-zinc-900 dark:text-zinc-100">웹 취약점 정기 점검</strong>(계획 대상 99.4% 점검)과 WAF를 운영하고, ' +
+    '인증서 만료 0건으로 운영 중인 ' +
     '<strong class="text-zinc-900 dark:text-zinc-100">인증서 자동화 체계</strong>를 직접 만들었습니다. ' +
     '그전에는 국가정보원·과학기술정보통신부와 협력해 ' +
     '<strong class="text-zinc-900 dark:text-zinc-100">연 100건 이상의 보안성 검토</strong>와 과기정통부 정보보안·개인정보 감사 대응을 이끌었고, ' +
@@ -273,11 +274,11 @@ const resumeKo: typeof resumeEn = {
           period: '2026.07 — 현재',
           focus: '정보보안팀 · 웹 보안',
           points: [
-            '직원 현장연구 「생성형 AI 도입을 위한 보안 프레임워크 및 가드레일 실증 연구」 연구책임자 — 국가정보원 N2SF AI 연계체계에 대응하는 기관 전용 LLM 가드레일 게이트웨이(송신 8단계·수신 6단계, RAG 권한 통제, 카나리아 토큰)와 평가셋 205문항·배포 게이트를 구축하여 놓친 공격 30%→0%, 정상 질의 오차단 2.6%→0%, 검사당 약 6ms(GPU 없이 1U 서버 2대)를 실증.',
-            '2026 하반기 과기정통부 계획에 따른 교내 웹 취약점 정기 점검 운영 — 운영 도메인 약 1,200개 대상, 계획 대상 점검률 99.4%(519/522), 상용 스캐너 미점검분은 nuclei 자체점검으로 해소, 취약 사이트 62개(상 214·중 832건) 담당자 56명에게 조치 안내.',
-            '교내 인증서 자동화 체계 구축·운영(2026.05~) — 명령 한 줄 ACME 설치, 자가 업데이트 에이전트, 인증서 4지점 지문 대조, 80번을 열 수 없는 서버를 위한 DNS-01 위임 설계. 서버 73대 등록, 자동 갱신 109건, 만료 0건.',
+            '직원 현장연구 「생성형 AI 도입을 위한 보안 프레임워크 및 가드레일 실증 연구」 연구책임자(연구 프로젝트 완료, 기관 운영 환경 미적용) — 국가정보원 N2SF AI 연계체계에 대응하는 기관 전용 LLM 가드레일 게이트웨이 프로토타입(송신 8단계·수신 6단계, RAG 권한 통제, 카나리아 토큰)와 평가셋 205문항·배포 게이트를 구축하여 놓친 공격 30%→0%, 정상 질의 오차단 2.6%→0%, 검사당 약 6ms(GPU 없음)를 실증.',
+            '2026 하반기 과기정통부 계획에 따른 교내 웹 취약점 정기 점검 운영 — 계획 대상 점검률 99.4%, 상용 스캐너 미점검분은 nuclei 자체점검으로 해소, 취약 사이트 담당자에게 개별 조치 안내 및 재점검 관리.',
+            '교내 인증서 자동화 체계 구축·운영(2026.05~) — 명령 한 줄 ACME 설치, 자가 업데이트 에이전트, 인증서 4지점 지문 대조, 80번을 열 수 없는 서버를 위한 DNS-01 위임 설계. 인증서 만료 0건.',
             '셀프서비스 웹 보안포털(SafeWeb) 설계 — 점검 신청, 서버 소유권 자동 확인, 외부 반출 없는 오프라인 한글 조치 리포트, 재점검 대조. AI 보조 개발에 검증 가능한 데이터 경계 적용.',
-            '악성 URL IoC 약 9,500건에 대한 위협 인텔리전스 판정 기준 수립(근거 등급화, 판정과 차단 범위 분리), KISA 주요정보통신기반시설 가이드를 원격 판정 가능한 서버 보안 기준 47개 항목으로 설계.',
+            '악성 URL IoC에 대한 위협 인텔리전스 판정 기준 수립(근거 등급화, 판정과 차단 범위 분리), KISA 주요정보통신기반시설 가이드를 원격 판정 가능한 서버 보안 기준 47개 항목으로 설계.',
             '웹 방화벽(WAF) 운영·튜닝 — 웹 계층 공격 차단과 오탐 최소화의 균형 유지.',
           ],
         },
@@ -299,6 +300,7 @@ const resumeKo: typeof resumeEn = {
             '약 USD 130M 규모, 3년간 진행된 차세대 통합정보시스템의 핵심 실무자로서 학사 모듈(교과과정·수강신청·수업·졸업) 설계에 깊이 관여하고, 검증·테스트·운영 배포까지 성공적으로 완수.',
             '전산·전기전자·기계 등 여러 학과의 공통·전공 졸업요건 1,400건 이상을 검토·현행화하여 차세대 시스템에 재정비하고, 오랜 제도–시스템 불일치를 해소.',
             '졸업사정 예외처리와 인턴십·특강·대체교과목 반영 로직을 재설계하고, 논문 심사 관리(프로포절·디펜스·외부 심사위원)를 개선하여 반복 오류를 제거.',
+            '학사 모듈의 보안·개인정보 보호 설계 — 역할(학생·교수·학과·학사팀)별 권한·접근통제 설계와 검증, 고유식별정보 등 개인정보 암호화와 화면·출력물 마스킹, 개인정보 영향평가 요건과 개인정보 처리 접속기록 반영, 오픈 전 보안 취약점 점검 결과 조치와 시큐어코딩 적용.',
             '차세대 전환과 맞물린 졸업 시즌에 2,000명 이상의 졸업 확정·학위 수여를 무중단으로 처리하고, 학위기·학위명·학위번호 발급 기능을 신규 구축하여 학적 정확성과 행정 신뢰도를 제고.',
           ],
         },

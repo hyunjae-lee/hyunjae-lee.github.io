@@ -44,11 +44,11 @@ const content = {
     title: '정보보안 엔지니어 · AI 보안',
     location: '대전',
     summary:
-      'AI 보안과 현장 보안 운영이 만나는 지점에서 일합니다. 국가정보원 N2SF 구성도에 대응하는 <b>LLM 가드레일 게이트웨이</b>를 연구책임자로 구현·실증했고, 약 1,200개 웹사이트의 <b>취약점 정기 점검</b>과 <b>인증서 자동화</b>를 운영합니다. 그전에는 국정원·과기정통부와 함께 <b>연 100건 이상의 보안성 검토</b>를 이끌었고, 약 USD 130M 규모 차세대 정보시스템 구축의 핵심 실무를 맡았습니다.',
+      'AI 보안과 현장 보안 운영이 만나는 지점에서 일합니다. 국가정보원 N2SF 구성도에 대응하는 <b>LLM 가드레일 게이트웨이</b>를 연구 프로젝트의 책임자로 구현·실증했고, 교내 웹사이트의 <b>취약점 정기 점검</b>과 <b>인증서 자동화</b>를 운영합니다. 그전에는 국정원·과기정통부와 함께 <b>연 100건 이상의 보안성 검토</b>를 이끌었고, 약 USD 130M 규모 차세대 정보시스템 구축의 핵심 실무를 맡았습니다.',
     metrics: [
       ['30% → 0%', 'LLM 가드레일 공격 미탐 (평가셋 205문항)'],
       ['99.4%', '웹 취약점 점검률 (과기정통부 계획 대상)'],
-      ['0건', '인증서 만료 (서버 73대 · 자동 갱신 109건)'],
+      ['0건', '인증서 만료 (자동 갱신 체계 운영)'],
       ['100+/년', '국정원·과기정통부 협력 보안성 검토'],
     ],
     h: { exp: '경력', skills: '기술', edu: '학력', cert: '자격 · 어학', pub: '논문 · 특허', honors: '수상' },
@@ -59,10 +59,10 @@ const content = {
           {
             label: '정보보안팀 · 웹 보안 / AI 보안', period: '2026.07 — 현재',
             points: [
-              '<b>생성형 AI 가드레일 실증 연구 연구책임자</b>(3인) — 송신 8·수신 6단계 검사, RAG 권한 통제, 카나리아 토큰. 평가셋 205문항과 배포 게이트로 공격 미탐 30%→0%, 정상 오차단 2.6%→0%, 검사당 6ms(GPU 없음). OWASP LLM Top 10 대응.',
-              '<b>교내 웹 취약점 정기 점검</b> 운영 — 도메인 약 1,200개, 계획 대상 99.4% 점검, 상용 스캐너 공백은 nuclei 자체점검으로 해소, 취약 사이트 62개(상 214·중 832건) 조치 안내.',
-              '<b>인증서 자동화 체계</b> 설계·구축·운영 — ACME 1줄 설치, 자가 업데이트 에이전트, 4지점 지문 대조, DNS-01 위임. 서버 73대, 자동 갱신 109건, 만료 0건.',
-              '셀프서비스 보안포털 설계, 악성 URL IoC 약 9,500건 판정 기준 수립, KISA 가이드 기반 서버 보안 기준 47항목 자동 판정 설계, WAF 운영.',
+              '<b>생성형 AI 가드레일 실증 연구 연구책임자</b>(3인, 연구 프로젝트 완료·기관 운영 미적용) — 송신 8·수신 6단계 검사, RAG 권한 통제, 카나리아 토큰. 평가셋 205문항과 배포 게이트로 공격 미탐 30%→0%, 정상 오차단 2.6%→0%, 검사당 6ms(GPU 없음). OWASP LLM Top 10 대응.',
+              '<b>교내 웹 취약점 정기 점검</b> 운영 — 계획 대상 99.4% 점검, 상용 스캐너 공백은 nuclei 자체점검으로 해소, 취약 사이트 담당자 개별 조치 안내·재점검.',
+              '<b>인증서 자동화 체계</b> 설계·구축·운영 — ACME 1줄 설치, 자가 업데이트 에이전트, 4지점 지문 대조, DNS-01 위임. 인증서 만료 0건.',
+              '셀프서비스 보안포털 설계, 악성 URL IoC 판정 기준 수립, KISA 가이드 기반 서버 보안 기준 47항목 자동 판정 설계, WAF 운영.',
             ],
           },
           {
@@ -76,6 +76,7 @@ const content = {
             label: '정보개발팀 · 학사 시스템', period: '2020 — 2025.07',
             points: [
               '약 USD 130M·3년 <b>차세대 통합정보시스템</b> 학사 모듈 핵심 실무 — 졸업요건 1,400건 이상 현행화, 전환기 졸업 2,000명 이상 무중단 처리(KAIST 특별표창).',
+              '학사 모듈 <b>보안·개인정보 보호</b> — 역할별 권한·접근통제 설계, 개인정보 암호화·마스킹, 개인정보 영향평가·접속기록 반영, 오픈 전 취약점 조치·시큐어코딩.',
             ],
           },
         ],
@@ -108,11 +109,11 @@ const content = {
     title: 'Information Security Engineer · AI Security',
     location: 'Daejeon, Korea',
     summary:
-      'I work where AI security meets day-to-day security operations. As principal investigator I built and validated an <b>LLM guardrail gateway</b> aligned with Korea’s NIS N2SF framework, and I run <b>web vulnerability assessment</b> and <b>certificate automation</b> across ~1,200 university websites. Before that I led <b>100+ security reviews a year</b> with the NIS and MSIT, and played a key role in a ~USD 130M next-generation information-system program.',
+      'I work where AI security meets day-to-day security operations. As principal investigator I built and validated an <b>LLM guardrail gateway</b> aligned with Korea’s NIS N2SF framework, as a research project, and I run <b>web vulnerability assessment</b> and <b>certificate automation</b> across the university’s websites. Before that I led <b>100+ security reviews a year</b> with the NIS and MSIT, and played a key role in a ~USD 130M next-generation information-system program.',
     metrics: [
       ['30% → 0%', 'missed attacks, LLM guardrail (205-prompt eval set)'],
       ['99.4%', 'web assessment coverage of mandated targets'],
-      ['0', 'certificate expiries (73 servers, 109 auto-renewals)'],
+      ['0', 'certificate expiries under automated renewal'],
       ['100+/yr', 'security reviews with the NIS and MSIT'],
     ],
     h: { exp: 'Experience', skills: 'Skills', edu: 'Education', cert: 'Certifications · Languages', pub: 'Publications · Patent', honors: 'Honors' },
@@ -123,10 +124,10 @@ const content = {
           {
             label: 'Information Security Team · Web & AI Security', period: 'Jul 2026 — Present',
             points: [
-              '<b>Principal investigator, generative-AI guardrail field study</b> (team of 3): 8 outbound / 6 inbound inspection stages, RAG clearance control, canary tokens. A 205-prompt eval set with a CI gate took missed attacks 30%→0% and false blocks 2.6%→0% at 6 ms per check, no GPU. Mapped to OWASP LLM Top 10.',
-              'Ran the <b>campus web vulnerability assessment</b>: ~1,200 domains, 99.4% of mandated targets, scanner gaps closed with nuclei self-scans; remediation guidance for 62 affected sites (214 high, 832 medium).',
-              'Designed, built, and operate <b>certificate automation</b>: one-command ACME installer, self-updating agent, four-point fingerprint checks, DNS-01 delegation. 73 servers, 109 auto-renewals, zero expiries.',
-              'Designed a self-service security portal, IoC triage criteria for ~9,500 malicious URLs, and 47 automated server-baseline checks from the KISA guide; operate the WAF.',
+              '<b>Principal investigator, generative-AI guardrail research project</b> (team of 3; completed, not deployed to production): 8 outbound / 6 inbound inspection stages, RAG clearance control, canary tokens. A 205-prompt eval set with a CI gate took missed attacks 30%→0% and false blocks 2.6%→0% at 6 ms per check, no GPU. Mapped to OWASP LLM Top 10.',
+              'Ran the <b>campus web vulnerability assessment</b>: 99.4% of mandated targets, scanner gaps closed with nuclei self-scans; individual remediation guidance and rescans for affected sites.',
+              'Designed, built, and operate <b>certificate automation</b>: one-command ACME installer, self-updating agent, four-point fingerprint checks, DNS-01 delegation. Zero certificate expiries.',
+              'Designed a self-service security portal, IoC triage criteria for malicious URLs, and 47 automated server-baseline checks from the KISA guide; operate the WAF.',
             ],
           },
           {
@@ -140,6 +141,7 @@ const content = {
             label: 'Information Development Team · Academic Systems', period: '2020 — Jul 2025',
             points: [
               'Core member of a ~USD 130M, 3-year <b>next-generation information system</b>: modernized 1,400+ graduation rules; 2,000+ graduations processed through the cutover without disruption (KAIST Special Commendation).',
+              'Built in <b>security and privacy</b>: role-based access control, encryption and masking of personal data, privacy-impact-assessment and access-logging requirements, pre-launch vulnerability fixes and secure coding.',
             ],
           },
         ],
