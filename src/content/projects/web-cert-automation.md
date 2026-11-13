@@ -1,6 +1,6 @@
 ---
 title: One Command to HTTPS — Automating Public TLS Across a University
-description: Departments, labs, and clubs each run their own web server, and almost nobody wants to think about TLS. Building a portal and a one-command installer that issue and renew publicly trusted Let's Encrypt certificates on their own — with central visibility over every server. In production since May 2026 — 73 servers enrolled, 109 automatic renewals, zero expiries.
+description: Departments, labs, and clubs each run their own web server, and almost nobody wants to think about TLS. Building a portal and a one-command installer that issue and renew publicly trusted Let's Encrypt certificates on their own — with central visibility over every server. In production since May 2026, with zero expiries among issued certificates.
 date: 2026-07-01
 tags: [TLS, Let's Encrypt, ACME, DNS-01, Automation, DevSecOps]
 featured: true
@@ -128,7 +128,7 @@ Plenty of servers can't expose port 80. What blocks automation isn't "internal-o
 validation method. The institutional zone gets **one permanent CNAME per host**; the per-renewal
 TXT is written only to a **dedicated delegated subzone**. Only the portal holds DNS write
 credentials, and it writes only after checking the name belongs to that tracer, so DNS credentials
-never get scattered across dozens of servers.
+never get scattered across servers.
 
 This is opt-in, not a migration. DNS-01 puts the portal on every renewal's critical path, so HTTP-01
 stays the default and DNS-01 is reserved for servers that can open no ports at all, and for Windows.
@@ -156,7 +156,7 @@ take over the fleet.
 
 ## Asset visibility
 
-Upload the ~2,500 registered domains and the portal narrows them stage by stage (resolves, responds,
+Upload the institution's registered domain list and the portal narrows it stage by stage (resolves, responds,
 on-campus HTTPS, owned by the security team), recording why each one dropped out and diffing against
 the previous upload. A quarterly spreadsheet exercise became an automatic one, and it quantifies
 what must move to automatic renewal before lifetimes shrink to 100 days (Mar 2027) and 47 days
@@ -164,8 +164,7 @@ what must move to automatic renewal before lifetimes shrink to 100 days (Mar 202
 
 ## Where it stands (Nov 2026)
 
-- **73** servers / **86** domains enrolled; 54 report weekly
-- **50,000+** external checks since August; **109** confirmed automatic renewals
+- Enrolled servers renew and report on their own every week, cross-checked from outside by the portal
 - **Zero** issued certificates expired or within 30 days of expiry
 - No license cost versus commercial alternatives. Built solo with an AI coding agent (Claude):
   300+ commits, ~1,000 tests
