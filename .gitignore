@@ -21,3 +21,6 @@ pnpm-debug.log*
 # macOS / editor cruft
 .DS_Store
 Thumbs.db
+
+# private reference material (job postings, internal reports) — never publish
+ref/
