@@ -7,7 +7,17 @@ export const ui: Record<Lang, Record<string, string>> = {
   en: {
     'nav.home': 'Home',
     'nav.projects': 'Projects',
+    'nav.blog': 'Blog',
+    'resume.pdfKo': '이력서 (국문)',
+    'resume.pdfEn': 'Resume (EN)',
+    'blog.title': 'Blog',
+    'blog.intro': 'Field notes from security work — methods, write-ups, and what I learned. Most posts are written in Korean.',
+    'blog.empty': 'No posts yet.',
+    'blog.otherLang': 'Korean',
+    'action.backToBlog': '← Back to blog',
+    'action.relatedProject': 'Related project →',
     'section.experience': 'Experience',
+    'section.now': 'Now building',
     'section.selected': 'Selected work',
     'section.allProjects': 'All projects →',
     'section.skills': 'Skills',
@@ -41,7 +51,17 @@ export const ui: Record<Lang, Record<string, string>> = {
   ko: {
     'nav.home': '홈',
     'nav.projects': '프로젝트',
+    'nav.blog': '블로그',
+    'resume.pdfKo': '이력서 (국문)',
+    'resume.pdfEn': 'Resume (영문)',
+    'blog.title': '블로그',
+    'blog.intro': '보안 실무에서 남긴 기록 — 방법론, 분석 노트, 그리고 배운 것들.',
+    'blog.empty': '아직 글이 없습니다.',
+    'blog.otherLang': 'English',
+    'action.backToBlog': '← 블로그로 돌아가기',
+    'action.relatedProject': '관련 프로젝트 →',
     'section.experience': '경력',
+    'section.now': '지금 준비 중',
     'section.selected': '주요 프로젝트',
     'section.allProjects': '전체 프로젝트 →',
     'section.skills': '기술',
@@ -76,6 +96,7 @@ export const ui: Record<Lang, Record<string, string>> = {
 export const navItems = [
   { key: 'nav.home', path: '/' },
   { key: 'nav.projects', path: '/projects/' },
+  { key: 'nav.blog', path: '/blog/' },
 ];
 
 export function t(lang: Lang, key: string): string {
@@ -96,6 +117,8 @@ export function alternatePath(pathname: string, current: Lang): string {
   let base = pathname.replace(/^\/(ko|en)(?=\/|$)/, '');
   if (base === '') base = '/';
   if (!base.startsWith('/')) base = '/' + base;
+  // Blog posts exist in one language only — switch to the other locale's blog index instead.
+  if (/^\/blog\/[^/]+/.test(base)) base = '/blog/';
   if (other === defaultLang) return base;
   return base === '/' ? `/${other}/` : `/${other}${base}`;
 }

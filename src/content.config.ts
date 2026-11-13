@@ -32,8 +32,9 @@ const projectsKo = defineCollection({
 });
 
 /**
- * Blog structure prepared for future use (per CLAUDE.md).
- * Add Markdown under `src/content/blog/` and build a listing page when ready.
+ * Blog posts. One Markdown file per post under `src/content/blog/`.
+ * `lang` decides where the post lives: ko → /ko/blog/<slug>/, en → /blog/<slug>/.
+ * Both listing pages show every post (a post in the other language gets a badge).
  */
 const blog = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/blog' }),
@@ -41,6 +42,9 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     pubDate: z.coerce.date(),
+    lang: z.enum(['en', 'ko']).default('ko'),
+    tags: z.array(z.string()).default([]),
+    project: z.string().optional(), // related project slug
     draft: z.boolean().default(false),
   }),
 });

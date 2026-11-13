@@ -24,6 +24,8 @@ const selfPath = lang === 'ko' ? koPath : enPath;
 const canonical = new URL(selfPath, site.url).href;
 const enHref = new URL(enPath, site.url).href;
 const koHref = new URL(koPath, site.url).href;
+// Blog posts are single-language, so they get no hreflang alternates.
+const hasAlternate = !/^\/blog\/[^/]+/.test(enPath);
 const ogImage = new URL('/og.png', site.url).href;
 
 const personJsonLd = {
@@ -51,9 +53,9 @@ const personJsonLd = {
     <title>{pageTitle}</title>
     <meta name="description" content={desc} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={enHref} />
-    <link rel="alternate" hreflang="ko" href={koHref} />
-    <link rel="alternate" hreflang="x-default" href={enHref} />
+    {hasAlternate && <link rel="alternate" hreflang="en" href={enHref} />}
+    {hasAlternate && <link rel="alternate" hreflang="ko" href={koHref} />}
+    {hasAlternate && <link rel="alternate" hreflang="x-default" href={enHref} />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

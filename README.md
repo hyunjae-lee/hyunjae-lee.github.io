@@ -33,11 +33,12 @@ src/
 ├─ pages/
 │  ├─ index.astro         # the resume (Home)
 │  ├─ 404.astro
-│  └─ projects/           # list + [slug] detail, generated from content
+│  ├─ projects/           # list + [slug] detail, generated from content
+│  └─ blog/               # post list (all languages) + [slug] detail per language
 ├─ content/
 │  ├─ projects/           # one Markdown file per project (English)
 │  ├─ projects-ko/        # Korean translations, matching slugs
-│  └─ blog/               # reserved for a future blog
+│  └─ blog/               # blog posts; frontmatter lang: ko|en decides /ko/blog/ vs /blog/
 └─ styles/global.css      # Tailwind, dark mode, and print styles
 public/                   # favicon, og.png, robots.txt, project diagrams
 diagrams/                 # diagram sources — see "Project diagrams"

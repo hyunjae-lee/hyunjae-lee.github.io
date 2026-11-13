@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogList from '../../components/BlogList.astro';
+import { t } from '../../i18n';
+---
+<BaseLayout lang="en" title={t('en', 'blog.title')} description={t('en', 'blog.intro')}>
+  <BlogList lang="en" />
+</BaseLayout>

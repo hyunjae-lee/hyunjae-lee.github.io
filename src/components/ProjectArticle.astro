@@ -5,19 +5,26 @@ import { t, localizePath, type Lang } from '../i18n';
 interface Props {
   project: any;
   lang: Lang;
+  kind?: 'project' | 'post'; // blog posts reuse this layout
 }
-const { project, lang } = Astro.props;
+const { project, lang, kind = 'project' } = Astro.props;
 const { Content } = await render(project);
-const { title, description, date, tags, link, repo, status } = project.data;
+const { title, description, tags = [], link, repo, status } = project.data;
+const date = project.data.date ?? project.data.pubDate;
+const isPost = kind === 'post';
+const backHref = localizePath(isPost ? '/blog/' : '/projects/', lang);
+const backLabel = t(lang, isPost ? 'action.backToBlog' : 'action.backToProjects');
+const related = isPost ? project.data.project : undefined;
 const dateLabel = new Date(date).toLocaleDateString(lang === 'ko' ? 'ko-KR' : 'en-US', {
   year: 'numeric',
   month: 'long',
+  ...(isPost ? { day: 'numeric' } : {}),
 });
 const inProgress = status === 'in-progress';
 ---
 <article>
-  <a href={localizePath('/projects/', lang)} class="text-sm text-zinc-500 transition-colors hover:text-accent-600 dark:hover:text-accent-400">
-    {t(lang, 'action.backToProjects')}
+  <a href={backHref} class="text-sm text-zinc-500 transition-colors hover:text-accent-600 dark:hover:text-accent-400">
+    {backLabel}
   </a>
 
   <header class="mt-6 border-b border-zinc-100 pb-8 dark:border-zinc-900">
@@ -49,8 +56,13 @@ const inProgress = status === 'in-progress';
     }
 
     {
-      (link || repo) && (
+      (link || repo || related) && (
         <div class="mt-5 flex flex-wrap gap-4 text-sm">
+          {related && (
+            <a href={localizePath(`/projects/${related}/`, lang)} class="font-medium text-accent-600 transition-colors hover:text-accent-700 dark:text-accent-400">
+              {t(lang, 'action.relatedProject')}
+            </a>
+          )}
           {link && (
             <a href={link} target="_blank" rel="noopener" class="font-medium text-accent-600 transition-colors hover:text-accent-700 dark:text-accent-400">
               {t(lang, 'label.live')}
