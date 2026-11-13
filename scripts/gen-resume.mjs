@@ -45,12 +45,6 @@ const content = {
     location: '대전',
     summary:
       'AI 보안과 현장 보안 운영이 만나는 지점에서 일합니다. 국가정보원 N2SF 구성도에 대응하는 <b>LLM 가드레일 게이트웨이</b>를 연구 프로젝트의 책임자로 구현·실증했고, 교내 웹사이트의 <b>취약점 정기 점검</b>과 <b>인증서 자동화</b>를 운영합니다. 그전에는 국정원·과기정통부와 함께 <b>연 100건 이상의 보안성 검토</b>를 이끌었고, 약 USD 130M 규모 차세대 정보시스템 구축의 핵심 실무를 맡았습니다.',
-    metrics: [
-      ['30% → 0%', 'LLM 가드레일 공격 미탐 (평가셋 205문항)'],
-      ['100%', '웹 취약점 점검률 (과기정통부 계획 대상)'],
-      ['0건', '인증서 만료 (자동 갱신 체계 운영)'],
-      ['100+/년', '국정원·과기정통부 협력 보안성 검토'],
-    ],
     h: { exp: '경력', skills: '기술', edu: '학력', cert: '자격 · 어학', training: '교육 이수', pub: '논문 · 특허', honors: '수상' },
     experience: [
       {
@@ -111,12 +105,6 @@ const content = {
     location: 'Daejeon, Korea',
     summary:
       'I work where AI security meets day-to-day security operations. As principal investigator I built and validated an <b>LLM guardrail gateway</b> aligned with Korea’s NIS N2SF framework, as a research project, and I run <b>web vulnerability assessment</b> and <b>certificate automation</b> across the university’s websites. Before that I led <b>100+ security reviews a year</b> with the NIS and MSIT, and played a key role in a ~USD 130M next-generation information-system program.',
-    metrics: [
-      ['30% → 0%', 'missed attacks, LLM guardrail (205-prompt eval set)'],
-      ['100%', 'web assessment coverage of mandated targets'],
-      ['0', 'certificate expiries under automated renewal'],
-      ['100+/yr', 'security reviews with the NIS and MSIT'],
-    ],
     h: { exp: 'Experience', skills: 'Skills', edu: 'Education', cert: 'Certifications · Languages', training: 'Training · Cyber Security Training Center', pub: 'Publications · Patent', honors: 'Honors' },
     experience: [
       {
@@ -204,10 +192,6 @@ function html(c) {
   .title { margin-top: 1mm; font-size: 10pt; font-weight: 600; color: #4f46e5; }
   .contact { text-align: right; font-size: 7.8pt; color: #52525b; line-height: 1.55; }
   .summary { margin-top: 3mm; font-size: 8.6pt; color: #3f3f46; }
-  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; margin-top: 3mm; }
-  .metric { border: 1px solid #e0e7ff; background: #eef2ff; border-radius: 1.5mm; padding: 1.8mm 2.2mm; }
-  .metric .v { font-size: 12pt; font-weight: 700; color: #4338ca; line-height: 1.15; }
-  .metric .l { font-size: 7pt; color: #52525b; line-height: 1.3; margin-top: 0.6mm; }
   h2 { margin-top: 3.6mm; margin-bottom: 1.4mm; font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #4f46e5; font-weight: 700; display: flex; align-items: center; gap: 2mm; }
   h2::after { content: ''; flex: 1; height: 1px; background: #e4e4e7; }
   .row { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
@@ -236,7 +220,6 @@ function html(c) {
   <div class="contact">${contact.email}<br>${contact.site}<br>${contact.github} · ${contact.linkedin}<br>${c.location}</div>
 </header>
 <p class="summary">${c.summary}</p>
-<div class="metrics">${c.metrics.map(([v, l]) => `<div class="metric"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('')}</div>
 <h2>${c.h.exp}</h2>
 ${exp}
 <h2>${c.h.skills}</h2>
